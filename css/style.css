@@ -3063,3 +3063,105 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   font-weight: 700 !important;
   line-height: 1.3 !important;
 }
+
+/* -------- Lead-gen CTA lines (Why + About) -------- */
+.why-cta-line, .about-statement {
+  margin: 48px 0 0;
+  padding: 28px 36px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--amber);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mut);
+}
+.why-cta-line .tech-label, .about-statement .tech-label { color: var(--amber); margin: 0; }
+.about-statement p {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -.015em;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 4px 0 8px;
+  max-width: 56ch;
+}
+.about-statement p .hi { color: var(--hi); font-weight: 900; }
+.why-cta-btn, .about-cta-btn { align-self: flex-start; margin-top: 6px; }
+@media (min-width: 900px) {
+  .why-cta-line { flex-direction: row; align-items: center; gap: 24px; }
+  .why-cta-line .tech-label { flex-shrink: 0; }
+  .why-cta-btn { margin-top: 0; margin-left: auto; flex-shrink: 0; }
+}
+@media (max-width: 700px) {
+  .why-cta-line, .about-statement { padding: 24px 22px; }
+  .about-statement p { font-size: 18px; }
+}
+
+/* -------- Trust strip (replaces basic .strip) -------- */
+.trust-strip {
+  padding: 56px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.trust-strip__head {
+  margin-bottom: 28px;
+  text-align: center;
+}
+.trust-strip__head .tech-label {
+  color: var(--amber);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.trust-strip__head p {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -.005em;
+  color: var(--mut);
+  margin: 0;
+}
+.trust-strip__head p b {
+  color: var(--ink);
+  font-weight: 900;
+}
+.trust-strip__row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+}
+.trust-strip__chip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--amber);
+  text-align: left;
+  transition: border-left-color .2s ease, transform .2s ease;
+}
+.trust-strip__chip:hover { border-left-color: var(--hi); transform: translateY(-1px); }
+.trust-strip__chip b {
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.trust-strip__chip small {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--mut-2);
+  line-height: 1.3;
+}
+@media (max-width: 1200px) { .trust-strip__row { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 700px) { .trust-strip__row { grid-template-columns: repeat(2, 1fr); } .trust-strip__chip { padding: 12px 10px; } }
+@media (max-width: 380px) { .trust-strip__row { grid-template-columns: 1fr; } }
