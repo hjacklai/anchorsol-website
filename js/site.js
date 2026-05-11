@@ -1,12 +1,9 @@
 (() => {
-  // ---------- Scroll-aware header ----------
-  const header = document.querySelector('.header');
-  if (header) {
-    let last = 0;
+  // ---------- Scroll-aware nav ----------
+  const nav = document.querySelector('.nav, .header');
+  if (nav) {
     const onScroll = () => {
-      const y = window.scrollY;
-      header.classList.toggle('scrolled', y > 16);
-      last = y;
+      nav.classList.toggle('scrolled', window.scrollY > 24);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
