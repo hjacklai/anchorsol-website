@@ -179,17 +179,22 @@ p { color: var(--mut); }
   background: rgba(6, 13, 26, .92);
   border-bottom-color: rgba(212, 162, 58, .5);
 }
+/* Centered brand mark, nav links stacked below on desktop, hidden on mobile.
+   The bottom tab bar replaces all nav on tablet/mobile, so the top simply
+   becomes a clean centered logo, very Apple-style. */
 .nav__in {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 0;
-  transition: padding .25s ease;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 0 14px;
+  transition: padding .25s ease, gap .25s ease;
 }
-.nav.scrolled .nav__in { padding: 10px 0; }
+.nav.scrolled .nav__in { padding: 10px 0 8px; gap: 10px; }
 
-.brand { display: flex; align-items: center; gap: 14px; transition: transform .25s ease; }
-.brand:hover { transform: translateX(2px); }
+.brand { display: flex; align-items: center; gap: 14px; transition: transform .25s ease; justify-content: center; text-align: left; }
+.brand:hover { transform: translateY(-1px); }
 .brand img {
   height: 56px;
   width: auto;
@@ -224,6 +229,7 @@ p { color: var(--mut); }
 
 .nav__links {
   display: flex;
+  justify-content: center;
   gap: 4px;
   font-family: var(--ff-mono);
   font-size: 12px;
@@ -231,6 +237,11 @@ p { color: var(--mut); }
   text-transform: uppercase;
   letter-spacing: .12em;
   color: rgba(255, 255, 255, .82);
+}
+/* Mobile and tablet: bottom tab bar handles navigation, hide the
+   inline horizontal nav links entirely so the top stays clean. */
+@media (max-width: 1100px) {
+  .nav__links { display: none; }
 }
 .nav__links a {
   position: relative;
@@ -1859,9 +1870,13 @@ footer .bottom {
 @media (max-width: 1100px) {
   :root { --container-x: 32px; }
 
-  /* Show hamburger, hide desktop nav */
+  /* Desktop nav links hidden, bottom tab bar handles all navigation */
   .nav__links { display: none; }
-  .nav-toggle { display: inline-flex; }
+
+  /* Centered brand mark tightens on tablet+ */
+  .nav__in { padding: 14px 0 12px; gap: 0; }
+  .brand img { height: 48px; }
+  .brand .wm { font-size: 19px; }
 
   /* Hero stacks */
   .hero { grid-template-columns: 1fr; min-height: auto; }
