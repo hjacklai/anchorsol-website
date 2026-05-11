@@ -5,6 +5,8 @@ node_modules/
 site/assets/images/*.webp
 site/assets/images/*.avif
 site/assets/images/_manifest.json
+# Exceptions: hand-added webp/avif files that should be tracked
+!site/assets/images/dr_lai_yip_poon.webp
 
 # Originals, research, raw source materials (kept locally, not for public repo)
 originals/
