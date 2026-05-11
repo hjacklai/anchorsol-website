@@ -496,8 +496,24 @@ body.nav-open { overflow: hidden; }
   position: relative;
   display: grid;
   grid-template-columns: 1.1fr .9fr;
-  min-height: 760px;
+  min-height: 720px;
+  max-height: 86vh;
   border-bottom: 1px solid var(--rule);
+}
+/* On very wide screens the hero stops looking like an Apple product page
+   and starts looking like a stretched billboard. Cap height, keep video
+   contained, and bump the left column padding so text breathes. */
+@media (min-width: 1600px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 680px;
+    max-height: 80vh;
+  }
+  .hero__l { padding: 96px 80px; max-width: 880px; }
+}
+@media (min-width: 1920px) {
+  .hero { max-height: 760px; }
+  .hero__l { padding: 96px 96px; }
 }
 .hero__l {
   padding: 64px 56px;
@@ -1540,33 +1556,53 @@ section.hero { padding: 0; }
 }
 .about-portrait__cap p { font-size: 14px; line-height: 1.55; color: var(--mut); }
 
-.about-pillars { display: flex; flex-direction: column; }
-.about-pillar {
+/* 3-pillar block, redesigned as a clean 3-column card grid with
+   number + title in a header and paragraph body. Stacks vertically
+   on tablet and mobile. */
+.about-pillars {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  padding: 28px 0;
-  border-top: 1px solid var(--rule);
-  align-items: start;
+  margin-top: 2rem;
 }
-.about-pillar:last-child { border-bottom: 1px solid var(--rule); }
+.about-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--amber);
+  transition: transform var(--dur-base) var(--ease-expo), border-color var(--dur-base) var(--ease-soft);
+}
+.about-pillar:hover { transform: translateY(-3px); border-top-color: var(--hi); }
 .about-pillar__num {
   font-family: var(--ff-mono);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .18em;
   color: var(--amber);
 }
 .about-pillar h4 {
   font-family: var(--ff-display);
   font-weight: 900;
-  font-size: 24px;
+  font-size: 22px;
+  line-height: 1.05;
   letter-spacing: -.015em;
   text-transform: uppercase;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin: 0;
 }
-.about-pillar p { font-size: 15px; line-height: 1.55; color: var(--mut); }
+.about-pillar p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mut);
+  margin: 0;
+}
+@media (max-width: 1000px) {
+  .about-pillars { grid-template-columns: 1fr; gap: 16px; }
+  .about-pillar { padding: 20px 18px; }
+}
 
 /* -------- [07] Contact section (form + aside) -------- */
 .contact-section { background: var(--bg-2); }
@@ -3430,12 +3466,22 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   .tabbar__pulse { animation: none; opacity: .25; }
 }
 
-/* Show tab bar on tablet + mobile, push body up so footer is reachable */
-@media (max-width: 1100px) {
-  .tabbar { display: flex; }
-  body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0)); }
-  /* Floating WhatsApp FAB is redundant when tabbar Chat exists, hide it */
-  .wa-fab { display: none !important; }
+/* Tab bar is now SITE-WIDE on every device. Desktop, tablet, mobile,
+   the bar lives at the bottom on every page. */
+.tabbar { display: flex; }
+body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0)); }
+/* Floating WhatsApp FAB is redundant when tabbar Chat exists */
+.wa-fab { display: none !important; }
+/* Desktop tab bar feels even more refined with a max-width container */
+@media (min-width: 1101px) {
+  .tabbar__scroll {
+    max-width: var(--container);
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .tabbar__tab { min-width: 88px; padding: 12px 14px 10px; }
+  .tabbar__lbl { font-size: 11px; }
+  .tabbar__icon { width: 24px; height: 24px; }
 }
 @media (max-width: 380px) {
   .tabbar__tab { padding: 8px 2px 6px; min-height: 56px; }
@@ -3644,29 +3690,13 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   .pull-quote blockquote { font-size: clamp(22px, 6.5vw, 32px); }
 }
 
-/* Inline contextual link at bottom of #system section, replaces the
-   old big in-page brochure CTA. Resources live on /learn/, not here. */
-.system__resources-link {
+/* CTA row beneath the closing pull-quote in About */
+.about-cta-row {
   margin: 2.5rem 0 0;
-  padding: 1.25rem 1.5rem;
-  border: 1px solid var(--rule);
-  border-left: 2px solid var(--amber);
-  background: rgba(212, 162, 58, .04);
-  font-family: var(--ff-display);
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--mut);
-  max-width: 680px;
+  text-align: center;
 }
-.system__resources-link a {
-  color: var(--amber);
-  font-weight: 700;
-  border-bottom: 1px solid currentColor;
-  transition: color .15s ease, border-color .15s ease;
-}
-.system__resources-link a:hover, .system__resources-link a:focus-visible {
-  color: var(--hi);
-  border-color: var(--hi);
+@media (max-width: 720px) {
+  .about-cta-row { text-align: left; }
 }
 
 /* =========================================================================
