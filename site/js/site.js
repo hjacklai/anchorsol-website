@@ -13,16 +13,21 @@
   const toggle = document.querySelector('.nav-toggle');
   const mobileNav = document.querySelector('.mobile-nav');
   if (toggle && mobileNav) {
+    const setOpen = (isOpen) => {
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      mobileNav.classList.toggle('is-open', isOpen);
+      document.body.classList.toggle('nav-open', isOpen);
+    };
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      mobileNav.classList.toggle('is-open', !open);
+      setOpen(!open);
     });
     mobileNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.setAttribute('aria-expanded', 'false');
-        mobileNav.classList.remove('is-open');
-      });
+      a.addEventListener('click', () => setOpen(false));
+    });
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) setOpen(false);
     });
   }
 
