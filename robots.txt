@@ -6,7 +6,5 @@ Disallow: /extracted/
 # Search engine crawlers welcome
 Sitemap: https://anchorsolwall.com/sitemap.xml
 
-# LLM / AI crawlers — content summary at /llms.txt
+# LLM / AI crawlers, content summary at /llms.txt
 # (see https://llmstxt.org for the spec)
-</content>
-</invoke>
