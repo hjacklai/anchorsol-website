@@ -2488,3 +2488,78 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   gap: 20px;
 }
 @media (max-width: 700px) { .article__related-grid { grid-template-columns: 1fr; } }
+
+/* Knowledge base: Resources & downloads */
+.kb-section-title--resources { margin-top: 72px; color: var(--ink); }
+.kb-resources {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+@media (max-width: 1000px) { .kb-resources { grid-template-columns: 1fr; } }
+.kb-resource {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--amber);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-left-color .2s ease, transform .2s ease, background .2s ease;
+}
+.kb-resource:hover {
+  border-left-color: var(--hi);
+  background: var(--bg-surface-2);
+  transform: translateX(2px);
+}
+.kb-resource__icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.kb-resource__icon svg { width: 22px; height: 22px; }
+.kb-resource:hover .kb-resource__icon { color: var(--hi); }
+.kb-resource__body { display: flex; flex-direction: column; gap: 4px; }
+.kb-resource__tag {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 700;
+}
+.kb-resource__body h3 {
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.15;
+}
+.kb-resource__body p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--mut);
+  margin: 4px 0 0;
+}
+.kb-resource__cta {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--amber);
+  white-space: nowrap;
+  transition: color .15s ease;
+}
+.kb-resource:hover .kb-resource__cta { color: var(--hi); }
