@@ -1318,6 +1318,44 @@ section.hero { padding: 0; }
   line-height: 1.6;
   margin-bottom: 14px;
 }
+.addr-link {
+  display: block;
+  color: var(--mut);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  margin-left: -12px;
+  transition: border-left-color .2s ease, color .2s ease;
+}
+.addr-link:hover { border-left-color: var(--amber); color: var(--ink); }
+.addr-link__cta {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 700;
+}
+.addr-link:hover .addr-link__cta { color: var(--hi); }
+.gbp-review {
+  margin-top: 12px !important;
+  font-size: 12px !important;
+}
+.gbp-review a {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px dotted rgba(212,162,58,.4);
+  padding-bottom: 2px;
+  transition: color .15s ease, border-bottom-color .15s ease;
+}
+.gbp-review a:hover { color: var(--hi); border-bottom-color: var(--hi); }
 .contact-block p { font-size: 14px; line-height: 1.7; color: var(--mut); margin-bottom: 8px; }
 .contact-block p b { color: var(--mut-2); font-family: var(--ff-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 .contact-block a { color: var(--ink); transition: color .15s ease; }
