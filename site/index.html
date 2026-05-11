@@ -73,6 +73,98 @@
       "category": "Geotechnical Engineering / Retaining Walls / MSE",
       "image": "https://anchorsolwall.com/assets/videos/wall-linear-poster.jpg",
       "url": "https://anchorsolwall.com/#system"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://anchorsolwall.com/#localbusiness",
+      "name": "AnchorSOL® Wall Sdn. Bhd.",
+      "image": "https://anchorsolwall.com/assets/images/logo-white.png",
+      "telephone": "+60-12-236-2159",
+      "email": "lai@anchorsolwall.com",
+      "url": "https://anchorsolwall.com/",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C27-1 Plaza Jelutong, Persiaran Gerbang Utama, Bukit Jelutong",
+        "addressLocality": "Shah Alam",
+        "addressRegion": "Selangor",
+        "postalCode": "40150",
+        "addressCountry": "MY"
+      },
+      "geo": {"@type": "GeoCoordinates", "latitude": 3.0989, "longitude": 101.5469},
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }],
+      "areaServed": [
+        {"@type": "Country", "name": "Malaysia"},
+        {"@type": "Country", "name": "Bangladesh"}
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "AnchorSOL® Wall at Central Park Damansara, drone aerial",
+      "description": "Aerial drone footage of an AnchorSOL® inverted-T precast facing MSE wall under construction at Central Park Damansara, Selangor, Malaysia. Long-run linear wall with galvanised tendons and deadman anchor block termination.",
+      "thumbnailUrl": "https://anchorsolwall.com/assets/videos/wall-linear-poster.jpg",
+      "uploadDate": "2026-05-10",
+      "contentUrl": "https://anchorsolwall.com/assets/videos/wall-linear.mp4",
+      "publisher": {"@id": "https://anchorsolwall.com/#organization"}
+    },
+    {
+      "@type": "VideoObject",
+      "name": "AnchorSOL® Wall at Desa Park City, drone aerial",
+      "description": "Aerial drone footage of a circular hilltop containment AnchorSOL® wall at Desa Park City, Kuala Lumpur. Grade 30 MPa precast facing with galvanised tendons and deadman anchor block termination.",
+      "thumbnailUrl": "https://anchorsolwall.com/assets/videos/wall-circular-poster.jpg",
+      "uploadDate": "2026-05-10",
+      "contentUrl": "https://anchorsolwall.com/assets/videos/wall-circular.mp4",
+      "publisher": {"@id": "https://anchorsolwall.com/#organization"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an MSE wall?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mechanically Stabilized Earth (MSE) is a modern engineering category that replaced concrete-gravity retaining walls. The retained soil itself becomes part of the structure, stitched together by horizontal steel reinforcement laid at intervals through compacted backfill, with a precast concrete facing holding the front face in line. The wall acts as a single composite block."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AnchorSOL® different from conventional MSE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AnchorSOL® is an anchored variant of MSE. Where conventional MSE relies on friction along the full length of horizontal reinforcement, AnchorSOL® concentrates pullout resistance at a discrete deadman anchor block at the tendon end. This allows the wall to run on crusher run or local cohesionless granular fill instead of premium granular backfill, reducing material cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What backfill does an AnchorSOL® wall require?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Crusher run or local cohesionless granular fill with internal friction angle ≥34°. Hand-compacted or mini-compactor only — no heavy vibration plant required on site."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the typical wall height range for AnchorSOL®?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Practical range is 3 to 30 metres. Above 5 metres, AnchorSOL® is typically up to 50% cheaper than reinforced concrete (RC) retaining walls; the cost advantage widens with every additional metre of height."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AnchorSOL® walls be used under railways?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. AnchorSOL® walls are cyclic-load capable and have been installed under KTMB rail corridors and ADB-financed cross-border road corridors. The composite soil mass yields elastically under cyclic loads and recovers, performing well where rigid RC walls crack."
+          }
+        }
+      ]
     }
   ]
 }
@@ -603,8 +695,13 @@
   <div class="apps">
 
     <a class="app" href="#projects">
-      <span class="app__num">01</span>
-      <div class="app__media"><img src="assets/images/RoadEmbmt-11.jpg" alt="Highway embankment AnchorSOL wall" loading="lazy" /></div>
+      <span class="app__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M4 28 L11 4 M28 28 L21 4"/>
+          <path d="M16 6 L16 10 M16 14 L16 18 M16 22 L16 26" stroke-dasharray="3 3"/>
+        </svg>
+      </span>
+      <div class="app__media"><img src="assets/images/RoadEmbmt-11.jpg" alt="Highway embankment AnchorSOL wall" loading="lazy" width="800" height="533" /></div>
       <div class="app__body">
         <h4>Highway Embankments</h4>
         <p>NKVE, federal &amp; state roads. Abutments, side-hill cuts, ramp walls.</p>
@@ -613,8 +710,15 @@
     </a>
 
     <a class="app" href="#projects">
-      <span class="app__num">02</span>
-      <div class="app__media"><img src="assets/images/BridgeAbmt-04-2.jpg" alt="Bridge abutment AnchorSOL wall" loading="lazy" /></div>
+      <span class="app__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M3 12 L29 12"/>
+          <path d="M3 12 L3 26 M29 12 L29 26"/>
+          <path d="M8 12 Q8 22 16 22 Q24 22 24 12"/>
+          <path d="M3 26 L29 26"/>
+        </svg>
+      </span>
+      <div class="app__media"><img src="assets/images/BridgeAbmt-04-2.jpg" alt="Bridge abutment AnchorSOL wall" loading="lazy" width="800" height="533" /></div>
       <div class="app__body">
         <h4>Bridge Abutments</h4>
         <p>Inverted-T precast facing with integral ground beam. Structural certainty at the deck transition.</p>
@@ -623,8 +727,12 @@
     </a>
 
     <a class="app" href="#projects">
-      <span class="app__num">03</span>
-      <div class="app__media"><img src="assets/images/HillWall-2.jpg" alt="Hill stabilisation AnchorSOL wall" loading="lazy" /></div>
+      <span class="app__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <path d="M3 26 L11 10 L17 18 L22 8 L29 26 Z"/>
+        </svg>
+      </span>
+      <div class="app__media"><img src="assets/images/HillWall-2.jpg" alt="Hill stabilisation AnchorSOL wall" loading="lazy" width="800" height="533" /></div>
       <div class="app__body">
         <h4>Hill Stabilisation</h4>
         <p>Stepped retention on slopes. Templer Hills, Cheras, Kajang and beyond.</p>
@@ -633,8 +741,14 @@
     </a>
 
     <a class="app" href="#projects">
-      <span class="app__num">04</span>
-      <div class="app__media"><img src="assets/images/Submerged-04.jpg" alt="Marine and riverbank AnchorSOL wall" loading="lazy" /></div>
+      <span class="app__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12 Q8 7 13 12 T23 12 T29 12"/>
+          <path d="M3 19 Q8 14 13 19 T23 19 T29 19"/>
+          <path d="M3 26 Q8 21 13 26 T23 26 T29 26"/>
+        </svg>
+      </span>
+      <div class="app__media"><img src="assets/images/Submerged-04.jpg" alt="Marine and riverbank AnchorSOL wall" loading="lazy" width="800" height="533" /></div>
       <div class="app__body">
         <h4>Submerged &amp; Marine</h4>
         <p>Tide-line retention, riverbank, drainage and culvert headwalls.</p>
@@ -643,8 +757,16 @@
     </a>
 
     <a class="app" href="#projects">
-      <span class="app__num">05</span>
-      <div class="app__media"><img src="assets/images/proj_ktm_sungai_buaya.jpg" alt="KTMB rail corridor AnchorSOL wall" loading="lazy" /></div>
+      <span class="app__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <rect x="6" y="5" width="20" height="18" rx="2"/>
+          <path d="M11 11 L21 11"/>
+          <circle cx="11" cy="19" r="2" fill="currentColor"/>
+          <circle cx="21" cy="19" r="2" fill="currentColor"/>
+          <path d="M9 23 L7 28 M23 23 L25 28"/>
+        </svg>
+      </span>
+      <div class="app__media"><img src="assets/images/proj_ktm_sungai_buaya.jpg" alt="KTMB rail corridor AnchorSOL wall" loading="lazy" width="800" height="533" /></div>
       <div class="app__body">
         <h4>Under-Railway &amp; Heavy Civils</h4>
         <p>KTMB rail corridors and sub-track embankments. Cyclic-load capable. ADB-financed cross-border roads.</p>

@@ -30,13 +30,13 @@ const IMG_DIR = path.join(ROOT, "site", "assets", "images");
 const HTML_GLOB = path.join(ROOT, "site");
 const MANIFEST = path.join(IMG_DIR, "_manifest.json");
 
-const QUALITY_JPEG = 85;
-const QUALITY_PNG = 90;
-const QUALITY_WEBP = 80;
-const QUALITY_AVIF = 60;
-const THRESH_BYTES = 200 * 1024; // skip tiny images
+const QUALITY_JPEG = 86;       // slight bump for better detail retention
+const QUALITY_PNG = 92;        // higher quality (90 was borderline lossy)
+const QUALITY_WEBP = 82;       // sweet spot: ~85% of JPEG quality at ~30% smaller
+const QUALITY_AVIF = 65;       // slight bump from 60 for less artifacting
+const THRESH_BYTES = 40 * 1024;     // process anything ≥40KB (catches thumbnails)
 const RECOMPRESS_BYTES = 500 * 1024; // re-compress originals above this
-const MAX_WIDTH = 1920;
+const MAX_WIDTH = 1920;        // cap at 1920 (no upscaling)
 
 const args = new Set(process.argv.slice(2));
 const DRY_RUN = args.has("--dry-run");
