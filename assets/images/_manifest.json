@@ -1,220 +1,220 @@
 {
-  "generated": "2026-05-11T15:58:05.069Z",
+  "generated": "2026-05-11T16:01:41.510Z",
   "entries": [
     {
       "file": "AnchorBlock-01.jpg",
       "origSize": 3088606,
-      "webp": 430004,
-      "avif": 356978,
-      "recompress": "3088606 → 522713"
+      "webp": 470638,
+      "avif": 408477,
+      "recompress": "3088606 → 546815"
     },
     {
       "file": "AnchorBlock-021.jpg",
       "origSize": 932126,
-      "webp": 123482,
-      "avif": 106778,
-      "recompress": "932126 → 172536"
+      "webp": 131512,
+      "avif": 119617,
+      "recompress": "932126 → 177782"
     },
     {
       "file": "ArchBridge-01-1.jpg",
       "origSize": 1287076,
-      "webp": 185950,
-      "avif": 168110,
-      "recompress": "1287076 → 222706"
+      "webp": 202252,
+      "avif": 196856,
+      "recompress": "1287076 → 238261"
     },
     {
       "file": "ArchitecturalAppearance.jpg",
       "origSize": 511872,
-      "webp": 65022,
-      "avif": 45667
+      "webp": 70718,
+      "avif": 52585
     },
     {
       "file": "Benefit1-1.jpg",
       "origSize": 2431170,
-      "webp": 341110,
-      "avif": 300898,
-      "recompress": "2431170 → 437024"
+      "webp": 368654,
+      "avif": 341349,
+      "recompress": "2431170 → 457324"
     },
     {
       "file": "Benefit2.jpg",
       "origSize": 1422850,
-      "webp": 186142,
-      "avif": 137451,
-      "recompress": "1422850 → 275415"
+      "webp": 203126,
+      "avif": 156406,
+      "recompress": "1422850 → 289198"
     },
     {
       "file": "BridgeAbmt-04-2.jpg",
       "origSize": 812356,
-      "webp": 172050,
-      "avif": 144596,
-      "recompress": "812356 → 243795"
+      "webp": 185680,
+      "avif": 162679,
+      "recompress": "812356 → 252739"
     },
     {
       "file": "BridgeAbmt-05-1.jpg",
       "origSize": 1728550,
-      "webp": 155732,
-      "avif": 128422,
-      "recompress": "1728550 → 265331"
+      "webp": 171078,
+      "avif": 150797,
+      "recompress": "1728550 → 281936"
     },
     {
       "file": "Components-01.jpg",
       "origSize": 2176074,
-      "webp": 226680,
-      "avif": 163343,
-      "recompress": "2176074 → 339810"
+      "webp": 247370,
+      "avif": 187729,
+      "recompress": "2176074 → 356243"
     },
     {
       "file": "Components-03.jpg",
       "origSize": 879782,
-      "webp": 164844,
-      "avif": 142716,
-      "recompress": "879782 → 196630"
+      "webp": 178358,
+      "avif": 156857,
+      "recompress": "879782 → 203393"
     },
     {
       "file": "Components-04-1.jpg",
       "origSize": 2173948,
-      "webp": 357184,
-      "avif": 288986,
-      "recompress": "2173948 → 449169"
+      "webp": 379908,
+      "avif": 331011,
+      "recompress": "2173948 → 470309"
     },
     {
       "file": "EffectiveProgress.jpg",
       "origSize": 1775026,
-      "webp": 238236,
-      "avif": 176194,
-      "recompress": "1775026 → 338286"
+      "webp": 256790,
+      "avif": 200289,
+      "recompress": "1775026 → 354730"
     },
     {
       "file": "HillWall-2.jpg",
       "origSize": 2743194,
-      "webp": 295998,
-      "avif": 227247,
-      "recompress": "2743194 → 403617"
+      "webp": 318132,
+      "avif": 262810,
+      "recompress": "2743194 → 422406"
     },
     {
       "file": "Industry-02.jpg",
       "origSize": 1132548,
-      "webp": 133216,
-      "avif": 91627,
-      "recompress": "1132548 → 227468"
+      "webp": 143608,
+      "avif": 104594,
+      "recompress": "1132548 → 242634"
     },
     {
       "file": "IpohWall-img-1.jpg",
       "origSize": 442022,
-      "webp": 45184,
-      "avif": 36289
+      "webp": 47946,
+      "avif": 42301
     },
     {
       "file": "Reinforcement.jpg",
       "origSize": 1437082,
-      "webp": 378252,
-      "avif": 333695,
-      "recompress": "1437082 → 367797"
+      "webp": 399482,
+      "avif": 354283,
+      "recompress": "1437082 → 380642"
     },
     {
       "file": "RetainingWall-09.jpg",
       "origSize": 1474360,
-      "webp": 160678,
-      "avif": 121374,
-      "recompress": "1474360 → 256455"
+      "webp": 173904,
+      "avif": 138998,
+      "recompress": "1474360 → 271342"
     },
     {
       "file": "RetainingWall-11-1.jpg",
       "origSize": 1607886,
-      "webp": 177854,
-      "avif": 131864,
-      "recompress": "1607886 → 283463"
+      "webp": 193682,
+      "avif": 150801,
+      "recompress": "1607886 → 299051"
     },
     {
       "file": "RetainingWall-12.jpg",
       "origSize": 2588680,
-      "webp": 412246,
-      "avif": 336244,
-      "recompress": "2588680 → 491291"
+      "webp": 445800,
+      "avif": 379662,
+      "recompress": "2588680 → 513508"
     },
     {
       "file": "RetainingWall-14.jpg",
       "origSize": 988054,
-      "webp": 208036,
-      "avif": 189833,
-      "recompress": "988054 → 223553"
+      "webp": 225446,
+      "avif": 213899,
+      "recompress": "988054 → 234591"
     },
     {
       "file": "RetainingWall-15-1.jpg",
       "origSize": 1782048,
-      "webp": 218046,
-      "avif": 165103,
-      "recompress": "1782048 → 319052"
+      "webp": 233534,
+      "avif": 187794,
+      "recompress": "1782048 → 336033"
     },
     {
       "file": "RetainingWall-18.jpg",
       "origSize": 896554,
-      "webp": 116336,
-      "avif": 81344,
-      "recompress": "896554 → 203087"
+      "webp": 126688,
+      "avif": 93215,
+      "recompress": "896554 → 215754"
     },
     {
       "file": "RoadEmbmt-01.jpg",
       "origSize": 2092156,
-      "webp": 287586,
-      "avif": 212893,
-      "recompress": "2092156 → 388081"
+      "webp": 310016,
+      "avif": 242339,
+      "recompress": "2092156 → 406711"
     },
     {
       "file": "RoadEmbmt-03-3.jpg",
       "origSize": 1195778,
-      "webp": 179396,
-      "avif": 156376,
-      "recompress": "1195778 → 262608"
+      "webp": 196582,
+      "avif": 185014,
+      "recompress": "1195778 → 283020"
     },
     {
       "file": "RoadEmbmt-09.jpg",
       "origSize": 806980,
-      "webp": 163270,
-      "avif": 137600,
-      "recompress": "806980 → 185866"
+      "webp": 174192,
+      "avif": 147904,
+      "recompress": "806980 → 192716"
     },
     {
       "file": "RoadEmbmt-11.jpg",
       "origSize": 2579954,
-      "webp": 438380,
-      "avif": 368091,
-      "recompress": "2579954 → 502889"
+      "webp": 478790,
+      "avif": 415741,
+      "recompress": "2579954 → 526864"
     },
     {
       "file": "RoadEmbmt-13-1.jpg",
       "origSize": 2425122,
-      "webp": 462026,
-      "avif": 391927,
-      "recompress": "2425122 → 480360"
+      "webp": 494230,
+      "avif": 439591,
+      "recompress": "2425122 → 500966"
     },
     {
       "file": "RoadEmbmt-14.jpg",
       "origSize": 1801802,
-      "webp": 241330,
-      "avif": 167291,
-      "recompress": "1801802 → 339346"
+      "webp": 265172,
+      "avif": 192163,
+      "recompress": "1801802 → 355773"
     },
     {
       "file": "Submerged-04.jpg",
       "origSize": 2275430,
-      "webp": 234652,
-      "avif": 184502,
-      "recompress": "2275430 → 343151"
+      "webp": 257208,
+      "avif": 213005,
+      "recompress": "2275430 → 362112"
     },
     {
       "file": "Submerged-06-1.jpg",
       "origSize": 1480822,
-      "webp": 224606,
-      "avif": 198930,
-      "recompress": "1480822 → 269692"
+      "webp": 243470,
+      "avif": 234199,
+      "recompress": "1480822 → 285420"
     },
     {
       "file": "Submerged-img-03-1.jpg",
       "origSize": 1475996,
-      "webp": 167036,
-      "avif": 144486,
-      "recompress": "1475996 → 226968"
+      "webp": 185572,
+      "avif": 171841,
+      "recompress": "1475996 → 239204"
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/anchorSOL-logo.png",
@@ -224,23 +224,23 @@
     {
       "file": "anchorsol-research-cover.jpg",
       "origSize": 512196,
-      "webp": 218618,
-      "avif": 186003,
-      "recompress": "512196 → 266854"
+      "webp": 231112,
+      "avif": 202329,
+      "recompress": "512196 → 275780"
     },
     {
       "file": "anchorsolwall-img-1.jpg",
       "origSize": 1348062,
-      "webp": 225586,
-      "avif": 182079,
-      "recompress": "1348062 → 278380"
+      "webp": 245960,
+      "avif": 209083,
+      "recompress": "1348062 → 291783"
     },
     {
       "file": "anchorsolwall-img-3-1.jpg",
       "origSize": 1709758,
-      "webp": 191908,
-      "avif": 122334,
-      "recompress": "1709758 → 293509"
+      "webp": 205138,
+      "avif": 139416,
+      "recompress": "1709758 → 308846"
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/anchorsolwall-logo-dark.png",
@@ -255,53 +255,58 @@
     {
       "file": "anchorsolwall-retaining-img-1.jpg",
       "origSize": 1978752,
-      "webp": 245854,
-      "avif": 196517,
-      "recompress": "1978752 → 348481"
+      "webp": 259404,
+      "avif": 222457,
+      "recompress": "1978752 → 367149"
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/anchorsolwall-retaining-img-2-e1756906867690.jpg",
-      "skipped": "too small",
-      "size": 149427
+      "file": "anchorsolwall-retaining-img-2-e1756906867690.jpg",
+      "origSize": 149427,
+      "webp": 91944,
+      "avif": 79109
     },
     {
       "file": "anchorsolwall-retaining-img-3.jpg",
       "origSize": 2529246,
-      "webp": 420724,
-      "avif": 371189,
-      "recompress": "2529246 → 485582"
+      "webp": 451314,
+      "avif": 416931,
+      "recompress": "2529246 → 510132"
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/bd_anchor_soil_road.jpg",
-      "skipped": "too small",
-      "size": 68749
+      "file": "bd_anchor_soil_road.jpg",
+      "origSize": 68749,
+      "webp": 40254,
+      "avif": 38614
     },
     {
       "file": "bd_fdee_construction.png",
       "origSize": 492704,
-      "webp": 35288,
-      "avif": 27384
+      "webp": 39190,
+      "avif": 33321
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/bd_padma_bridge.jpeg",
-      "skipped": "too small",
-      "size": 60027
+      "file": "bd_padma_bridge.jpeg",
+      "origSize": 60027,
+      "webp": 38642,
+      "avif": 35994
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/bd_riverbank_msewall.jpg",
-      "skipped": "too small",
-      "size": 76252
+      "file": "bd_riverbank_msewall.jpg",
+      "origSize": 76252,
+      "webp": 53798,
+      "avif": 48383
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/bd_road_hill_terrain.jpg",
-      "skipped": "too small",
-      "size": 92581
+      "file": "bd_road_hill_terrain.jpg",
+      "origSize": 92581,
+      "webp": 59682,
+      "avif": 57687
     },
     {
       "file": "bd_sirajganj_wall.png",
       "origSize": 444584,
-      "webp": 30914,
-      "avif": 24317
+      "webp": 33636,
+      "avif": 28299
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/bg-pattern-img-3.png",
@@ -319,16 +324,17 @@
       "size": 8982
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/bg-pattern-img-7.png",
-      "skipped": "too small",
-      "size": 42836
+      "file": "bg-pattern-img-7.png",
+      "origSize": 42836,
+      "webp": 84402,
+      "avif": 32334
     },
     {
       "file": "brochure-cover.jpg",
       "origSize": 888232,
-      "webp": 142168,
-      "avif": 117921,
-      "recompress": "888232 → 191178"
+      "webp": 151414,
+      "avif": 130081,
+      "recompress": "888232 → 197865"
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/c1-1.png",
@@ -338,16 +344,16 @@
     {
       "file": "durable-peformance-1-1.jpg",
       "origSize": 2525066,
-      "webp": 383360,
-      "avif": 338781,
-      "recompress": "2525066 → 459987"
+      "webp": 412576,
+      "avif": 382322,
+      "recompress": "2525066 → 483758"
     },
     {
       "file": "istana-negara-1.jpg",
       "origSize": 1139876,
-      "webp": 136834,
-      "avif": 110853,
-      "recompress": "1139876 → 199504"
+      "webp": 151562,
+      "avif": 128865,
+      "recompress": "1139876 → 209953"
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/l.png",
@@ -365,30 +371,31 @@
       "size": 13881
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/network-globe.png",
-      "skipped": "too small",
-      "size": 102994
+      "file": "network-globe.png",
+      "origSize": 102994,
+      "webp": 74442,
+      "avif": 60895
     },
     {
       "file": "page-title-banner-2.jpg",
       "origSize": 617466,
-      "webp": 86988,
-      "avif": 67786,
-      "recompress": "617466 → 134340"
+      "webp": 94756,
+      "avif": 78986,
+      "recompress": "617466 → 141354"
     },
     {
       "file": "page-title-banner-3.jpg",
       "origSize": 1678180,
-      "webp": 156730,
-      "avif": 125512,
-      "recompress": "1678180 → 198789"
+      "webp": 167468,
+      "avif": 146968,
+      "recompress": "1678180 → 209207"
     },
     {
       "file": "page-title-contact-us-1.jpg",
       "origSize": 907484,
-      "webp": 146786,
-      "avif": 126053,
-      "recompress": "907484 → 195551"
+      "webp": 156584,
+      "avif": 147007,
+      "recompress": "907484 → 207697"
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/proj_cheras_private_dev.jpg",
@@ -396,9 +403,10 @@
       "size": 26200
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/proj_istana_negara_extra.jpg",
-      "skipped": "too small",
-      "size": 112054
+      "file": "proj_istana_negara_extra.jpg",
+      "origSize": 112054,
+      "webp": 107722,
+      "avif": 93253
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/proj_jkr_bandar_sri_iskandar.jpg",
@@ -441,16 +449,17 @@
       "size": 16927
     },
     {
-      "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/proj_templer_hills_extra.jpg",
-      "skipped": "too small",
-      "size": 147472
+      "file": "proj_templer_hills_extra.jpg",
+      "origSize": 147472,
+      "webp": 161216,
+      "avif": 134227
     },
     {
       "file": "templer-hills-img.jpg",
       "origSize": 1343390,
-      "webp": 208346,
-      "avif": 176364,
-      "recompress": "1343390 → 264118"
+      "webp": 225322,
+      "avif": 202333,
+      "recompress": "1343390 → 276500"
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/v3-1.png",

@@ -1,0 +1,104 @@
+# AnchorSOL® Wall
+
+> AnchorSOL® is Malaysia's most-specified anchored MSE (Mechanically Stabilized Earth) retaining wall system. Founded 1999 by Dr. Ir. Lai Yip Poon. Engineered for highway, bridge, hill, marine, and rail applications.
+
+## What we are
+
+- **Category:** Anchored MSE wall (a variant of Mechanically Stabilized Earth)
+- **Specialty:** The pullout resistance lives in a discrete *deadman anchor block* at the tendon end, not distributed along the full reinforcement length
+- **Why it matters:** Allows the wall to run on **crusher run or local cohesionless granular fill** (≥34° friction angle) instead of premium granular fill, reducing material cost
+- **Headquarters:** C27-1 Plaza Jelutong, Persiaran Gerbang Utama, Bukit Jelutong, Shah Alam, Selangor 40150, Malaysia
+- **Founded:** 1999
+- **Domain:** https://anchorsolwall.com
+
+## System components
+
+1. **Discrete Concrete Facing Panel** — Inverted-T or octagonal precast, Grade 30 MPa, factory-cast. Architectural finishes, custom logo cast directly into the panel.
+2. **High-Tensile Soil Reinforcement** — Carbon-steel deformed bar, hot-dip galvanised, inextensible. Grade 8.8 nuts on tendon connection.
+3. **Reinforced Granular Fill** — Crusher run or local cohesionless granular fill, well-graded, ≥34° internal friction angle. Hand-compacted or mini-compactor only, no heavy vibration on site.
+4. **Deadman Anchor Block** — Discrete Grade 30 precast block at the tendon end. The pullout resistance lives here.
+
+## Capabilities
+
+- **Height:** 3 to 30 metres
+- **Geometry:** Any alignment (curved, straight, stepped, terraced, fully circular tank-containment)
+- **Finish:** Architectural finishes, custom logos cast directly into panels
+- **Site conditions:** Urban, marine, tight-access, riverbank
+- **Speed:** Days, not months. Zero heavy vibration plant on site.
+- **Foundation:** Rigid or soft ground (with appropriate ground improvement)
+- **Seismic & dynamic load:** Composite soil mass yields elastically and recovers. Cyclic-load capable, used under KTMB rail corridors.
+
+## Comparison: AnchorSOL® MSE vs RC Wall
+
+| | AnchorSOL® Anchored MSE | Conventional RC Retaining Wall |
+|---|---|---|
+| Mechanism | Soil + steel composite, anchored at deadman | Concrete-gravity mass |
+| Construction | Modular precast, factory-built, no formwork | Cast-in-situ, formwork + multi-week curing |
+| Site vibration | None — hand or mini-compactor only | Heavy vibrating plant required |
+| Build crew | 3-4 person team, days not months | 12-20 person crew, months |
+| Backfill | Crusher run or local granular ≥34° | Conventional fill (wall does the work) |
+| Cost @ ≥5 m | Up to 50% cheaper than RC | Steep cost growth with height |
+| Seismic | Yields elastically, recovers | Rigid concrete cracks |
+
+## Applications
+
+1. **Highway Embankments** — NKVE, federal & state roads, abutments, side-hill cuts, ramp walls
+2. **Bridge Abutments** — Inverted-T precast facing with integral ground beam
+3. **Hill Stabilisation** — Stepped retention on slopes (Templer Hills, Cheras, Kajang)
+4. **Submerged & Marine** — Tide-line retention, riverbank, drainage and culvert headwalls
+5. **Under-Railway & Heavy Civils** — KTMB rail corridors, sub-track embankments, ADB-financed cross-border roads
+
+## Clients (Malaysia)
+
+JKR (Public Works Dept), PLUS / NKVE expressways, LLM (Malaysian Highway Authority), KTMB (national rail), Putrajaya Holdings, Istana Negara (national palace).
+
+## Bangladesh agent
+
+Anchor Soil Bangladesh Ltd. — sole authorised agent in Bangladesh. Delivering AnchorSOL® on RHD, ADB / SASEC and Bangladesh Army Engineers Corps infrastructure. https://anchorsoilbd.com
+
+## Notable projects
+
+- **Templer Hills** — Hill stabilisation, Selangor
+- **Istana Negara** — National Palace wall, Kuala Lumpur
+- **Bandar Sri Iskandar** — JKR federal road, Perak
+- **NKVE Jalan Meru Link** — PLUS expressway, Selangor
+- **Sungai Buaya** — KTMB rail corridor, Selangor
+- **Kajang Residential** — Private development, Selangor
+- **Ipoh Interchange** — Highway retention, Perak
+- **Arch Bridge** — Bridge abutment, Kuala Lumpur
+- **Central Park Damansara** — Long-run linear MSE wall, Selangor (featured hero video)
+- **Desa Park City** — Circular hilltop containment wall, Kuala Lumpur (featured mid-page video)
+
+300+ walls delivered since 1999.
+
+## Founder
+
+**Dr. Ir. Lai Yip Poon** — Founder, Chief Designer & MD. Engineer behind the AnchorSOL® Wall System and the Anchored Soil concept. Specialist in slope stability, earth retention, and ground improvement.
+
+Credentials: Ir. (BEM), Ph.D. AIT 2007, M.Eng. USM 1997, B.Eng. UTM 1990.
+
+## Brand position
+
+AnchorSOL® stands on three brand pillars:
+- **Impact by Cost** — Up to 50% cheaper than RC at heights ≥5m
+- **Innovate by Design** — Anchored Soil concept transfers pullout resistance to a discrete deadman anchor block
+- **Prompt by Delivery** — Days, not months. 3-4 person crew, zero heavy vibration plant
+
+Tagline: **ENGINEERED TO RETAIN EARTH.**
+
+Manifesto: **Don't reinforce. Anchor.**
+
+## Contact
+
+- **WhatsApp / Mobile:** +6012-236 2159
+- **Email:** lai@anchorsolwall.com (primary), yypplai@gmail.com (alternate)
+- **Hours:** Mon to Sat · 8:00 am to 6:00 pm (MYT)
+- **HQ:** C27-1 Plaza Jelutong, Persiaran Gerbang Utama, Bukit Jelutong, Shah Alam, Selangor 40150, Malaysia
+
+## Resources
+
+- [Homepage](https://anchorsolwall.com)
+- [Brochure (PDF)](https://anchorsolwall.com/assets/docs/anchorsol-wall-catalogue.pdf)
+- [Sitemap (XML)](https://anchorsolwall.com/sitemap.xml)
+</content>
+</invoke>
