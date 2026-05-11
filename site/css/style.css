@@ -2810,3 +2810,35 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   .gallery-cta-line .tech-label { flex-shrink: 0; }
   .gallery-cta-btn { margin-top: 0; margin-left: auto; flex-shrink: 0; }
 }
+
+/* Capabilities: lead-gen CTA strip below the 7-tile grid */
+.caps-cta-line {
+  margin: 48px 0 0;
+  padding: 28px 36px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--amber);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mut);
+}
+.caps-cta-line .tech-label { color: var(--amber); margin: 0; }
+.caps-cta-btn { align-self: flex-start; margin-top: 8px; }
+@media (min-width: 900px) {
+  .caps-cta-line { flex-direction: row; align-items: center; gap: 24px; }
+  .caps-cta-line .tech-label { flex-shrink: 0; }
+  .caps-cta-btn { margin-top: 0; margin-left: auto; flex-shrink: 0; }
+}
+
+/* Capabilities eyebrow now reads as a question; tune typography */
+.cap__eyebrow {
+  /* Eyebrow is now a question, slightly larger + readable */
+  font-size: 12px !important;
+  letter-spacing: .04em !important;
+  text-transform: none !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
