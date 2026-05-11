@@ -807,14 +807,12 @@ section.hero { padding: 0; }
   margin: 0 0 12px;
 }
 .apps-quote .hi { color: var(--hi); font-weight: 900; }
-.apps-quote cite {
-  font-family: var(--ff-mono);
-  font-size: 11px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--mut-2);
-  font-style: normal;
+.apps-quote .tech-label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--amber);
 }
+.apps-quote p:last-child { margin-bottom: 0; }
 @media (max-width: 700px) {
   .apps-quote { padding: 28px 24px; }
   .apps-quote p { font-size: 20px; }
