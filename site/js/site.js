@@ -210,20 +210,38 @@
           });
         };
 
-        // When the user taps a tab, suppress scroll-spy auto-tracking for
-        // ~900ms so the bar doesn't scrub through every intermediate
-        // section as the page smooth-scrolls to the target.
-        let suppressUntil = 0;
+        // When the user taps a tab, suppress scroll-spy entirely until the
+        // page has finished smooth-scrolling (no scroll events for 200ms).
+        // Also adds .is-tapping to the bar so :hover styles are killed
+        // while the bar auto-scrolls past other tabs.
+        let suppressed = false;
+        let settleTimer = null;
+        const onSettled = () => { suppressed = false; tabbar.classList.remove('is-tapping'); };
         hashTabs.forEach((tab, hash) => {
           tab.addEventListener('click', () => {
-            suppressUntil = performance.now() + 900;
-            setActiveHash(hash, 'auto'); // snap tab into center instantly
+            suppressed = true;
+            tabbar.classList.add('is-tapping');
+            setActiveHash(hash, 'auto'); // snap tab into center, no scrubbing
+            // Safety release in case scroll never fires (already on section)
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(onSettled, 1400);
           });
         });
+        // Detect when the page actually finishes scrolling: re-enable
+        // scroll-spy 200ms after the last scroll event.
+        let endTimer = null;
+        window.addEventListener('scroll', () => {
+          if (!suppressed) return;
+          clearTimeout(endTimer);
+          endTimer = setTimeout(() => {
+            clearTimeout(settleTimer);
+            onSettled();
+          }, 200);
+        }, { passive: true });
 
         let lastHash = null;
         const onScroll = () => {
-          if (performance.now() < suppressUntil) return;
+          if (suppressed) return;
           const viewportCenter = window.innerHeight / 2;
           let best = null;
           let bestDist = Infinity;
