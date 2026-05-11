@@ -132,15 +132,25 @@ async function rewriteHtml(htmlDir) {
   let touched = 0;
   for (const file of files) {
     const before = await fs.readFile(file, "utf8");
-    // Only rewrite raw <img ... src="...{jpg|jpeg|png}" ... /> not already inside <picture>
-    const after = before.replace(
-      /(<img\b(?![^>]*\bdata-no-picture\b)[^>]*\bsrc="([^"]+\.(?:jpe?g|png))"[^>]*\/>)/g,
-      (full, imgTag, src) => {
-        if (src.startsWith("http")) return full; // don't rewrite remote
-        const base = src.replace(/\.[^.]+$/, "");
-        return `<picture><source type="image/avif" srcset="${base}.avif"><source type="image/webp" srcset="${base}.webp">${imgTag}</picture>`;
-      }
-    );
+    // Only rewrite raw <img ... src="...{jpg|jpeg|png}" ... /> not already inside <picture>.
+    // Skip if AVIF/WebP siblings don't exist (otherwise we generate broken <picture> with 404 sources).
+    const matches = [...before.matchAll(/(<img\b(?![^>]*\bdata-no-picture\b)[^>]*\bsrc="([^"]+\.(?:jpe?g|png))"[^>]*\/>)/g)];
+    let after = before;
+    for (const m of matches) {
+      const [full, imgTag, src] = m;
+      if (src.startsWith("http")) continue;
+      const base = src.replace(/\.[^.]+$/, "");
+      // Resolve site-relative path (HTML lives in site/, src starts with "assets/...")
+      const avifAbs = path.join(htmlDir, `${base}.avif`);
+      const webpAbs = path.join(htmlDir, `${base}.webp`);
+      const avifExists = await safeStat(avifAbs);
+      const webpExists = await safeStat(webpAbs);
+      if (!avifExists && !webpExists) continue; // no siblings → skip rewrite
+      const sources = [];
+      if (avifExists) sources.push(`<source type="image/avif" srcset="${base}.avif">`);
+      if (webpExists) sources.push(`<source type="image/webp" srcset="${base}.webp">`);
+      after = after.replace(full, `<picture>${sources.join("")}${imgTag}</picture>`);
+    }
     if (after !== before) {
       if (!DRY_RUN) await fs.writeFile(file, after, "utf8");
       touched++;
