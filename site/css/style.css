@@ -500,20 +500,47 @@ body.nav-open { overflow: hidden; }
   max-height: 86vh;
   border-bottom: 1px solid var(--rule);
 }
-/* On very wide screens the hero stops looking like an Apple product page
-   and starts looking like a stretched billboard. Cap height, keep video
-   contained, and bump the left column padding so text breathes. */
+/* On wide screens, give the hero a centered container with side gutters
+   and let the text overlap the video edge for that Apple product-page feel.
+   The video stretches to the right (no more right gutter on the video),
+   while the text column extends slightly INTO the video, with a subtle
+   gradient fade so the overlap reads as intentional. */
+@media (min-width: 1101px) {
+  .hero {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-inline: var(--container-x);
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    background: transparent;
+  }
+  .hero__l {
+    z-index: 3;
+    padding: 80px 56px 80px 0;
+    max-width: 720px;
+  }
+  /* Text fades over the video edge for the overlap feel */
+  .hero__l::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--bg) 0%, var(--bg) 55%, rgba(10,20,38,.55) 80%, rgba(10,20,38,0) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
 @media (min-width: 1600px) {
   .hero {
-    grid-template-columns: 1fr 1fr;
-    min-height: 680px;
-    max-height: 80vh;
+    grid-template-columns: 1fr 1.05fr;
+    min-height: 640px;
+    max-height: 78vh;
   }
-  .hero__l { padding: 96px 80px; max-width: 880px; }
+  .hero__l { padding: 96px 80px 96px 0; }
 }
 @media (min-width: 1920px) {
-  .hero { max-height: 760px; }
-  .hero__l { padding: 96px 96px; }
+  .hero { max-height: 720px; }
+  .hero__l { padding: 104px 96px 104px 0; max-width: 760px; }
 }
 .hero__l {
   padding: 64px 56px;
@@ -660,6 +687,20 @@ section.hero { padding: 0; }
 }
 .secmark .num { color: var(--hi); }
 .secmark .rule { flex: 1; height: 1px; background: var(--rule); }
+/* Section number eyebrows replaced with SVG icons */
+.secmark__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  flex-shrink: 0;
+  transition: border-color var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft);
+}
+.secmark__icon svg { width: 18px; height: 18px; }
+.secmark:hover .secmark__icon { border-color: var(--hi); color: var(--hi); }
 
 .sechead {
   display: grid;
@@ -1053,9 +1094,9 @@ section.hero { padding: 0; }
   margin: 8px 28px 12px;
   font-family: var(--ff-display);
   font-weight: 900;
-  font-size: 30px;
-  line-height: 1.08;
-  letter-spacing: -.02em;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -.015em;
   text-transform: uppercase;
   color: var(--ink);
 }
@@ -1281,9 +1322,9 @@ section.hero { padding: 0; }
 .lean-card__num {
   font-family: var(--ff-display);
   font-weight: 900;
-  font-size: clamp(44px, 3.5vw, 64px);
-  line-height: .95;
-  letter-spacing: -.035em;
+  font-size: clamp(32px, 2.5vw, 44px);
+  line-height: 1;
+  letter-spacing: -.025em;
   color: var(--hi);
   margin-bottom: 4px;
 }
@@ -1336,6 +1377,22 @@ section.hero { padding: 0; }
   background: var(--amber);
   padding: 4px 8px;
 }
+/* Lean step numbers replaced with SVG icons */
+.lean-step__icon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg);
+  background: var(--amber);
+  box-shadow: 0 4px 12px rgba(0,0,0,.35);
+}
+.lean-step__icon svg { width: 22px; height: 22px; }
 .lean-step img {
   width: 100%;
   height: 240px;
@@ -3498,6 +3555,17 @@ body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0)); }
   body { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0)); }
 }
 @media print { .tabbar { display: none; } }
+/* While a tap is auto-scrolling the bar past other tabs, kill hover
+   so intermediate tabs don't get the hover/active visual treatment
+   as they slide under the cursor. */
+.tabbar.is-tapping .tabbar__tab:hover,
+.tabbar.is-tapping .tabbar__tab:focus-visible {
+  color: var(--mut-2);
+}
+.tabbar.is-tapping .tabbar__tab.is-active { color: var(--amber); }
+.tabbar.is-tapping .tabbar__tab.tabbar__tab--whatsapp { color: var(--amber); }
+.tabbar.is-tapping .tabbar__tab { pointer-events: none; }
+.tabbar.is-tapping .tabbar__tab.is-active { pointer-events: auto; }
 
 /* =========================================================================
    vs Other walls, tap-to-expand accordion (replaces wordy 6-card grid)
