@@ -3280,3 +3280,166 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   body { padding-bottom: calc(56px + env(safe-area-inset-bottom, 0)); }
 }
 @media print { .tabbar { display: none; } }
+
+/* =========================================================================
+   APPLE-GRADE REFINEMENT LAYER
+   Cascade-overrides for slow motion, premium type, refined buttons,
+   premium nav, scroll-reveal entrance. Drops in late so it wins.
+   ========================================================================= */
+
+/* -- Easing tokens, Apple-flavored -- */
+:root {
+  --ease-expo:   cubic-bezier(.16, 1, .3, 1);    /* ease-out-expo, Apple's go-to */
+  --ease-soft:   cubic-bezier(.4, 0, .2, 1);     /* Material's standard, also Apple-grade */
+  --ease-snap:   cubic-bezier(.2, .9, .3, 1);    /* tactile button feedback */
+  --dur-fast:    .18s;
+  --dur-base:    .32s;
+  --dur-slow:    .6s;
+  --dur-deep:    .9s;
+}
+
+/* -- Type polish, system-wide -- */
+html { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-feature-settings: "kern" 1, "liga" 1, "calt" 1; }
+h1, h2, h3, h4, h5, h6, .h1, .h2 { font-feature-settings: "kern" 1, "ss01" 1; letter-spacing: -.025em; }
+.mono, [class*="mono"], .stat-card__num, .spec-card__num, code, pre { font-variant-numeric: tabular-nums slashed-zero; }
+
+/* -- Refined buttons, Apple-tier feel -- */
+.btn {
+  padding: 18px 28px;
+  font-size: 13px;
+  letter-spacing: .09em;
+  transition:
+    background var(--dur-base) var(--ease-soft),
+    color var(--dur-base) var(--ease-soft),
+    border-color var(--dur-base) var(--ease-soft),
+    transform var(--dur-base) var(--ease-snap),
+    box-shadow var(--dur-base) var(--ease-soft);
+  will-change: transform;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); transition-duration: var(--dur-fast); }
+.btn--p:hover, .btn--primary:hover { box-shadow: 0 10px 30px rgba(244, 239, 226, .18), 0 4px 10px rgba(212, 162, 58, .15); }
+.btn--g:hover, .btn--ghost:hover, .btn--ghost-light:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, .35); }
+.btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+/* Tab bar tabs also pick up the snappy feel */
+.tabbar__tab { transition: color var(--dur-fast) var(--ease-soft), background var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-snap); }
+
+/* -- Premium nav, compact-on-scroll, stronger frosted glass when scrolled -- */
+.nav, .header {
+  transition:
+    background-color var(--dur-base) var(--ease-soft),
+    box-shadow var(--dur-base) var(--ease-soft),
+    backdrop-filter var(--dur-base) var(--ease-soft);
+}
+.nav.scrolled, .header.scrolled {
+  background: rgba(10, 20, 38, .78);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  backdrop-filter: saturate(180%) blur(24px);
+  box-shadow: 0 1px 0 var(--rule), 0 12px 32px rgba(0, 0, 0, .35);
+}
+
+/* -- Scroll reveal, one-shot fade-up. Added via JS by setting data-reveal -- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-deep) var(--ease-expo), transform var(--dur-deep) var(--ease-expo);
+  will-change: opacity, transform;
+}
+[data-reveal].is-revealed { opacity: 1; transform: translateY(0); }
+[data-reveal][data-reveal-delay="1"] { transition-delay: .06s; }
+[data-reveal][data-reveal-delay="2"] { transition-delay: .12s; }
+[data-reveal][data-reveal-delay="3"] { transition-delay: .18s; }
+[data-reveal][data-reveal-delay="4"] { transition-delay: .24s; }
+[data-reveal][data-reveal-delay="5"] { transition-delay: .3s; }
+
+/* -- Hero entrance, staggered rows + lede + buttons.
+      Triggered by .hero-ready on <body> set by JS once DOM is interactive.
+      Uses transitions (not animations) so it's robust on backgrounded tabs. -- */
+.hero__l > .rank,
+.hero__l > p.lede,
+.hero__l > .hero__btns,
+.hero__l > h1 .row {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-deep) var(--ease-expo), transform var(--dur-deep) var(--ease-expo);
+  will-change: opacity, transform;
+}
+.hero__r video, .hero__r > img {
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1.2s var(--ease-expo), transform 1.4s var(--ease-expo);
+}
+body.hero-ready .hero__l > .rank        { opacity: 1; transform: translateY(0); transition-delay: .05s; }
+body.hero-ready .hero__l > h1 .row:nth-of-type(1) { opacity: 1; transform: translateY(0); transition-delay: .18s; }
+body.hero-ready .hero__l > h1 .row:nth-of-type(2) { opacity: 1; transform: translateY(0); transition-delay: .28s; }
+body.hero-ready .hero__l > h1 .row:nth-of-type(3) { opacity: 1; transform: translateY(0); transition-delay: .38s; }
+body.hero-ready .hero__l > p.lede       { opacity: 1; transform: translateY(0); transition-delay: .52s; }
+body.hero-ready .hero__l > .hero__btns  { opacity: 1; transform: translateY(0); transition-delay: .64s; }
+body.hero-ready .hero__r video,
+body.hero-ready .hero__r > img          { opacity: 1; transform: scale(1); transition-delay: .15s; }
+
+/* -- Reduced motion, kill all of the above -- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero__l > .rank, .hero__l > p.lede, .hero__l > .hero__btns,
+  .hero__l > h1 .row, .hero__r video, .hero__r > img {
+    opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important;
+  }
+  .btn { transition: none !important; }
+}
+/* No-JS safety, if site.js never runs, hero is still visible */
+html.no-js .hero__l > .rank, html.no-js .hero__l > p.lede, html.no-js .hero__l > .hero__btns,
+html.no-js .hero__l > h1 .row, html.no-js .hero__r video, html.no-js .hero__r > img {
+  opacity: 1 !important; transform: none !important;
+}
+
+/* -- Section breathing, refined rhythm -- */
+section { scroll-margin-top: 100px; }
+.mse, #system, #why, #lean, #capabilities, #applications, #projects, #contact, #about,
+.kb-article > section, .kb-hub > section {
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+/* -- Premium card hover, gentle lift -- */
+.proj, .proj-card, .app-card, .spec-card, .stat-card, .compare__col, .step, .kb-card,
+.benefit, .resource, .post-card, .feature, .testimonial {
+  transition:
+    transform var(--dur-base) var(--ease-expo),
+    border-color var(--dur-base) var(--ease-soft),
+    box-shadow var(--dur-base) var(--ease-soft);
+}
+.proj:hover, .proj-card:hover, .app-card:hover, .spec-card:hover,
+.compare__col:hover, .step:hover, .kb-card:hover, .benefit:hover, .feature:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
+}
+
+/* -- Image within cards, slow zoom on hover -- */
+.proj img, .proj-card img, .app-card img, .gallery a img, .kb-card img {
+  transition: transform var(--dur-slow) var(--ease-expo), filter var(--dur-slow) var(--ease-soft);
+  will-change: transform;
+}
+.proj:hover img, .proj-card:hover img, .app-card:hover img, .gallery a:hover img, .kb-card:hover img {
+  transform: scale(1.04);
+}
+
+/* -- Body link slow underline reveal, optional polish -- */
+a:not(.btn):not(.nav__cta):not(.tabbar__tab):not(.wa-fab) {
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+
+/* -- Section number eyebrows get subtle animation room -- */
+.secmark, .sechead, .hero__l > .rank { letter-spacing: .14em; }
+
+/* -- Focus-visible refinement across the board -- */
+*:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+/* -- Smooth scroll w/ correct offset for sticky nav -- */
+html { scroll-padding-top: 120px; }
+@media (max-width: 1100px) { html { scroll-padding-top: 80px; } }
