@@ -3329,6 +3329,31 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 }
 @media print { .tabbar { display: none; } }
 
+/* Inline contextual link at bottom of #system section, replaces the
+   old big in-page brochure CTA. Resources live on /learn/, not here. */
+.system__resources-link {
+  margin: 2.5rem 0 0;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--rule);
+  border-left: 2px solid var(--amber);
+  background: rgba(212, 162, 58, .04);
+  font-family: var(--ff-display);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mut);
+  max-width: 680px;
+}
+.system__resources-link a {
+  color: var(--amber);
+  font-weight: 700;
+  border-bottom: 1px solid currentColor;
+  transition: color .15s ease, border-color .15s ease;
+}
+.system__resources-link a:hover, .system__resources-link a:focus-visible {
+  color: var(--hi);
+  border-color: var(--hi);
+}
+
 /* =========================================================================
    APPLE-GRADE REFINEMENT LAYER
    Cascade-overrides for slow motion, premium type, refined buttons,
