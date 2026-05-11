@@ -2674,3 +2674,139 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   transition: color .15s ease;
 }
 .kb-resource:hover .kb-resource__cta { color: var(--hi); }
+
+/* -------- Gallery strip (between Projects and Desa Park City cinematic break) -------- */
+.gallery-strip {
+  padding: 96px 0;
+  background: var(--bg-2);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+.gallery-tile {
+  margin: 0;
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--amber);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-left-color .2s ease, transform .2s ease;
+}
+.gallery-tile:hover {
+  border-left-color: var(--hi);
+  transform: translateY(-2px);
+}
+.gallery-tile--lead { grid-row: span 1; }
+.gallery-tile img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.95) contrast(1.05);
+  transition: transform .5s ease, filter .3s ease;
+}
+.gallery-tile--lead img { height: 480px; }
+.gallery-tile:hover img {
+  transform: scale(1.03);
+  filter: saturate(1.05) contrast(1.05);
+}
+.gallery-tile figcaption {
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.gallery-tile__tag {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--amber);
+}
+.gallery-tile h4 {
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 4px 0 0;
+  line-height: 1.1;
+}
+.gallery-tile p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--mut);
+  margin: 4px 0 0;
+}
+
+@media (max-width: 1100px) { .gallery-grid { grid-template-columns: 1fr 1fr; } .gallery-tile--lead img { height: 380px; } }
+@media (max-width: 700px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-tile img, .gallery-tile--lead img { height: 280px; }
+}
+
+/* Gallery: lead-generation CTAs */
+.gallery-tile__tag {
+  /* Override default tag style for question-mark intent */
+  font-style: normal;
+  text-transform: none !important;
+  letter-spacing: .04em !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: var(--amber) !important;
+  font-family: var(--ff-mono);
+}
+.gallery-tile h4 {
+  font-size: 22px !important;
+  margin-top: 2px !important;
+}
+.gallery-tile__cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--hi);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(244,239,226,.3);
+  padding-bottom: 2px;
+  transition: color .15s ease, border-bottom-color .15s ease;
+}
+.gallery-tile__cta:hover {
+  color: var(--amber);
+  border-bottom-color: var(--amber);
+}
+
+.gallery-cta-line {
+  margin: 56px 0 0;
+  padding: 28px 36px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--amber);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mut);
+}
+.gallery-cta-line .tech-label { color: var(--amber); margin: 0; }
+.gallery-cta-btn { align-self: flex-start; margin-top: 8px; }
+@media (min-width: 900px) {
+  .gallery-cta-line {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+  .gallery-cta-line .tech-label { flex-shrink: 0; }
+  .gallery-cta-btn { margin-top: 0; margin-left: auto; flex-shrink: 0; }
+}
