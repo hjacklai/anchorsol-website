@@ -1632,23 +1632,42 @@ section.hero { padding: 0; }
 }
 .about-portrait__cap p { font-size: 14px; line-height: 1.55; color: var(--mut); }
 
-/* 3-pillar block, redesigned as a clean 3-column card grid with
-   number + title in a header and paragraph body. Stacks vertically
-   on tablet and mobile. */
+/* Portrait, full-width centered above the pillars on wide screens */
+.about-portrait--centered {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (min-width: 900px) {
+  .about-portrait--centered {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 0;
+    max-width: 1080px;
+    align-items: stretch;
+  }
+}
+
+/* 3-pillar block, full container width below portrait for breathing room.
+   Each pillar gets ample horizontal space, single-line title, and the
+   "by" connector visually demoted so the IMPACT/INNOVATE/PROMPT keyword
+   reads as the primary hit. */
 .about-pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 .about-pillar {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 28px 24px;
+  gap: 14px;
+  padding: 32px 28px;
   background: var(--bg-surface);
   border: 1px solid var(--rule);
   border-top: 2px solid var(--amber);
+  min-height: 220px;
   transition: transform var(--dur-base) var(--ease-expo), border-color var(--dur-base) var(--ease-soft);
 }
 .about-pillar:hover { transform: translateY(-3px); border-top-color: var(--hi); }
@@ -1662,12 +1681,22 @@ section.hero { padding: 0; }
 .about-pillar h4 {
   font-family: var(--ff-display);
   font-weight: 900;
-  font-size: 22px;
+  font-size: 26px;
   line-height: 1.05;
-  letter-spacing: -.015em;
+  letter-spacing: -.02em;
   text-transform: uppercase;
   color: var(--ink);
   margin: 0;
+  white-space: nowrap;
+}
+.about-pillar__by {
+  font-family: var(--ff-mono);
+  font-weight: 500;
+  font-size: .55em;
+  letter-spacing: .1em;
+  color: var(--mut-2);
+  vertical-align: 0.2em;
+  margin: 0 .15em;
 }
 .about-pillar p {
   font-size: 14px;
@@ -1676,8 +1705,40 @@ section.hero { padding: 0; }
   margin: 0;
 }
 @media (max-width: 1000px) {
-  .about-pillars { grid-template-columns: 1fr; gap: 16px; }
-  .about-pillar { padding: 20px 18px; }
+  .about-pillars { grid-template-columns: 1fr; gap: 14px; margin-top: 2rem; }
+  .about-pillar { padding: 22px 20px; min-height: 0; }
+  .about-pillar h4 { font-size: 22px; white-space: normal; }
+}
+
+/* Trust strip counter: massive amber number animating up to 500+ */
+.trust-strip__counter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  text-align: left;
+}
+.trust-strip__num {
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -.025em;
+  color: var(--amber);
+  font-variant-numeric: tabular-nums;
+}
+.trust-strip__lbl {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -.005em;
+  color: var(--mut);
+}
+@media (max-width: 600px) {
+  .trust-strip__counter { flex-direction: column; gap: 4px; align-items: flex-start; }
+  .trust-strip__num { font-size: 44px; }
+  .trust-strip__lbl { font-size: 14px; }
 }
 
 /* -------- [07] Contact section (form + aside) -------- */
