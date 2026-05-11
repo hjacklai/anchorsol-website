@@ -98,5 +98,14 @@ Manifesto: **Don't reinforce. Anchor.**
 ## Resources
 
 - [Homepage](https://anchorsolwall.com)
+- [Knowledge Base](https://anchorsolwall.com/learn/)
 - [Brochure (PDF)](https://anchorsolwall.com/assets/docs/anchorsol-wall-catalogue.pdf)
 - [Sitemap (XML)](https://anchorsolwall.com/sitemap.xml)
+
+## Knowledge base guides
+
+In-depth engineering reference articles, all original content authored by AnchorSOL:
+
+- [What is an MSE Wall? Complete Guide](https://anchorsolwall.com/learn/what-is-mse-wall.html), ~2,100 words covering MSE definition, mechanics, four components, history (Henri Vidal 1963), modern variants (strip / geogrid / anchored), Malaysian applications, RC comparison, cost economics, design life, and citing standards (BS 8006, FHWA NHI-10-024, JKR).
+- [MSE Wall vs RC Wall: Cost, Build, Programme](https://anchorsolwall.com/learn/mse-wall-vs-rc-wall.html), ~1,850 words on side-by-side cost (RM 700 to RM 4,500 per m²), build crew, programme risk, six-factor comparison, case study of a 200 m x 10 m wall (RM 1.8 M cheaper, 14 weeks faster than RC).
+- [Anchored Soil vs Reinforced Soil](https://anchorsolwall.com/learn/anchored-vs-reinforced-soil.html), ~1,700 words on the mechanical difference between discrete deadman anchorage and distributed friction, with pullout equations, backfill cost implications, and common misconceptions.
