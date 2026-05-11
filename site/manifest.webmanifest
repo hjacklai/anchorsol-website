@@ -1,0 +1,23 @@
+{
+  "name": "AnchorSOL® Wall — Anchored Soil. Engineered Earth Retention.",
+  "short_name": "AnchorSOL",
+  "description": "At the forefront of geotechnical innovation since 1999. The Anchored Soil concept — sustainable, turnkey solutions for earth retention. Specified by JKR, PLUS, KTMB and the Bangladesh Bridge Authority.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a2c4a",
+  "lang": "en-MY",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

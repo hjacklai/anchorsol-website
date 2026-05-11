@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /research/
+Disallow: /extracted/
+
+Sitemap: https://anchorsolwall.com/sitemap.xml
