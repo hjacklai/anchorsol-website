@@ -3466,22 +3466,26 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   .tabbar__pulse { animation: none; opacity: .25; }
 }
 
-/* Tab bar is now SITE-WIDE on every device. Desktop, tablet, mobile,
-   the bar lives at the bottom on every page. */
-.tabbar { display: flex; }
-body { padding-bottom: calc(60px + env(safe-area-inset-bottom, 0)); }
+/* Tab bar is SITE-WIDE on every device. Desktop, tablet, mobile.
+   Hard rule with !important so nothing in the cascade can hide it. */
+.tabbar { display: flex !important; }
+body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0)); }
 /* Floating WhatsApp FAB is redundant when tabbar Chat exists */
 .wa-fab { display: none !important; }
-/* Desktop tab bar feels even more refined with a max-width container */
+/* Desktop refinement: bigger touch targets, centered scroll container */
 @media (min-width: 1101px) {
   .tabbar__scroll {
     max-width: var(--container);
     margin: 0 auto;
     justify-content: center;
   }
-  .tabbar__tab { min-width: 88px; padding: 12px 14px 10px; }
+  .tabbar__tab { min-width: 92px; padding: 13px 14px 10px; }
   .tabbar__lbl { font-size: 11px; }
   .tabbar__icon { width: 24px; height: 24px; }
+  body { padding-bottom: 70px; }
+}
+@media (min-width: 1600px) {
+  .tabbar__tab { min-width: 104px; padding: 14px 16px 12px; }
 }
 @media (max-width: 380px) {
   .tabbar__tab { padding: 8px 2px 6px; min-height: 56px; }
