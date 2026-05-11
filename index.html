@@ -231,7 +231,10 @@
 <div class="trust-strip"><div class="wrap">
   <div class="trust-strip__head">
     <span class="tech-label">[ Specified by ]</span>
-    <p><b>500+ walls delivered since 1999.</b></p>
+    <p class="trust-strip__counter">
+      <span class="trust-strip__num"><span data-counter="500" data-suffix="+">0</span></span>
+      <span class="trust-strip__lbl">walls delivered since 1999</span>
+    </p>
   </div>
   <div class="trust-strip__row">
     <span class="trust-strip__chip"><b>JKR</b><small>Public Works</small></span>
@@ -647,8 +650,8 @@
     </div>
     <div class="lean-card">
       <div class="lean-card__num">0</div>
-      <div class="lean-card__lbl">Formwork, not pages of it</div>
-      <p class="lean-card__cap">Panels precast off-site. Trucks roll in, panels go up. No carpenters, no plywood, no rebar fixing inside formwork cages.</p>
+      <div class="lean-card__lbl">Formwork on site</div>
+      <p class="lean-card__cap">Panels precast off-site. Trucks roll in, panels go up. No carpenters, no plywood, no rebar cages.</p>
     </div>
     <div class="lean-card">
       <div class="lean-card__num">DAYS</div>
@@ -896,39 +899,39 @@
     <p>Founded 1999 by Dr. Ir. Lai Yip Poon. Same team designs, manufactures and installs every wall, end-to-end.</p>
   </div>
 
-  <div class="about-grid">
-    <div class="about-portrait">
-      <img src="assets/images/dr_lai_yip_poon.webp" alt="Dr. Ir. Lai Yip Poon, Founder, Chief Designer & CEO of AnchorSOL Wall Sdn. Bhd." loading="lazy" />
-      <div class="about-portrait__cap">
-        <span class="tech-label">Founder · Chief Designer · MD</span>
-        <h4>Dr. Ir. Lai Yip Poon</h4>
-        <p>The engineer behind the AnchorSOL® Wall System and the Anchored Soil concept. Specialist in slope stability, earth retention, and ground improvement.</p>
-        <div class="chip-row" style="margin-top:1rem;">
-          <span class="chip chip--accent">Ir. (BEM)</span>
-          <span class="chip">Ph.D., AIT 2007</span>
-          <span class="chip">M.Eng., USM 1997</span>
-          <span class="chip">B.Eng., UTM 1990</span>
-        </div>
+  <!-- Founder portrait stays on top, takes natural width -->
+  <div class="about-portrait about-portrait--centered">
+    <img src="assets/images/dr_lai_yip_poon.webp" alt="Dr. Ir. Lai Yip Poon, Founder, Chief Designer & CEO of AnchorSOL Wall Sdn. Bhd." loading="lazy" />
+    <div class="about-portrait__cap">
+      <span class="tech-label">Founder · Chief Designer · MD</span>
+      <h4>Dr. Ir. Lai Yip Poon</h4>
+      <p>The engineer behind the AnchorSOL® Wall System and the Anchored Soil concept. Specialist in slope stability, earth retention, and ground improvement.</p>
+      <div class="chip-row" style="margin-top:1rem;">
+        <span class="chip chip--accent">Ir. (BEM)</span>
+        <span class="chip">Ph.D., AIT 2007</span>
+        <span class="chip">M.Eng., USM 1997</span>
+        <span class="chip">B.Eng., UTM 1990</span>
       </div>
     </div>
+  </div>
 
-    <div class="about-pillars">
-      <article class="about-pillar">
-        <span class="about-pillar__num">01</span>
-        <h4>Impact by Cost</h4>
-        <p>Up to 50% cheaper than RC at heights ≥5 m. Crusher-run local fill, smaller crew, no formwork. The cost curve flattens as the wall goes higher.</p>
-      </article>
-      <article class="about-pillar">
-        <span class="about-pillar__num">02</span>
-        <h4>Innovate by Design</h4>
-        <p>Anchored Soil concept transfers pullout resistance to a discrete deadman anchor block. Architectural finishes, custom logos cast, any alignment. Engineering certainty without the gravity-wall mass.</p>
-      </article>
-      <article class="about-pillar">
-        <span class="about-pillar__num">03</span>
-        <h4>Prompt by Delivery</h4>
-        <p>Days, not months. 3 to 4 person erection crew, no on-site curing wait, zero heavy vibration plant. Hand the site back early. Engineered to retain earth, schedule, and scope.</p>
-      </article>
-    </div>
+  <!-- 3-pillar brand statement, full width below the portrait so each pillar gets breathing room -->
+  <div class="about-pillars">
+    <article class="about-pillar">
+      <span class="about-pillar__num">01</span>
+      <h4>Impact <span class="about-pillar__by">by</span> Cost</h4>
+      <p>Up to 50% cheaper than RC at heights ≥5 m. Crusher-run local fill. The cost curve flattens as the wall goes higher.</p>
+    </article>
+    <article class="about-pillar">
+      <span class="about-pillar__num">02</span>
+      <h4>Innovate <span class="about-pillar__by">by</span> Design</h4>
+      <p>Anchored Soil transfers pullout to a discrete deadman block. Architectural finishes, any alignment. Engineering certainty without the gravity-wall mass.</p>
+    </article>
+    <article class="about-pillar">
+      <span class="about-pillar__num">03</span>
+      <h4>Prompt <span class="about-pillar__by">by</span> Delivery</h4>
+      <p>Days, not months. 3-4 person crew. No curing wait, zero heavy vibration. Engineered to retain earth, schedule, scope.</p>
+    </article>
   </div>
 
   <!-- Closing manifesto, Apple-style pull-quote -->
