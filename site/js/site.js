@@ -1,4 +1,39 @@
 (() => {
+  // ---------- vs Comparison row pairing ----------
+  // Hover or tap a row in either column to highlight both that row
+  // and its matching pair in the other column. Other rows dim.
+  const vsContainer = document.querySelector('.vs');
+  if (vsContainer) {
+    const allRows = vsContainer.querySelectorAll('[data-vs-pair]');
+    const clearHighlight = () => {
+      vsContainer.classList.remove('is-focused');
+      allRows.forEach(r => r.classList.remove('is-highlight'));
+    };
+    const focusPair = (pair) => {
+      vsContainer.classList.add('is-focused');
+      allRows.forEach(r => r.classList.toggle('is-highlight', r.dataset.vsPair === pair));
+    };
+    allRows.forEach(row => {
+      row.addEventListener('mouseenter', () => focusPair(row.dataset.vsPair));
+      row.addEventListener('focus', () => focusPair(row.dataset.vsPair));
+      row.tabIndex = 0;
+    });
+    vsContainer.addEventListener('mouseleave', clearHighlight);
+    // Click-tap support: tap a row to lock the highlight, tap again to clear
+    let lockedPair = null;
+    allRows.forEach(row => {
+      row.addEventListener('click', () => {
+        if (lockedPair === row.dataset.vsPair) {
+          lockedPair = null;
+          clearHighlight();
+        } else {
+          lockedPair = row.dataset.vsPair;
+          focusPair(lockedPair);
+        }
+      });
+    });
+  }
+
   // ---------- Hero entrance trigger ----------
   // Add .hero-ready to <body> on next frame so CSS transitions kick in.
   // Robust against backgrounded tabs (transitions resume on visibility).
