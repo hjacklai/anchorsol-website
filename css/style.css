@@ -1961,22 +1961,56 @@ footer .bottom {
 
   /* Hero copy tightened, ensure no horizontal overflow on small phones */
   .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero__l, .hero__r { min-width: 0; }
-  .hero__l { padding: 48px 20px; }
+  .hero__l, .hero__r { min-width: 0; max-width: 100%; }
+  .hero__l { padding: 40px 20px 32px; }
   .hero h1 {
-    font-size: clamp(36px, 11vw, 56px);
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: .92;
+    letter-spacing: -.035em;
     word-break: break-word;
     overflow-wrap: anywhere;
   }
-  .hero p.lede { font-size: 15px; }
-  .hero__btns { gap: 10px; flex-wrap: wrap; }
-  .hero__btns .btn { flex: 1 1 auto; min-width: 0; font-size: 11px; padding: 14px 16px; }
-  .rank { font-size: 11px; }
-  .rank b { font-size: 13px; }
+  .hero p.lede { font-size: 14px; line-height: 1.5; max-width: 100%; }
+  /* Stack hero buttons vertically on phones, full width, no overflow */
+  .hero__btns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .hero__btns .btn {
+    flex: 0 0 auto;
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    font-size: 11px;
+    padding: 14px 16px;
+  }
+  .rank { font-size: 10px; }
+  .rank b { font-size: 12px; }
 
-  /* Section headlines */
-  .sechead h2 { font-size: clamp(32px, 9vw, 44px); }
-  .cta h2 { font-size: clamp(32px, 9vw, 40px); }
+  /* Section headlines, tighter on mobile so they don't dominate the viewport */
+  .sechead h2 { font-size: clamp(28px, 7.5vw, 38px); line-height: 1.05; letter-spacing: -.02em; }
+  .sechead p { font-size: 14px; line-height: 1.55; }
+  .cta h2 { font-size: clamp(26px, 7vw, 34px); line-height: 1.1; }
+  .cta p { font-size: 14px; }
+
+  /* Section number eyebrows tighter */
+  .secmark { font-size: 10px; gap: 10px; letter-spacing: .14em; flex-wrap: wrap; }
+  .secmark .rule { display: none; }
+
+  /* Article body text tighter */
+  p, li { font-size: 14px; }
+  .tech-label { font-size: 10px; }
+
+  /* Spec card numbers smaller so they don't blow up the viewport */
+  .stat-card__num, .spec-card__num { font-size: clamp(40px, 12vw, 60px); }
+  .cap__stat { font-size: clamp(28px, 8vw, 38px); }
+  .cap__eyebrow { font-size: 11px; }
+
+  /* Trust strip chip text */
+  .trust-strip__chip b { font-size: 12px; }
+  .trust-strip__chip small { font-size: 8px; }
+  .trust-strip__head p { font-size: 15px; }
 
   /* All grids to 1-col */
   .apps { grid-template-columns: 1fr; }

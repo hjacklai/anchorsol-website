@@ -191,25 +191,39 @@
       });
 
       if (targets.length) {
-        const centerActiveTab = (tab) => {
-          // Compute the offset that centers the active tab within the visible bar
+        // Centers the active tab in the bar. behavior 'auto' jumps instantly
+        // (used after a tap to avoid the bar scrubbing through every tab),
+        // 'smooth' eases (used during natural page scroll).
+        const centerActiveTab = (tab, behavior) => {
           const tabLeft = tab.offsetLeft;
           const tabWidth = tab.offsetWidth;
           const barWidth = tabbarScroll.clientWidth;
           const targetLeft = Math.max(0, tabLeft + tabWidth / 2 - barWidth / 2);
-          tabbarScroll.scrollTo({ left: targetLeft, behavior: 'smooth' });
+          tabbarScroll.scrollTo({ left: targetLeft, behavior: behavior || 'smooth' });
         };
 
-        const setActiveHash = (hash) => {
+        const setActiveHash = (hash, behavior) => {
           hashTabs.forEach((t, h) => {
             const isActive = h === hash;
             t.classList.toggle('is-active', isActive);
-            if (isActive) centerActiveTab(t);
+            if (isActive) centerActiveTab(t, behavior);
           });
         };
 
+        // When the user taps a tab, suppress scroll-spy auto-tracking for
+        // ~900ms so the bar doesn't scrub through every intermediate
+        // section as the page smooth-scrolls to the target.
+        let suppressUntil = 0;
+        hashTabs.forEach((tab, hash) => {
+          tab.addEventListener('click', () => {
+            suppressUntil = performance.now() + 900;
+            setActiveHash(hash, 'auto'); // snap tab into center instantly
+          });
+        });
+
         let lastHash = null;
         const onScroll = () => {
+          if (performance.now() < suppressUntil) return;
           const viewportCenter = window.innerHeight / 2;
           let best = null;
           let bestDist = Infinity;
