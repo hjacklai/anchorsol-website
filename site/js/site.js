@@ -159,20 +159,31 @@
     document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
   }
 
-  // ---------- Bottom tab bar scroll-spy (homepage only) ----------
-  // On the homepage, highlight the tab whose section is currently centered
-  // in the viewport. On sub-pages, the Learn tab is pre-marked .is-active
-  // in HTML and we leave it alone.
+  // ---------- Bottom tab bar scroll-spy + auto-center ----------
+  // Highlights the tab whose section is closest to viewport center, then
+  // smoothly scrolls the tab bar horizontally so the active tab is in view.
+  // Also manages a .is-scrollable / .is-at-end class for the edge-fade hint.
   const tabbar = document.querySelector('.tabbar');
-  if (tabbar) {
+  const tabbarScroll = tabbar ? tabbar.querySelector('.tabbar__scroll') : null;
+  if (tabbar && tabbarScroll) {
     const hashTabs = new Map();
     tabbar.querySelectorAll('.tabbar__tab').forEach(t => {
       const href = t.getAttribute('href') || '';
       if (href.startsWith('#')) hashTabs.set(href, t);
     });
 
+    // Tag scrollable state so the right-edge fade shows up only when needed
+    const updateScrollableHint = () => {
+      const isScrollable = tabbarScroll.scrollWidth - tabbarScroll.clientWidth > 4;
+      tabbar.classList.toggle('is-scrollable', isScrollable);
+      const atEnd = tabbarScroll.scrollLeft + tabbarScroll.clientWidth >= tabbarScroll.scrollWidth - 4;
+      tabbar.classList.toggle('is-at-end', atEnd);
+    };
+    updateScrollableHint();
+    tabbarScroll.addEventListener('scroll', updateScrollableHint, { passive: true });
+    window.addEventListener('resize', updateScrollableHint, { passive: true });
+
     if (hashTabs.size && 'IntersectionObserver' in window) {
-      // Only run scroll-spy if we have at least one matching section on this page
       const targets = [];
       hashTabs.forEach((tab, hash) => {
         const el = document.querySelector(hash);
@@ -180,13 +191,23 @@
       });
 
       if (targets.length) {
+        const centerActiveTab = (tab) => {
+          // Compute the offset that centers the active tab within the visible bar
+          const tabLeft = tab.offsetLeft;
+          const tabWidth = tab.offsetWidth;
+          const barWidth = tabbarScroll.clientWidth;
+          const targetLeft = Math.max(0, tabLeft + tabWidth / 2 - barWidth / 2);
+          tabbarScroll.scrollTo({ left: targetLeft, behavior: 'smooth' });
+        };
+
         const setActiveHash = (hash) => {
           hashTabs.forEach((t, h) => {
-            t.classList.toggle('is-active', h === hash);
+            const isActive = h === hash;
+            t.classList.toggle('is-active', isActive);
+            if (isActive) centerActiveTab(t);
           });
         };
 
-        // Track the section closest to the viewport center
         let lastHash = null;
         const onScroll = () => {
           const viewportCenter = window.innerHeight / 2;
@@ -202,7 +223,6 @@
               best = t;
             }
           }
-          // Fallback: if no section is visible, use top-most one in view
           if (!best) {
             for (const t of targets) {
               const r = t.el.getBoundingClientRect();
@@ -228,6 +248,17 @@
         }, { passive: true });
         onScroll();
       }
+    }
+
+    // On sub-pages, scroll the pre-marked .is-active tab into view on load
+    const preActive = tabbar.querySelector('.tabbar__tab.is-active');
+    if (preActive && !hashTabs.has(preActive.getAttribute('href'))) {
+      requestAnimationFrame(() => {
+        const tabLeft = preActive.offsetLeft;
+        const tabWidth = preActive.offsetWidth;
+        const barWidth = tabbarScroll.clientWidth;
+        tabbarScroll.scrollTo({ left: Math.max(0, tabLeft + tabWidth / 2 - barWidth / 2), behavior: 'auto' });
+      });
     }
   }
 

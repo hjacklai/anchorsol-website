@@ -3183,15 +3183,48 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   backdrop-filter: blur(20px) saturate(180%);
   border-top: 1px solid var(--amber);
   box-shadow: 0 -8px 24px rgba(0, 0, 0, .35);
+  overflow: hidden; /* hide horizontal overflow but show inner scroll */
 }
+/* Right-edge fade, hints there's more content to scroll. Disabled when bar
+   doesn't overflow (tablet+). */
+.tabbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: env(safe-area-inset-bottom, 0);
+  width: 36px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(10, 20, 38, 0), rgba(10, 20, 38, .92) 60%);
+  opacity: 0;
+  transition: opacity .25s var(--ease-soft);
+}
+.tabbar.is-scrollable::after { opacity: 1; }
+.tabbar.is-at-end::after { opacity: 0; }
+/* The inner scroll container, this is what actually scrolls horizontally */
+.tabbar__scroll {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 12px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth;
+}
+.tabbar__scroll::-webkit-scrollbar { display: none; } /* Chrome/Safari */
 .tabbar__tab {
-  flex: 1 1 0;
+  flex: 0 0 auto; /* don't shrink, allow natural width */
+  min-width: 68px;
+  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 10px 4px 8px;
+  padding: 10px 10px 8px;
   min-height: 60px;
   color: var(--mut-2);
   text-decoration: none;
