@@ -117,6 +117,78 @@
     document.body.appendChild(a);
   }
 
+  // ---------- Bottom tab bar scroll-spy (homepage only) ----------
+  // On the homepage, highlight the tab whose section is currently centered
+  // in the viewport. On sub-pages, the Learn tab is pre-marked .is-active
+  // in HTML and we leave it alone.
+  const tabbar = document.querySelector('.tabbar');
+  if (tabbar) {
+    const hashTabs = new Map();
+    tabbar.querySelectorAll('.tabbar__tab').forEach(t => {
+      const href = t.getAttribute('href') || '';
+      if (href.startsWith('#')) hashTabs.set(href, t);
+    });
+
+    if (hashTabs.size && 'IntersectionObserver' in window) {
+      // Only run scroll-spy if we have at least one matching section on this page
+      const targets = [];
+      hashTabs.forEach((tab, hash) => {
+        const el = document.querySelector(hash);
+        if (el) targets.push({ el, hash, tab });
+      });
+
+      if (targets.length) {
+        const setActiveHash = (hash) => {
+          hashTabs.forEach((t, h) => {
+            t.classList.toggle('is-active', h === hash);
+          });
+        };
+
+        // Track the section closest to the viewport center
+        let lastHash = null;
+        const onScroll = () => {
+          const viewportCenter = window.innerHeight / 2;
+          let best = null;
+          let bestDist = Infinity;
+          for (const t of targets) {
+            const r = t.el.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > window.innerHeight) continue;
+            const sectionCenter = r.top + r.height / 2;
+            const dist = Math.abs(sectionCenter - viewportCenter);
+            if (dist < bestDist) {
+              bestDist = dist;
+              best = t;
+            }
+          }
+          // Fallback: if no section is visible, use top-most one in view
+          if (!best) {
+            for (const t of targets) {
+              const r = t.el.getBoundingClientRect();
+              if (r.bottom > 0 && r.top < window.innerHeight) {
+                if (!best || r.top < best.el.getBoundingClientRect().top) best = t;
+              }
+            }
+          }
+          if (best && best.hash !== lastHash) {
+            lastHash = best.hash;
+            setActiveHash(best.hash);
+          }
+        };
+
+        let scrollTick = false;
+        window.addEventListener('scroll', () => {
+          if (scrollTick) return;
+          scrollTick = true;
+          requestAnimationFrame(() => {
+            onScroll();
+            scrollTick = false;
+          });
+        }, { passive: true });
+        onScroll();
+      }
+    }
+  }
+
   // ---------- Contact form: geo-toggle wiring ----------
   const rfqForm = document.getElementById('rfqForm');
   if (rfqForm) {
