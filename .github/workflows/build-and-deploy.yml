@@ -1,0 +1,52 @@
+name: Build and deploy AnchorSOL site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build + Deploy to gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Optimise images and rewrite <img> → <picture>
+        run: node tools/optimise-images.mjs --rewrite-html
+
+      - name: Verify build artefacts
+        run: |
+          echo "=== site/ tree (top-level) ==="
+          ls -lah site/
+          echo ""
+          echo "=== Image folder size after optimisation ==="
+          du -sh site/assets/images/
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          cname: anchorsolwall.com
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Deploy site: ${{ github.event.head_commit.message }}"
