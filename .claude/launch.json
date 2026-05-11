@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "anchorsol-site",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-ExecutionPolicy", "Bypass",
+        "-File", ".claude/serve.ps1",
+        "-Root", "site"
+      ],
+      "autoPort": true
+    }
+  ]
+}
