@@ -790,7 +790,7 @@ section.hero { padding: 0; }
   display: block;
   transition: transform .4s ease;
 }
-.mse__pic:hover img { transform: scale(1.04); }
+/* zoom-on-hover removed */
 .mse__pic figcaption {
   position: absolute;
   left: 0;
@@ -1020,7 +1020,7 @@ section.hero { padding: 0; }
   filter: saturate(.95) contrast(1.05);
   transition: transform .4s ease;
 }
-.app:hover .app__media img { transform: scale(1.04); }
+/* zoom-on-hover removed */
 .app__body {
   padding: 22px 24px 24px;
   display: flex;
@@ -1095,7 +1095,7 @@ section.hero { padding: 0; }
   filter: saturate(.95) contrast(1.05);
   transition: transform .4s ease;
 }
-.cap:hover .cap__media img { transform: scale(1.04); }
+/* zoom-on-hover removed */
 .cap__eyebrow {
   display: inline-block;
   margin: 0 28px;
@@ -3229,7 +3229,6 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 }
 .gallery-tile--lead img { height: 480px; }
 .gallery-tile:hover img {
-  transform: scale(1.03);
   filter: saturate(1.05) contrast(1.05);
 }
 .gallery-tile figcaption {
@@ -3940,7 +3939,8 @@ body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0)); }
   display: block;
   transition: transform var(--dur-slow) var(--ease-expo);
 }
-.usecase:hover .usecase__media img { transform: scale(1.04); }
+/* Image zoom on hover removed: was distracting when the cursor merely
+   passed over a card mid-scroll. Cards still lift on hover. */
 .usecase__body {
   display: flex;
   flex-direction: column;
@@ -4149,13 +4149,11 @@ section { scroll-margin-top: 100px; }
   box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
 }
 
-/* -- Image within cards, slow zoom on hover -- */
+/* Image zoom-on-hover removed across all cards. Cards still lift on
+   hover via translateY; the image stays static so the user isn't
+   distracted by zoom artifacts when scrolling past cards quickly. */
 .proj img, .proj-card img, .app-card img, .gallery a img, .kb-card img {
-  transition: transform var(--dur-slow) var(--ease-expo), filter var(--dur-slow) var(--ease-soft);
-  will-change: transform;
-}
-.proj:hover img, .proj-card:hover img, .app-card:hover img, .gallery a:hover img, .kb-card:hover img {
-  transform: scale(1.04);
+  transition: filter var(--dur-slow) var(--ease-soft);
 }
 
 /* -- Body link slow underline reveal, optional polish -- */
