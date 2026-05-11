@@ -1,11 +1,8 @@
 #!/usr/bin/env perl
 # Inject (or replace) bottom-tabbar HTML in all /learn/*.html pages.
-# Strategy:
-#   1. If a <nav class="tabbar"> already exists, strip it (and its block)
-#   2. Insert the canonical 12-tab tabbar just before the closing
-#      <script src="../js/site.js" defer></script> tag
-#
-# Re-runnable safely.
+# Order matches the landing page sections top-to-bottom:
+# Home -> Basics -> System -> Spec (capabilities) -> Apps -> Compare (why)
+# -> Lean -> Projects -> About -> Contact -> Learn (active) -> Chat
 use strict;
 use warnings;
 
@@ -14,7 +11,7 @@ my $anchor = '<script src="../js/site.js" defer></script>';
 
 my $tabbar = <<'EOF';
 
-<!-- Bottom tab bar (native app style, horizontally scrollable on mobile/tablet) -->
+<!-- Bottom tab bar, order matches landing-page sections top to bottom -->
 <nav class="tabbar" aria-label="Section navigation">
   <div class="tabbar__scroll">
     <a class="tabbar__tab" href="../#hero">
@@ -36,19 +33,6 @@ my $tabbar = <<'EOF';
       </svg>
       <span class="tabbar__lbl">System</span>
     </a>
-    <a class="tabbar__tab" href="../#why">
-      <svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
-        <path d="M12 3 V21"/><path d="M6 8 H18"/>
-        <path d="M3 14 L6 8 L9 14 Z"/><path d="M15 14 L18 8 L21 14 Z"/>
-      </svg>
-      <span class="tabbar__lbl">Compare</span>
-    </a>
-    <a class="tabbar__tab" href="../#lean">
-      <svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
-        <path d="M13 2 L4 14 H11 L11 22 L20 10 H13 L13 2 Z"/>
-      </svg>
-      <span class="tabbar__lbl">Lean</span>
-    </a>
     <a class="tabbar__tab" href="../#capabilities">
       <svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
         <rect x="3" y="8" width="18" height="8"/>
@@ -62,6 +46,19 @@ my $tabbar = <<'EOF';
         <path d="M3 12 L12 17 L21 12"/><path d="M3 16 L12 21 L21 16"/>
       </svg>
       <span class="tabbar__lbl">Apps</span>
+    </a>
+    <a class="tabbar__tab" href="../#why">
+      <svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+        <path d="M12 3 V21"/><path d="M6 8 H18"/>
+        <path d="M3 14 L6 8 L9 14 Z"/><path d="M15 14 L18 8 L21 14 Z"/>
+      </svg>
+      <span class="tabbar__lbl">Compare</span>
+    </a>
+    <a class="tabbar__tab" href="../#lean">
+      <svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+        <path d="M13 2 L4 14 H11 L11 22 L20 10 H13 L13 2 Z"/>
+      </svg>
+      <span class="tabbar__lbl">Lean</span>
     </a>
     <a class="tabbar__tab" href="../#projects">
       <svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
@@ -117,8 +114,7 @@ for my $f (@files) {
   my $html = do { local $/; <$in> };
   close($in);
 
-  # Strip any existing tabbar block (including the leading comment line and
-  # the trailing blank line before the script anchor).
+  # Strip any existing tabbar block (including the leading comment line)
   $html =~ s{
     \s*<!--\s*Bottom\s*tab\s*bar[^>]*-->\s*
     <nav\s+class="tabbar".*?</nav>\s*
@@ -129,8 +125,7 @@ for my $f (@files) {
     print "WARN  $f (anchor not found)\n";
     next;
   }
-  my $replacement = $tabbar . $anchor;
-  $html =~ s/\Q$anchor\E/$replacement/;
+  $html =~ s/\Q$anchor\E/$tabbar$anchor/;
   open(my $out, '>', $fp) or die "cannot write $fp: $!";
   print $out $html;
   close($out);
