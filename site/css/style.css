@@ -4442,6 +4442,19 @@ body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0)); }
   .proj-row__solution { font-size: 12.5px; }
 }
 
+/* CTA row beneath the Projects gallery on homepage */
+.proj-section-cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+@media (max-width: 480px) {
+  .proj-section-cta { flex-direction: column; align-items: stretch; }
+  .proj-section-cta .btn { width: 100%; justify-content: center; }
+}
+
 /* CTA row beneath the closing pull-quote in About */
 .about-cta-row {
   margin: 2.5rem 0 0;
