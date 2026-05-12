@@ -528,13 +528,13 @@ body.nav-open { overflow: hidden; }
   .hero__l::after {
     content: "";
     position: absolute;
-    /* Constrained to hero only (no bottom bleed into the trust strip) */
-    inset: 0 -240px 0 -60vw;
+    /* Gradient stays strictly inside .hero__l so it can't dim
+       the .ovl label or .pin badges inside .hero__r. */
+    inset: 0 0 0 -60vw;
     background: linear-gradient(90deg,
       var(--bg) 0%,
-      var(--bg) 60%,
-      rgba(10, 20, 38, .92) 75%,
-      rgba(10, 20, 38, .6) 86%,
+      var(--bg) 70%,
+      rgba(10, 20, 38, .6) 90%,
       rgba(10, 20, 38, 0) 100%);
     z-index: -1;
     pointer-events: none;
@@ -636,7 +636,7 @@ body.nav-open { overflow: hidden; }
 .pin {
   position: absolute;
   padding: 8px 12px;
-  background: rgba(6,13,26,.85);
+  background: rgba(6,13,26,.92);
   border: 1px solid var(--amber);
   font-family: var(--ff-mono);
   font-size: 11px;
@@ -644,7 +644,7 @@ body.nav-open { overflow: hidden; }
   color: #fff;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  z-index: 3;
+  z-index: 10;
 }
 .pin b { color: var(--amber); }
 .pin--a { top: 64px; left: 32px; }
@@ -654,10 +654,12 @@ body.nav-open { overflow: hidden; }
 .ovl {
   position: absolute;
   left: 32px; right: 32px; bottom: 32px;
-  background: rgba(6,13,26,.9);
+  background: rgba(6,13,26,.94);
   border-left: 3px solid var(--amber);
   padding: 18px 22px;
-  z-index: 3;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 .ovl h4 { margin: 0 0 6px; font-weight: 900; font-size: 18px; letter-spacing: -.01em; text-transform: uppercase; color: #fff; }
 .ovl p {
