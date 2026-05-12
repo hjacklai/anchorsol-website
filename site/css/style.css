@@ -499,6 +499,7 @@ body.nav-open { overflow: hidden; }
   min-height: 720px;
   max-height: 86vh;
   border-bottom: 1px solid var(--rule);
+  overflow: hidden; /* contains video scale + gradient overlays */
 }
 /* On wide screens, give the hero a centered container with side gutters.
    The video stretches further left (wider visible area) and the text
@@ -527,7 +528,8 @@ body.nav-open { overflow: hidden; }
   .hero__l::after {
     content: "";
     position: absolute;
-    inset: -80px -240px -80px -60vw;
+    /* Constrained to hero only (no bottom bleed into the trust strip) */
+    inset: 0 -240px 0 -60vw;
     background: linear-gradient(90deg,
       var(--bg) 0%,
       var(--bg) 60%,
@@ -3473,6 +3475,10 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   background: var(--bg-2);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
+  /* Defensive: own stacking context, nothing from siblings can bleed over */
+  position: relative;
+  z-index: 5;
+  isolation: isolate;
 }
 .trust-strip__head {
   margin-bottom: 28px;
