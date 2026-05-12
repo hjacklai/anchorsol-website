@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Backfill Mechanics for Retaining Walls: Earth Pressure, Compaction, Drainage (Malaysia)</title>
+<meta name="description" content="Backfill mechanics for retaining wall design: Rankine + Coulomb active and passive earth pressure, surcharge effects, compaction-induced stresses, water pressure, drainage, in Malaysian engineering practice." />
+<meta name="keywords" content="retaining wall backfill, earth pressure, Rankine theory, Coulomb earth pressure, active earth pressure, passive earth pressure, backfill compaction, retaining wall drainage, MSE backfill mechanics" />
+<meta name="theme-color" content="#0a1426" />
+<link rel="canonical" href="https://anchorsolwall.com/learn/backfill-mechanics-retaining-walls.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="AnchorSOL® Wall" />
+<meta property="og:locale" content="en_MY" />
+<meta property="og:title" content="Backfill Mechanics for Retaining Walls: Earth Pressure, Compaction, Drainage" />
+<meta property="og:description" content="Rankine + Coulomb earth pressure, compaction effects, surcharge, water, drainage. The mechanics of what the backfill does to the wall." />
+<meta property="og:image" content="https://anchorsolwall.com/assets/images/Reinforcement.jpg" />
+<meta property="og:url" content="https://anchorsolwall.com/learn/backfill-mechanics-retaining-walls.html" />
+<meta property="article:author" content="AnchorSOL® Wall Sdn. Bhd." />
+<meta property="article:published_time" content="2026-05-12" />
+<meta property="article:section" content="Engineering" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="../favicon.png" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
+<link rel="stylesheet" href="../css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://anchorsolwall.com/learn/backfill-mechanics-retaining-walls.html#article",
+      "headline": "Backfill Mechanics for Retaining Walls: Earth Pressure, Compaction, Drainage",
+      "description": "Rankine + Coulomb earth pressure theory, surcharge, compaction-induced stress, water pressure, drainage for retaining wall design.",
+      "image": "https://anchorsolwall.com/assets/images/Reinforcement.jpg",
+      "datePublished": "2026-05-12",
+      "dateModified": "2026-05-12",
+      "author": [
+        {"@type": "Person", "@id": "https://anchorsolwall.com/#founder", "name": "Dr. Ir. Lai Yip Poon", "jobTitle": "Founder, Chief Designer & Managing Director", "worksFor": {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}, "knowsAbout": ["Mechanically Stabilized Earth walls", "Anchored Soil retention", "Slope stability", "Geotechnical engineering", "Ground improvement"]},
+        {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}
+      ],
+      "publisher": {"@id": "https://anchorsolwall.com/#organization"},
+      "mainEntityOfPage": "https://anchorsolwall.com/learn/backfill-mechanics-retaining-walls.html",
+      "wordCount": 2100,
+      "inLanguage": "en-MY"
+    },
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anchorsolwall.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Knowledge Base", "item": "https://anchorsolwall.com/learn/"},
+      {"@type": "ListItem", "position": 3, "name": "Backfill Mechanics", "item": "https://anchorsolwall.com/learn/backfill-mechanics-retaining-walls.html"}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is active earth pressure?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Active earth pressure is the lateral pressure exerted by retained soil on a wall when the wall is free to move slightly away from the soil. The soil mobilises its shear strength to support itself, and the lateral pressure reduces from the at-rest condition (K0) to the active condition (Ka). For a frictional soil with friction angle phi, Rankine's active earth pressure coefficient is Ka = (1 - sin phi) / (1 + sin phi), or equivalently tan squared (45 - phi/2)."}},
+      {"@type": "Question", "name": "What is passive earth pressure?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Passive earth pressure is the lateral pressure that develops when a wall is pushed into the soil. The soil resists with a much larger pressure than active because it must be sheared in compression. For a frictional soil, Rankine's passive coefficient is Kp = (1 + sin phi) / (1 - sin phi), or tan squared (45 + phi/2). Passive resistance is what AnchorSOL deadman anchor blocks mobilise."}},
+      {"@type": "Question", "name": "Why does backfill compaction matter for retaining wall design?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Compaction is the only way to develop the design friction angle on a real site. Loose granular fill has a friction angle 5 to 10 degrees lower than well-compacted fill of the same gradation. The design assumed phi = 34 to 40 degrees only materialises if compaction reaches 95% modified Proctor density at optimum moisture, verified per lift with nuclear density gauge per BS 1377 Part 9 or ASTM D6938."}}
+    ]}
+  ]
+}
+</script>
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_CODE" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBPBK6RL1G"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DBPBK6RL1G', { anonymize_ip: true });</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="nav"><div class="wrap"><div class="nav__in">
+  <a class="brand" href="../" aria-label="AnchorSOL Wall, Home">
+    <img src="../assets/images/logo-white.png" alt="" data-no-picture decoding="async">
+    <span class="wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
+  </a>
+</div></div></header>
+
+<main id="main" class="article">
+<div class="wrap article__wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="../">Home</a> · <a href="./">Knowledge Base</a> · <span>Backfill Mechanics</span>
+</nav>
+
+<article>
+<header class="article__head">
+  <span class="article__tag">Engineering fundamentals</span>
+  <h1>Backfill mechanics: earth pressure, compaction, drainage.</h1>
+  <p class="article__lede">Every retaining wall design starts with the same question: <b>what does the backfill do to the wall?</b> The answer is a chain of mechanical effects. Soil weight produces vertical stress at depth. Vertical stress produces lateral earth pressure on the wall. Earth pressure varies with how the wall moves (active vs at-rest vs passive). Compaction stiffens the soil and develops the design friction angle. Water in the backfill adds hydrostatic pressure that can dwarf the dry-soil case. Drainage is the design element that controls the water. This guide walks through the mechanics every retaining-wall designer needs to internalise.</p>
+  <p class="article__meta">By <b>Dr. Ir. Lai Yip Poon</b>, Founder & Chief Designer · AnchorSOL® Wall Sdn. Bhd. · ~10 min read</p>
+</header>
+
+<section>
+<h2>At-rest, active, and passive: the three earth-pressure states</h2>
+<p>A retaining wall is in equilibrium with the soil behind it at one of three lateral pressure states, depending on how much the wall has moved.</p>
+
+<h3>At-rest (K<sub>0</sub>)</h3>
+<p>The wall has not moved. The soil sits in its original geostatic state with horizontal stress σ<sub>h</sub> = K<sub>0</sub> · σ<sub>v</sub>, where K<sub>0</sub> ≈ 1 − sin φ for normally-consolidated frictional soils. For φ = 35°, K<sub>0</sub> ≈ 0.43. For overconsolidated clays, K<sub>0</sub> can be much larger and approach 1.0.</p>
+<p>At-rest is what you design for if the wall is rigidly fixed (a basement wall braced by floor slabs) or if the wall is much stiffer than the soil's deformation tolerance.</p>
+
+<h3>Active (K<sub>a</sub>)</h3>
+<p>The wall has moved slightly outward (away from the soil), typically 0.001 H to 0.005 H of lateral movement is enough to mobilise active conditions on a granular backfill. The soil mobilises its shear strength to support itself; lateral pressure drops to:</p>
+<p>K<sub>a</sub> = (1 − sin φ) / (1 + sin φ) = tan²(45° − φ/2)</p>
+<p>For φ = 35°, K<sub>a</sub> ≈ 0.27. Most flexible retaining walls (MSE, cantilever RC at the working state, gabion) design to active earth pressure because they accept the small lateral movement that mobilises it.</p>
+
+<h3>Passive (K<sub>p</sub>)</h3>
+<p>The wall has been pushed into the soil. The soil resists in shear under compression with a much larger pressure:</p>
+<p>K<sub>p</sub> = (1 + sin φ) / (1 − sin φ) = tan²(45° + φ/2)</p>
+<p>For φ = 35°, K<sub>p</sub> ≈ 3.7, about 14 times the active coefficient. Passive resistance is what mobilises at the toe of a cantilever wall, against an embedded sheet pile, and (importantly) against an <b>AnchorSOL® deadman anchor block</b>. The very large K<sub>p</sub> is what makes anchored MSE pullout resistance economical.</p>
+
+<h3>Rankine and Coulomb: two theories, similar answers</h3>
+<p>The expressions above are <b>Rankine's earth-pressure theory</b>, derived from limiting equilibrium of a frictional half-space with a vertical wall and horizontal backfill surface. Rankine is the simpler theory and is taught first in every undergraduate course.</p>
+<p><b>Coulomb's theory</b> extends Rankine to inclined walls, sloping backfill, and wall-soil interface friction (δ). The Coulomb coefficient for active pressure on an inclined wall with sloping backfill is more involved but converges to Rankine when the wall is vertical, the backfill is horizontal, and the wall friction is zero. For practical Malaysian retaining-wall design, Rankine is conservative and Coulomb is used when geometry deviates from vertical-wall horizontal-backfill.</p>
+</section>
+
+<section>
+<h2>Earth pressure with depth and surcharge</h2>
+<p>Active earth pressure at depth z below the top of the wall:</p>
+<p>σ<sub>h,active</sub>(z) = K<sub>a</sub> · γ · z</p>
+<p>where γ is the unit weight of the backfill (typically 19 to 21 kN/m³ for compacted granular fill). The pressure grows linearly with depth, producing a triangular pressure distribution that integrates to a horizontal force per metre of wall:</p>
+<p>P<sub>a</sub> = ½ · K<sub>a</sub> · γ · H²</p>
+<p>acting at H/3 above the wall base (the centroid of the triangle).</p>
+
+<h3>Surcharge effects</h3>
+<p>If there's a uniform surcharge q on top of the backfill (a road, a building, a stockpile), the at-depth horizontal pressure is increased by:</p>
+<p>Δσ<sub>h,surcharge</sub> = K<sub>a</sub> · q</p>
+<p>This is a rectangular pressure distribution (constant with depth) integrating to:</p>
+<p>P<sub>surcharge</sub> = K<sub>a</sub> · q · H</p>
+<p>acting at H/2 above the base.</p>
+<p>For highway walls in Malaysia, JKR convention is to apply a 12 kPa live-load surcharge on the road platform behind the wall. For commercial and industrial loading, project-specific surcharges (often 20 to 50 kPa) are calculated.</p>
+
+<h3>Line loads and concentrated loads</h3>
+<p>A line load (e.g., from a bridge bearing) or a concentrated load (e.g., from a column footing) produces a lateral pressure distribution at the wall that is non-uniform. Boussinesq elastic-half-space solutions or simplified empirical methods (Westergaard, NAVFAC DM-7) give the resulting σ<sub>h</sub> profile.</p>
+</section>
+
+<section>
+<h2>Compaction effects: the design hinges on this</h2>
+<p>The design assumes a friction angle φ, typically 34° to 40° for granular backfill. <b>That friction angle exists in the design calculation. It does not yet exist in the field.</b> Loose granular fill has a friction angle 5 to 10 degrees lower than the design value. Compaction is the construction operation that delivers φ on site.</p>
+
+<h3>Compaction targets</h3>
+<p>The Malaysian-practice standard for retaining-wall backfill is <b>95% of modified Proctor maximum dry density (MDD) at moisture content within ±2% of optimum (OMC)</b>. Verification per BS 1377 Part 9 or ASTM D6938 nuclear-density-gauge readings, one test per 500 m² per 200 mm lift minimum, more for critical structures.</p>
+<p>At 95% MDD, the friction angle of crusher run is typically 34° to 36°. At 90% MDD, the same material would yield only 28° to 32°. Same material, different φ, dramatically different wall design.</p>
+
+<h3>Compaction-induced lateral stress</h3>
+<p>Heavy compaction equipment (vibratory rollers, plate compactors) produces transient lateral stresses on the wall that exceed the long-term active earth pressure. The Ingold (1979) and Duncan-Seed (1986) models predict that the lateral pressure during compaction can be 50 to 200% higher than the design active value, falling off as the compactor passes and the wall flexes.</p>
+<p>This is why <b>AnchorSOL® specifies hand or mini-compactor only within 1 m of the facing</b>, never heavy vibratory rollers. Beyond 1 m from the face, full-size compactors are used. This zone-restricted compaction sequence is part of the construction specification and is one reason MSE walls can be built immediately adjacent to live traffic, no heavy vibration affecting the carriageway.</p>
+</section>
+
+<section>
+<h2>Water in the backfill: the design killer</h2>
+<p>Most retaining-wall failures are water failures, not earth-pressure failures. A saturated backfill produces a hydrostatic water pressure that can dwarf the dry-soil lateral pressure.</p>
+
+<h3>The mechanics</h3>
+<p>If the backfill is saturated and undrained, the lateral pressure at depth z becomes:</p>
+<p>σ<sub>h,total</sub>(z) = K<sub>a</sub> · γ' · z + γ<sub>w</sub> · z</p>
+<p>where γ' is the buoyant (submerged) unit weight of the backfill (typically 11 kN/m³ for granular fill below water), and γ<sub>w</sub> is the water unit weight (9.81 kN/m³). The first term is the soil's effective-stress lateral pressure; the second is the hydrostatic water pressure.</p>
+<p>For φ = 35° and saturated granular fill, the lateral pressure at depth z is:</p>
+<p>(0.27 × 11 + 9.81) × z ≈ 12.8 × z   [kN/m² per m depth]</p>
+<p>Compare this to the dry case: 0.27 × 20 × z ≈ 5.4 × z [kN/m² per m depth]. <b>Saturation more than doubles the lateral force on the wall.</b> Worse, it concentrates the pressure at the base (hydrostatic distribution has its centroid at H/3, same as dry, but the total is much larger).</p>
+
+<h3>Why this matters for design</h3>
+<p>A wall designed for dry-fill active pressure that then experiences saturation due to a drainage failure will see lateral loads 2 to 3 times the design value. The factor of safety against sliding and overturning evaporates. Most retaining-wall collapses in Malaysia trace back to water in the backfill that the design did not anticipate.</p>
+</section>
+
+<section>
+<h2>Drainage behind the wall: how to keep water out</h2>
+<p>Drainage is the design element that prevents the water failure mode. Effective retaining-wall drainage has three components:</p>
+
+<h3>1. Drainage layer (geocomposite or granular blanket)</h3>
+<p>A continuous high-permeability layer behind the facing, sloped to drain to a collection pipe. Modern practice uses geocomposite drainage panels (a polymer core sandwiched between geotextile filters) installed against the back face of the wall. Older practice uses a 300 to 600 mm granular drainage blanket (free-draining stone, no fines).</p>
+
+<h3>2. Collection pipe (perforated subsoil drain)</h3>
+<p>A perforated pipe (typically 100 to 150 mm diameter UPVC or HDPE) laid at the toe of the wall, surrounded by free-draining stone, wrapped in geotextile filter to prevent fines migration. The pipe is sloped at minimum 1 in 200 to discharge points.</p>
+
+<h3>3. Discharge points (outlets)</h3>
+<p>The collection pipe must discharge to an open drain, a stormwater system, or natural ground at intervals of typically 20 to 50 metres along the wall. Each outlet flap-valve or screen prevents backflow during high-water events.</p>
+
+<h3>Weep holes</h3>
+<p>The classic retaining-wall drainage element is a <b>weep hole</b>: a 50 to 100 mm diameter hole through the face of the wall at low level, allowing water from the drainage layer to escape to the front of the wall. Weep holes are simple, cheap, and indispensable on older RC walls. Modern MSE walls with continuous geocomposite drainage and base collection pipes often dispense with weep holes (because the drainage path is continuous to the base), but for redundancy many MSE wall designs still specify them at 3 to 5 metre centres.</p>
+</section>
+
+<section>
+<h2>The role of fines in granular backfill</h2>
+<p>The single most important backfill spec parameter, after friction angle, is <b>fines content</b> (particles passing the 75 µm or No. 200 sieve). Fines do three bad things in retaining-wall backfill:</p>
+<ol>
+<li><b>They reduce the effective friction angle.</b> Fines fill the voids between coarse particles, reducing the dilatant interlocking that gives granular backfill its high φ.</li>
+<li><b>They reduce permeability dramatically.</b> A backfill with 10% fines might have a permeability 100 to 1000 times lower than the same gradation with 5% fines. Low permeability defeats the drainage design and traps water in the backfill.</li>
+<li><b>They are water-sensitive.</b> Plastic fines (clay) shrink and swell with moisture changes, applying additional lateral pressure on the wall during wet-dry cycles. Non-plastic fines (silt) lose cohesion when saturated and flow with seepage water, clogging drains.</li>
+</ol>
+<p>JKR and BS 8006 specifications for MSE backfill typically cap fines content at 10 to 15% with a plasticity index limit. Crusher run from Malaysian quarries typically delivers 5 to 12% fines, which is at the upper edge of acceptable. See <a href="crusher-run-mse-backfill.html">Crusher run as MSE backfill</a> for the project-specific QC.</p>
+</section>
+
+<section>
+<h2>The takeaways for the wall designer</h2>
+<ol>
+<li><b>Pick the right earth-pressure state.</b> Active for flexible walls (MSE, cantilever RC), at-rest for rigid walls (braced basements). Passive only mobilises at deliberate-engagement features like deadman anchors.</li>
+<li><b>Specify the friction angle for the placed condition.</b> Don't design with φ = 38° if the field compaction will only deliver φ = 32°. Compaction is a design parameter, not a construction afterthought.</li>
+<li><b>Specify the backfill gradation tightly.</b> Friction angle alone is not enough; fines content and plasticity index are decisive.</li>
+<li><b>Design for water.</b> Drainage layer plus collection pipe plus discharge points. If the drainage fails, the wall fails.</li>
+<li><b>Limit compaction-induced stresses near the face.</b> Hand or mini-compactor within 1 m of the wall; full-size compactors beyond.</li>
+</ol>
+<p>For an AnchorSOL® project, all of these are built into the construction specification we hand the contractor. The wall's design assumptions match what gets delivered on site.</p>
+</section>
+
+<section>
+<h2>Frequently asked questions</h2>
+
+<h3>How do I calculate active earth pressure on a sloped backfill?</h3>
+<p>For a horizontal backfill, use Rankine: K<sub>a</sub> = (1 − sin φ) / (1 + sin φ). For a backfill sloping up at angle β behind the wall, use the modified Rankine: K<sub>a,β</sub> = cos β · [cos β − √(cos²β − cos²φ)] / [cos β + √(cos²β − cos²φ)]. For β > φ, the formula breaks down because the slope is itself unstable independent of the wall.</p>
+
+<h3>What if my backfill is cohesive (clayey)?</h3>
+<p>Cohesive backfill is allowed by BS 8006 with caution, but never preferred. The active earth pressure on a c-φ soil includes a tension-zone term: σ<sub>h</sub>(z) = K<sub>a</sub> · γ · z − 2c · √K<sub>a</sub>. Above the tension-crack depth z<sub>c</sub> = 2c / (γ √K<sub>a</sub>), the calculated active pressure is negative (tensile) and is set to zero in design. Cohesive backfill is also prone to shrink-swell, plastic flow under saturation, and loss of cohesion at sustained pore pressure. For MSE walls, granular backfill is strongly preferred.</p>
+
+<h3>How much does compaction effort matter?</h3>
+<p>Massively. The same crusher run at 95% modified Proctor density gives φ ≈ 36°. The same material at 88% gives φ ≈ 30°. The active earth pressure coefficient at 88% is K<sub>a</sub> = 0.33, vs 0.26 at 95%. That's a 27% increase in lateral pressure on the wall for what looks on the surface like a small compaction shortfall.</p>
+
+<h3>Can I use site-won fill instead of imported granular?</h3>
+<p>Sometimes, yes. If the site-won material is granular (sandy gravel, clean sand, well-graded silt-poor fill), it can meet retaining-wall backfill spec. If it's cohesive (clay, plastic silt), it's usually not acceptable for MSE walls and is a risk on RC walls too. The decision turns on a soil characterisation test programme. For AnchorSOL® projects, our engineers review the site soil report and confirm or reject site-won fill before mobilisation.</p>
+</section>
+
+</article>
+
+<aside class="article__related">
+  <span class="tech-label">Read next</span>
+  <div class="article__related-grid">
+    <a class="kb-card" href="granular-fill-importance.html">
+      <span class="kb-card__tag">Specification</span>
+      <h3>Granular Fill: Why It Matters</h3>
+      <p>Friction angle ranges, gradation criteria, fines effects, granular vs cohesive economics.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="crusher-run-mse-backfill.html">
+      <span class="kb-card__tag">Specification</span>
+      <h3>Crusher Run as MSE Backfill</h3>
+      <p>Spec, performance, JKR + BS 8006 references, half the cost of premium fill.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="mse-wall-design.html">
+      <span class="kb-card__tag">Design guide</span>
+      <h3>MSE Wall Design Methodology</h3>
+      <p>External + internal stability with the earth-pressure mechanics applied.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+  </div>
+</aside>
+
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="grid">
+    <div><h4>AnchorSOL® Wall</h4><p>Malaysia's most-specified anchored MSE wall. Modular precast, factory-built, mobilised lean. Since 1999.</p></div>
+    <div><h4>System</h4><ul><li><a href="../#system">The System</a></li><li><a href="../applications/">Applications</a></li><li><a href="../projects/">All projects (500+)</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../#about">About</a></li><li><a href="../#contact">Contact</a></li><li><a href="./">Knowledge Base</a></li></ul></div>
+  </div>
+  <div class="bottom"><span>© 2026 AnchorSOL® Wall Sdn. Bhd. · 199901015121 (490021-M)</span><span>ENGINEERED TO RETAIN EARTH.</span></div>
+</div></footer>
+
+<nav class="tabbar" aria-label="Section navigation">
+  <div class="tabbar__scroll">
+    <a class="tabbar__tab" href="../#hero"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 11 L12 3 L21 11"/><path d="M5 10 V21 H19 V10"/></svg><span class="tabbar__lbl">Home</span></a>
+    <a class="tabbar__tab" href="../#mse"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8 V8.01" stroke-width="2.5"/><path d="M12 11 V17"/></svg><span class="tabbar__lbl">Basics</span></a>
+    <a class="tabbar__tab" href="../#system"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="tabbar__lbl">System</span></a>
+    <a class="tabbar__tab" href="../applications/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 L3 8 L12 13 L21 8 L12 3 Z"/><path d="M3 12 L12 17 L21 12"/><path d="M3 16 L12 21 L21 16"/></svg><span class="tabbar__lbl">Apps</span></a>
+    <a class="tabbar__tab" href="../#why"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 V21"/><path d="M6 8 H18"/><path d="M3 14 L6 8 L9 14 Z"/><path d="M15 14 L18 8 L21 14 Z"/></svg><span class="tabbar__lbl">Compare</span></a>
+    <a class="tabbar__tab" href="../#lean"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M13 2 L4 14 H11 L11 22 L20 10 H13 L13 2 Z"/></svg><span class="tabbar__lbl">Lean</span></a>
+    <a class="tabbar__tab" href="../projects/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 16 L8 11 L13 16 L17 12 L21 16"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/></svg><span class="tabbar__lbl">Projects</span></a>
+    <a class="tabbar__tab" href="../#about"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21 V19 C4 16 7 14 12 14 C17 14 20 16 20 19 V21"/></svg><span class="tabbar__lbl">About</span></a>
+    <a class="tabbar__tab" href="../#contact"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="6" width="18" height="13"/><path d="M3 7 L12 14 L21 7"/></svg><span class="tabbar__lbl">Contact</span></a>
+    <a class="tabbar__tab is-active" href="./"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4 H12 V20 H4 Z"/><path d="M12 4 H20 V20 H12 Z"/><path d="M4 8 L20 8" stroke-dasharray="2 2"/></svg><span class="tabbar__lbl">Learn</span></a>
+    <a class="tabbar__tab tabbar__tab--whatsapp" href="https://wa.me/60122362159?text=Hi%20AnchorSOL%2C%20project%20enquiry%20from%20your%20website." target="_blank" rel="noopener"><span class="tabbar__icon-wrap"><span class="tabbar__pulse" aria-hidden="true"></span><svg class="tabbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg></span><span class="tabbar__lbl">Chat</span></a>
+  </div>
+</nav>
+
+<script src="../js/site.js" defer></script>
+</body>
+</html>

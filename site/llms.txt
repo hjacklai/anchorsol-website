@@ -128,10 +128,17 @@ In-depth engineering reference articles, all original content authored by Anchor
 - [MSE Wall vs RC Wall: Cost, Build, Programme](https://anchorsolwall.com/learn/mse-wall-vs-rc-wall.html), ~1,850 words. Side-by-side cost (RM 700 to RM 4,500 per m²), 6-factor comparison, case study 14 weeks faster than RC.
 - [Anchored Soil vs Reinforced Soil](https://anchorsolwall.com/learn/anchored-vs-reinforced-soil.html), ~1,700 words. The mechanical difference between discrete deadman anchorage and distributed friction, with pullout equations.
 
-### Specification and design
+### Backfill and materials
+- [Backfill Mechanics for Retaining Walls](https://anchorsolwall.com/learn/backfill-mechanics-retaining-walls.html), ~2,100 words. Rankine + Coulomb earth pressure (active/passive/at-rest), surcharge effects, compaction-induced stress, water + drainage, fines effects.
+- [Granular Fill Importance](https://anchorsolwall.com/learn/granular-fill-importance.html), ~2,000 words. Friction angle ranges, gradation criteria, fines content, water sensitivity, granular vs cohesive economics, premium vs crusher run.
 - [Crusher Run as MSE Backfill](https://anchorsolwall.com/learn/crusher-run-mse-backfill.html), ~1,900 words. Friction angle, gradation, JKR + BS 8006 references, why crusher run works at half the cost of premium granular fill.
+
+### Design and standards
 - [MSE Wall Design Standards: BS 8006, FHWA, JKR](https://anchorsolwall.com/learn/mse-wall-design-standards.html), ~1,950 words. The five standards Malaysian engineers cite, how AnchorSOL maps to each, sample tender language.
 - [MSE Wall Design Methodology](https://anchorsolwall.com/learn/mse-wall-design.html), ~2,200 words. External + internal stability checks, BS 8006 limit-state framework, partial factors, pullout calc, seismic and cyclic loading.
+- [Slope Retaining Wall Design](https://anchorsolwall.com/learn/slope-retaining-wall-design.html), ~2,200 words. Hillside stabilization wall types, cut-slope vs fill-slope, JKR + JMG guidelines, Malaysian rainfall and residual-soil context.
+- [Slope Stability Analysis](https://anchorsolwall.com/learn/slope-stability-analysis.html), ~2,100 words. Bishop, Spencer, Morgenstern-Price methods. Global FoS, drained vs undrained, seismic, saturated rainy-season conditions.
+- [RC Retaining Wall Design](https://anchorsolwall.com/learn/rc-retaining-wall-design.html), ~2,100 words. Cantilever, gravity, counterfort types. Stem flexure, base shear, heel/toe pressures, BS 8110 + Eurocode 2 references. When RC beats MSE.
 
 ### Testing and QA
 - [Load Testing for MSE Walls](https://anchorsolwall.com/learn/load-testing-mse-walls.html), ~1,950 words. Static, cyclic, in-service monitoring with strain gauges, inclinometers, settlement plates. BS 8006, FHWA, ASTM standards.
