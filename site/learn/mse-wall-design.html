@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>MSE Wall Design Methodology: External + Internal Stability, BS 8006 Limit States (Malaysia)</title>
+<meta name="description" content="MSE wall design methodology for Malaysian engineers: external stability (sliding, overturning, bearing, global), internal stability (pullout, tensile strength, rupture), BS 8006 limit states, FHWA approach, partial factors, and worked geometry." />
+<meta name="keywords" content="MSE wall design, MSE wall design methodology, BS 8006 design, FHWA design, MSE wall external stability, MSE wall internal stability, pullout resistance, reinforced earth design, reinforced soil design, anchored MSE design" />
+<meta name="theme-color" content="#0a1426" />
+<link rel="canonical" href="https://anchorsolwall.com/learn/mse-wall-design.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="AnchorSOL® Wall" />
+<meta property="og:locale" content="en_MY" />
+<meta property="og:title" content="MSE Wall Design Methodology: External + Internal Stability" />
+<meta property="og:description" content="Sliding, overturning, bearing, global; tensile rupture, pullout, connection. BS 8006 limit-state framework. For Malaysian engineers." />
+<meta property="og:image" content="https://anchorsolwall.com/assets/videos/wall-linear-poster.jpg" />
+<meta property="og:url" content="https://anchorsolwall.com/learn/mse-wall-design.html" />
+<meta property="article:author" content="AnchorSOL® Wall Sdn. Bhd." />
+<meta property="article:published_time" content="2026-05-12" />
+<meta property="article:section" content="Engineering" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="../favicon.png" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
+<link rel="stylesheet" href="../css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://anchorsolwall.com/learn/mse-wall-design.html#article",
+      "headline": "MSE Wall Design Methodology: External + Internal Stability, BS 8006 Limit States",
+      "description": "External stability (sliding, overturning, bearing, global) and internal stability (pullout, rupture, connection) for MSE walls under BS 8006 limit-state framework.",
+      "image": "https://anchorsolwall.com/assets/videos/wall-linear-poster.jpg",
+      "datePublished": "2026-05-12",
+      "dateModified": "2026-05-12",
+      "author": [
+        {"@type": "Person", "@id": "https://anchorsolwall.com/#founder", "name": "Dr. Ir. Lai Yip Poon", "jobTitle": "Founder, Chief Designer & Managing Director", "worksFor": {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}, "knowsAbout": ["Mechanically Stabilized Earth walls", "Anchored Soil retention", "Slope stability", "Geotechnical engineering", "Ground improvement"]},
+        {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}
+      ],
+      "publisher": {"@id": "https://anchorsolwall.com/#organization"},
+      "mainEntityOfPage": "https://anchorsolwall.com/learn/mse-wall-design.html",
+      "wordCount": 2200,
+      "inLanguage": "en-MY"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anchorsolwall.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Knowledge Base", "item": "https://anchorsolwall.com/learn/"},
+        {"@type": "ListItem", "position": 3, "name": "MSE Wall Design", "item": "https://anchorsolwall.com/learn/mse-wall-design.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What are the design checks for an MSE wall?",
+         "acceptedAnswer": {"@type": "Answer", "text": "An MSE wall design has two layers of checks. External stability treats the reinforced soil block as a monolith and checks sliding along the base, overturning about the toe, bearing capacity of the foundation, and global slope stability. Internal stability checks each reinforcement layer for tensile rupture, pullout from the resistant zone, and connection strength at the facing. Under BS 8006 these are all limit-state checks with partial factors applied to actions and resistances."}},
+        {"@type": "Question", "name": "What factor of safety is required for an MSE wall?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Under BS 8006 limit-state design, partial factors replace a single overall FoS. Typical values: γf = 1.5 on dead load surcharge, 1.5 on live load, 1.0 on self-weight (for restoring effect); resistance partial factors apply to soil shear strength (γφ = 1.0 to 1.25) and reinforcement tensile capacity (γm = 1.0 for short term, with creep-rupture allowance for polymeric). For working-stress checks, an equivalent FoS of 1.5 on overturning, 1.5 on sliding, 2.0 on bearing, and 1.5 on pullout is the legacy target."}},
+        {"@type": "Question", "name": "How is pullout resistance calculated for an MSE wall?",
+         "acceptedAnswer": {"@type": "Answer", "text": "For friction-based MSE (strip or geogrid), pullout resistance per metre of reinforcement is calculated as Pr = 2 · Le · α · σv · tan(φ), where Le is the length of reinforcement embedded beyond the active wedge, α is the interaction coefficient (typically 0.6 to 0.9 depending on reinforcement type and surface texture), σv is the effective overburden pressure at the reinforcement level, and φ is the friction angle of the backfill. For anchored MSE walls like AnchorSOL®, the resistance is largely supplied by the discrete deadman anchor block via passive earth pressure: Pr = Kp · γ · z · H_block."}}
+      ]
+    }
+  ]
+}
+</script>
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_CODE" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBPBK6RL1G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DBPBK6RL1G', { anonymize_ip: true });
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="nav"><div class="wrap"><div class="nav__in">
+  <a class="brand" href="../" aria-label="AnchorSOL Wall, Home">
+    <img src="../assets/images/logo-white.png" alt="" data-no-picture decoding="async">
+    <span class="wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
+  </a>
+</div></div></header>
+
+<main id="main" class="article">
+<div class="wrap article__wrap">
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="../">Home</a> · <a href="./">Knowledge Base</a> · <span>MSE Wall Design</span>
+</nav>
+
+<article>
+<header class="article__head">
+  <span class="article__tag">Design guide</span>
+  <h1>MSE wall design methodology: external stability, internal stability, limit states.</h1>
+  <p class="article__lede">An MSE wall design is two layers of checks stacked on top of each other. <b>External stability</b> treats the reinforced soil block as a monolithic gravity wall and checks it for sliding, overturning, bearing capacity and global slope stability. <b>Internal stability</b> then drills inside that block to check each reinforcement layer for tensile rupture, pullout from the resistant zone, and connection strength at the facing. Both layers are governed by BS 8006-1:2010 in Malaysian practice, with FHWA NHI-10-024 as a parametric backup. This guide walks the design sequence as the supervising engineer wants to see it on a Malaysian project.</p>
+  <p class="article__meta">By <b>Dr. Ir. Lai Yip Poon</b>, Founder & Chief Designer · AnchorSOL® Wall Sdn. Bhd. · ~10 min read</p>
+</header>
+
+<section>
+<h2>Step 1, define the geometry and loading</h2>
+<p>Before any limit-state checks, fix the inputs:</p>
+<ul>
+<li><b>Wall geometry.</b> Total height H, batter (typically 0 for AnchorSOL® inverted-T panels), facing thickness, base width including any toe extension.</li>
+<li><b>Backfill profile.</b> Whether the retained soil rises level with the wall top, slopes up at angle β behind the wall, or steps back.</li>
+<li><b>Foundation profile.</b> Bearing soil characterisation: in-situ strength, drained vs undrained, layered profile, presence of soft layers within the influence zone.</li>
+<li><b>Loading.</b> Permanent surcharge (γ · h_surcharge), live surcharge (q_live), traffic load, line loads from bridge bearings or building columns, seismic.</li>
+<li><b>Reinforced fill spec.</b> Friction angle (typically 34 to 38° for crusher run, 36 to 40° for premium granular), unit weight (typically 19 to 21 kN/m³ compacted).</li>
+</ul>
+<p>For AnchorSOL® on crusher run, the design fill is typically <b>φ' = 34°</b>, c' = 0, γ = 20 kN/m³ as a conservative baseline. See <a href="crusher-run-mse-backfill.html">Crusher run as MSE backfill</a> for the rationale.</p>
+</section>
+
+<section>
+<h2>Step 2, external stability (the reinforced block as a gravity wall)</h2>
+<p>Treat the reinforced soil mass as a single block of width L (the reinforcement length) and height H. Check it against four failure modes:</p>
+
+<h3>2a. Sliding along the base</h3>
+<p>The horizontal driving force is the active earth pressure of the retained soil behind the block, plus any surcharge contribution. The resisting force is the weight of the block times the base friction coefficient (tan δ, where δ is typically the friction angle of the foundation soil or 2/3 of it, whichever is more conservative).</p>
+<table class="article__table">
+<thead><tr><th>Driving force</th><th>Resisting force</th><th>BS 8006 partial factor</th></tr></thead>
+<tbody>
+<tr><td>P_a = ½ · K_a · γ · H² (active earth pressure)</td><td>R = W · tan(δ)</td><td>γ_f = 1.5 on driving, γ_φ = 1.0 to 1.25 on resisting tan(φ)</td></tr>
+<tr><td>q_surcharge · K_a · H (uniform surcharge)</td><td>+ c · L (if cohesive base)</td><td>γ_f = 1.5 on surcharge driving</td></tr>
+</tbody>
+</table>
+<p>Working-stress equivalent: FoS_sliding = R / P_driving ≥ 1.5.</p>
+
+<h3>2b. Overturning about the toe</h3>
+<p>Moment-about-toe check: the overturning moment from active earth pressure (and surcharge) must be less than the restoring moment from the block self-weight. AnchorSOL® inverted-T panel walls have a wide effective base, so the overturning check is rarely binding for walls under 15 m on competent foundations.</p>
+<p>Working-stress equivalent: FoS_overturning = M_resisting / M_overturning ≥ 2.0 (BS 8006) or 1.5 (FHWA, with partial factors).</p>
+
+<h3>2c. Bearing capacity at the foundation</h3>
+<p>The vertical pressure at the base of the reinforced block, plus any eccentricity from the overturning moment, must be less than the allowable bearing pressure of the foundation soil. Use Meyerhof's effective-width method:</p>
+<p>Effective width <i>L'</i> = L − 2e, where <i>e</i> is the eccentricity of the resultant from the centre of the base. Bearing pressure = ΣV / L' must be less than the allowable bearing pressure of the foundation soil divided by an appropriate FoS (typically 2.5 to 3.0).</p>
+
+<h3>2d. Global slope stability</h3>
+<p>The most-often-missed check on Malaysian projects. The reinforced block, the retained soil, the foundation and any underlying weak layer all participate in a circular or non-circular failure surface that wraps around the wall. Use Bishop, Spencer, or Morgenstern-Price slope-stability analysis with the reinforcement modelled as a tensile force across any intercepted slip surface.</p>
+<p>This check is the one that catches problems with soft foundations, sloping ground behind the wall, or thin reinforced blocks. Target FoS_global ≥ 1.3 for permanent works, 1.5 for critical structures.</p>
+</section>
+
+<section>
+<h2>Step 3, internal stability (each reinforcement layer)</h2>
+<p>For each reinforcement layer at depth z below wall top:</p>
+
+<h3>3a. Tensile load in the reinforcement</h3>
+<p>The active wedge of retained soil pulls on the reinforcement at depth z. Tensile load per metre of facing:</p>
+<p><b>T_max(z) = σ_h(z) · S_v</b></p>
+<p>where σ_h(z) is the horizontal earth pressure at depth z (K_a · γ · z plus surcharge contributions), and S_v is the vertical spacing between reinforcement layers.</p>
+<p>For BS 8006 limit-state design, apply partial factors: T_design = γ_f · T_max.</p>
+
+<h3>3b. Tensile rupture check</h3>
+<p>The reinforcement must carry T_design without rupturing. Compare against the long-term tensile design strength T_d of the reinforcement:</p>
+<p><b>T_d = T_ult / (γ_m · γ_creep · γ_durability)</b></p>
+<p>where T_ult is the short-term ultimate tensile strength, γ_m is the partial factor on material (1.0 to 1.25 for steel), γ_creep handles polymeric creep over the design life (1.0 for steel), and γ_durability handles corrosion or chemical degradation (the sacrificial-thickness allowance from BS 8006 Annex B for galvanised steel).</p>
+<p>For AnchorSOL®'s hot-dip galvanised carbon-steel tendons, the durability allowance reduces the design section over the 75 to 120 year design life as zinc coating and then steel sacrifice to oxidation. The design starts oversized so the residual section at design-life end still meets T_design.</p>
+
+<h3>3c. Pullout resistance check</h3>
+<p>The reinforcement must not slip out of the resistant zone behind the active wedge. The active wedge in BS 8006 / FHWA is taken at 45° + φ/2 from horizontal at the wall base for friction-based MSE; for anchored MSE the wedge geometry is replaced by the location of the deadman block.</p>
+<p><b>Friction-based MSE (Reinforced Earth, geogrid)</b></p>
+<p>Pullout resistance per metre of reinforcement: P_r = 2 · L_e · α · σ_v · tan(φ), where L_e is the embedded length beyond the active wedge, α is the interaction coefficient (0.6 to 0.9 typically), and σ_v is the effective vertical stress at the reinforcement level.</p>
+<p><b>Anchored MSE (AnchorSOL®)</b></p>
+<p>Pullout resistance is dominated by the passive earth pressure mobilised against the deadman anchor block, not by friction along the tendon. For a deadman block of dimensions h_block × w_block at depth z below the wall top:</p>
+<p>P_r ≈ ½ · (K_p − K_a) · γ · h_block² · w_block</p>
+<p>where K_p = (1 + sin φ) / (1 − sin φ) is the passive earth pressure coefficient. This is what allows AnchorSOL® to run on lower-friction-angle backfill: the pullout is in passive resistance, not friction.</p>
+
+<h3>3d. Connection strength at the facing</h3>
+<p>The connection between the reinforcement and the facing panel must carry T_design at the facing. For AnchorSOL®, the connection is a Grade 8.8 nut and washer assembly on the threaded tendon end; the bolt connection capacity is verified against T_design with appropriate partial factors.</p>
+</section>
+
+<section>
+<h2>Step 4, seismic and dynamic loading</h2>
+<p>For seismic design (Eurocode 8 or AASHTO LRFD seismic provisions, or BS 8006 informative Annex), the horizontal pseudo-static coefficient kh is applied to:</p>
+<ul>
+<li>The reinforced block's self-weight (additional driving force on external stability)</li>
+<li>The active wedge's mass (additional tensile load on each reinforcement)</li>
+</ul>
+<p>For Malaysian sites, kh is typically 0.05 to 0.10 (low seismicity, with some sites in Sabah requiring higher values). The Mononobe-Okabe pseudo-static earth pressure formulation is the standard approach.</p>
+<p>For cyclic rail loading, the design checks the elastic recovery of the soil-steel composite under repeated peak load cycles. AnchorSOL®'s deadman anchorage mechanism distributes the cyclic peak through the soil mass rather than concentrating it at a single interface, which is why composite soil-steel walls perform well under sub-track conditions where rigid concrete walls fatigue at the rebar-concrete interface.</p>
+</section>
+
+<section>
+<h2>BS 8006 vs FHWA NHI-10-024: which to cite?</h2>
+<p>On Malaysian projects:</p>
+<ul>
+<li><b>Cite BS 8006-1:2010 as the primary design code.</b> Section 6 (walls and abutments), Section 7 (reinforced soil slopes), Annex A (fill characteristics), Annex B (steel durability).</li>
+<li><b>Use FHWA NHI-10-024 as a parametric backup</b> where BS 8006 leaves a value to engineering judgement. FHWA tables for interaction coefficient α, for example, are commonly cited.</li>
+<li><b>Use JKR Standard Specification</b> for materials and workmanship clauses on JKR-tendered projects.</li>
+</ul>
+<p>See <a href="mse-wall-design-standards.html">MSE wall design standards</a> for a detailed comparison of how the five standards map across.</p>
+</section>
+
+<section>
+<h2>How AnchorSOL® changes the design conversation</h2>
+<p>Three things shift when you choose anchored MSE over friction MSE:</p>
+<ol>
+<li><b>Backfill friction angle drops from ≥36° to ≥34°.</b> Crusher run from local quarries meets this. Premium granular fill is no longer required.</li>
+<li><b>Reinforcement length is set by the deadman position, not by L = 0.7H.</b> For tight-access sites or where competent ground sits close to the wall face, anchored MSE reaches the resistant zone at lower lateral reach.</li>
+<li><b>Cyclic-load performance improves.</b> The deadman distributes load through the soil mass rather than relying on cumulative friction.</li>
+</ol>
+<p>For a worked design on your project, send us the geometry, the soil report and the loading. Same-day response from the engineering team.</p>
+</section>
+
+<section>
+<h2>Frequently asked questions</h2>
+
+<h3>What is the difference between external and internal stability?</h3>
+<p>External stability treats the entire reinforced soil block as a single gravity wall, checking it against sliding, overturning, bearing, and global slope failure. Internal stability looks inside that block and checks each reinforcement layer for tensile rupture, pullout, and connection failure.</p>
+
+<h3>How much reinforcement length do I need?</h3>
+<p>For friction-based MSE, the rule of thumb is L = 0.7H minimum, sometimes longer for tall walls or soft foundations. For anchored MSE (AnchorSOL®), the reinforcement runs from the facing to the deadman block, which is positioned in the resistant zone behind the active wedge. The effective length is typically shorter than 0.7H, particularly on sites where competent ground sits close to the wall face.</p>
+
+<h3>Can I design an MSE wall on soft ground?</h3>
+<p>Yes, with appropriate ground improvement. The flexible facing-panel interface in anchored MSE tolerates differential settlement better than rigid RC. Common ground-improvement strategies include preloading, prefabricated vertical drains (PVDs), stone columns, jet grouting, or partial soil replacement. The MSE wall design must include a settlement analysis and a deformation-tolerance check on the facing.</p>
+
+<h3>What design life is typical for an AnchorSOL® MSE wall?</h3>
+<p>75 to 120 years for highway and infrastructure projects, with corresponding sacrificial-thickness allowances on the steel tendons per BS 8006 Annex B. The oldest in-service AnchorSOL® walls date from 1999 with no measurable distress.</p>
+</section>
+
+</article>
+
+<aside class="article__related">
+  <span class="tech-label">Read next</span>
+  <div class="article__related-grid">
+    <a class="kb-card" href="mse-wall-design-standards.html">
+      <span class="kb-card__tag">Standards</span>
+      <h3>MSE Wall Design Standards</h3>
+      <p>BS 8006, FHWA NHI-10-024, JKR specs. How AnchorSOL® maps to each.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="pullout-testing-mse-walls.html">
+      <span class="kb-card__tag">Testing</span>
+      <h3>Pullout Testing for MSE Walls</h3>
+      <p>BS 8006 Annex G, ASTM D6706, test setup, results interpretation.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="../projects/">
+      <span class="kb-card__tag">Field record</span>
+      <h3>Design proven across 500+ projects</h3>
+      <p>Where the design methodology becomes real walls: 1,000,000+ m² delivered.</p>
+      <span class="kb-card__cta">Browse portfolio →</span>
+    </a>
+  </div>
+</aside>
+
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="grid">
+    <div>
+      <h4>AnchorSOL® Wall</h4>
+      <p>Malaysia's most-specified anchored MSE wall. Modular precast, factory-built, mobilised lean. Since 1999.</p>
+    </div>
+    <div>
+      <h4>System</h4>
+      <ul>
+        <li><a href="../#system">The System</a></li>
+        <li><a href="../applications/">Applications</a></li>
+        <li><a href="../projects/">All projects (500+)</a></li>
+        <li><a href="../assets/docs/anchorsol-wall-catalogue.pdf" target="_blank" rel="noopener" download>Brochure (PDF) ↓</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#contact">Contact</a></li>
+        <li><a href="./">Knowledge Base</a></li>
+        <li><a href="https://anchorsoilbd.com" target="_blank" rel="noopener">Bangladesh agent ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <span>© 2026 AnchorSOL® Wall Sdn. Bhd. · 199901015121 (490021-M)</span>
+    <span>ENGINEERED TO RETAIN EARTH.</span>
+  </div>
+</div></footer>
+
+<nav class="tabbar" aria-label="Section navigation">
+  <div class="tabbar__scroll">
+    <a class="tabbar__tab" href="../#hero"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 11 L12 3 L21 11"/><path d="M5 10 V21 H19 V10"/></svg><span class="tabbar__lbl">Home</span></a>
+    <a class="tabbar__tab" href="../#mse"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8 V8.01" stroke-width="2.5"/><path d="M12 11 V17"/></svg><span class="tabbar__lbl">Basics</span></a>
+    <a class="tabbar__tab" href="../#system"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="tabbar__lbl">System</span></a>
+    <a class="tabbar__tab" href="../applications/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 L3 8 L12 13 L21 8 L12 3 Z"/><path d="M3 12 L12 17 L21 12"/><path d="M3 16 L12 21 L21 16"/></svg><span class="tabbar__lbl">Apps</span></a>
+    <a class="tabbar__tab" href="../#why"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 V21"/><path d="M6 8 H18"/><path d="M3 14 L6 8 L9 14 Z"/><path d="M15 14 L18 8 L21 14 Z"/></svg><span class="tabbar__lbl">Compare</span></a>
+    <a class="tabbar__tab" href="../#lean"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M13 2 L4 14 H11 L11 22 L20 10 H13 L13 2 Z"/></svg><span class="tabbar__lbl">Lean</span></a>
+    <a class="tabbar__tab" href="../projects/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 16 L8 11 L13 16 L17 12 L21 16"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/></svg><span class="tabbar__lbl">Projects</span></a>
+    <a class="tabbar__tab" href="../#about"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21 V19 C4 16 7 14 12 14 C17 14 20 16 20 19 V21"/></svg><span class="tabbar__lbl">About</span></a>
+    <a class="tabbar__tab" href="../#contact"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="6" width="18" height="13"/><path d="M3 7 L12 14 L21 7"/></svg><span class="tabbar__lbl">Contact</span></a>
+    <a class="tabbar__tab is-active" href="./"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4 H12 V20 H4 Z"/><path d="M12 4 H20 V20 H12 Z"/><path d="M4 8 L20 8" stroke-dasharray="2 2"/></svg><span class="tabbar__lbl">Learn</span></a>
+    <a class="tabbar__tab tabbar__tab--whatsapp" href="https://wa.me/60122362159?text=Hi%20AnchorSOL%2C%20project%20enquiry%20from%20your%20website." target="_blank" rel="noopener"><span class="tabbar__icon-wrap"><span class="tabbar__pulse" aria-hidden="true"></span><svg class="tabbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg></span><span class="tabbar__lbl">Chat</span></a>
+  </div>
+</nav>
+
+<script src="../js/site.js" defer></script>
+</body>
+</html>
