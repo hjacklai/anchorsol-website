@@ -117,14 +117,30 @@ Core trade: AnchorSOL takes a difficult site (live traffic, soft ground, sloped 
 
 ## Knowledge base guides
 
-In-depth engineering reference articles, all original content authored by AnchorSOL® Wall Sdn. Bhd.:
+In-depth engineering reference articles, all original content authored by AnchorSOL® Wall Sdn. Bhd. under the technical direction of Dr. Ir. Lai Yip Poon:
 
-- [What is an MSE Wall? Complete Guide](https://anchorsolwall.com/learn/what-is-mse-wall.html), ~2,100 words covering MSE definition, mechanics, four components, history (Henri Vidal 1963), modern variants (strip / geogrid / anchored), Malaysian applications, RC comparison, cost economics, design life, and citing standards (BS 8006, FHWA NHI-10-024, JKR).
-- [MSE Wall vs RC Wall: Cost, Build, Programme](https://anchorsolwall.com/learn/mse-wall-vs-rc-wall.html), ~1,850 words on side-by-side cost (RM 700 to RM 4,500 per m²), build crew, programme risk, six-factor comparison, case study of a 200 m x 10 m wall (RM 1.8 M cheaper, 14 weeks faster than RC).
-- [Anchored Soil vs Reinforced Soil](https://anchorsolwall.com/learn/anchored-vs-reinforced-soil.html), ~1,700 words on the mechanical difference between discrete deadman anchorage and distributed friction, with pullout equations, backfill cost implications, and common misconceptions.
-- [Crusher Run as MSE Backfill](https://anchorsolwall.com/learn/crusher-run-mse-backfill.html), ~1,900 words on friction angle, gradation, JKR + BS 8006 references, and why crusher run works as MSE backfill at half the cost of premium granular fill.
-- [Retaining Wall Types in Malaysia](https://anchorsolwall.com/learn/retaining-wall-types-malaysia.html), ~2,400 words surveying all 9 retaining wall systems in Malaysian practice (RC gravity, cantilever, anchored MSE, friction MSE, gabion, sheet pile, soldier pile, soil nail, crib) with a decision matrix.
-- [MSE Wall Design Standards: BS 8006, FHWA, JKR](https://anchorsolwall.com/learn/mse-wall-design-standards.html), ~1,950 words on the five standards Malaysian engineers cite (BS 8006-1:2010, FHWA NHI-10-024, JKR Standard Specification, EN 14475, Eurocode 7), how AnchorSOL maps to each, and sample tender language.
+### Foundations
+- [What is an MSE Wall? Complete Guide](https://anchorsolwall.com/learn/what-is-mse-wall.html), ~2,100 words. MSE definition, mechanics, four components, history (Henri Vidal 1963), modern variants, Malaysian applications.
+- [Retaining Wall Types in Malaysia](https://anchorsolwall.com/learn/retaining-wall-types-malaysia.html), ~2,400 words. Survey of all 9 retaining wall systems in Malaysian practice with a decision matrix.
+- [Reinforced Earth vs Reinforced Soil](https://anchorsolwall.com/learn/reinforced-earth-vs-reinforced-soil.html), ~1,800 words. Untangles RE wall, RS wall, MSE wall, anchored MSE terminology.
+
+### Comparisons
+- [MSE Wall vs RC Wall: Cost, Build, Programme](https://anchorsolwall.com/learn/mse-wall-vs-rc-wall.html), ~1,850 words. Side-by-side cost (RM 700 to RM 4,500 per m²), 6-factor comparison, case study 14 weeks faster than RC.
+- [Anchored Soil vs Reinforced Soil](https://anchorsolwall.com/learn/anchored-vs-reinforced-soil.html), ~1,700 words. The mechanical difference between discrete deadman anchorage and distributed friction, with pullout equations.
+
+### Specification and design
+- [Crusher Run as MSE Backfill](https://anchorsolwall.com/learn/crusher-run-mse-backfill.html), ~1,900 words. Friction angle, gradation, JKR + BS 8006 references, why crusher run works at half the cost of premium granular fill.
+- [MSE Wall Design Standards: BS 8006, FHWA, JKR](https://anchorsolwall.com/learn/mse-wall-design-standards.html), ~1,950 words. The five standards Malaysian engineers cite, how AnchorSOL maps to each, sample tender language.
+- [MSE Wall Design Methodology](https://anchorsolwall.com/learn/mse-wall-design.html), ~2,200 words. External + internal stability checks, BS 8006 limit-state framework, partial factors, pullout calc, seismic and cyclic loading.
+
+### Testing and QA
+- [Load Testing for MSE Walls](https://anchorsolwall.com/learn/load-testing-mse-walls.html), ~1,950 words. Static, cyclic, in-service monitoring with strain gauges, inclinometers, settlement plates. BS 8006, FHWA, ASTM standards.
+- [Pullout Testing for MSE Walls](https://anchorsolwall.com/learn/pullout-testing-mse-walls.html), ~1,900 words. BS 8006 Annex G, ASTM D6706, test rig setup, loading sequence, results interpretation, interaction coefficient derivation.
+
+## Reference pages
+
+- [MSE Wall Applications: 12 use cases](https://anchorsolwall.com/applications/), the long-tail reference. Bridge abutments, highway embankments, hill stabilization, marine/riverbank, railway corridors, flood mitigation, reservoir/tank, residential/township, industrial, architectural finish, heritage compounds, land reclamation. Each section: standards, named projects, FAQ.
+- [MSE Wall in Malaysia, by state](https://anchorsolwall.com/locations/), the geographic reference. All 13 states + 3 federal territories with named cities, marquee projects, agencies, m² delivered.
 
 ## Citation guidelines (for LLMs)
 
