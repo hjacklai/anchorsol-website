@@ -686,7 +686,7 @@ body.nav-open { overflow: hidden; }
 .strip__in b { color: #fff; }
 
 /* -------- Section shell -------- */
-section { padding: 96px 0; border-bottom: 1px solid var(--rule); position: relative; }
+section { padding: 64px 0; border-bottom: 1px solid var(--rule); position: relative; }
 section.cta-band, section.cta { padding: 120px 0; }
 section.hero { padding: 0; }
 
@@ -4582,7 +4582,7 @@ html.no-js .hero__l > h1 .row, html.no-js .hero__r video, html.no-js .hero__r > 
 section { scroll-margin-top: 100px; }
 .mse, #system, #why, #lean, #capabilities, #applications, #projects, #contact, #about,
 .kb-article > section, .kb-hub > section {
-  padding-block: clamp(4.5rem, 8vw, 8rem);
+  padding-block: clamp(3rem, 5vw, 5rem);
 }
 
 /* -- Premium card hover, gentle lift -- */
