@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Pullout Testing for MSE Walls: BS 8006 Annex G, ASTM D6706 (Malaysia)</title>
+<meta name="description" content="Pullout testing protocol for MSE walls: BS 8006 Annex G procedure, ASTM D6706 setup, test rig geometry, loading sequence, results interpretation, interaction coefficient calculation. Malaysian practice." />
+<meta name="keywords" content="MSE wall pullout test, pullout testing geosynthetic, BS 8006 Annex G, ASTM D6706, soil reinforcement pullout, interaction coefficient, reinforcement pullout test, anchored MSE pullout" />
+<meta name="theme-color" content="#0a1426" />
+<link rel="canonical" href="https://anchorsolwall.com/learn/pullout-testing-mse-walls.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="AnchorSOL® Wall" />
+<meta property="og:locale" content="en_MY" />
+<meta property="og:title" content="Pullout Testing for MSE Walls: BS 8006 Annex G, ASTM D6706" />
+<meta property="og:description" content="Test rig, loading sequence, results interpretation. The procedure that calibrates the interaction coefficient used in design." />
+<meta property="og:image" content="https://anchorsolwall.com/assets/images/Reinforcement.jpg" />
+<meta property="og:url" content="https://anchorsolwall.com/learn/pullout-testing-mse-walls.html" />
+<meta property="article:author" content="AnchorSOL® Wall Sdn. Bhd." />
+<meta property="article:published_time" content="2026-05-12" />
+<meta property="article:section" content="Engineering" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="../favicon.png" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
+<link rel="stylesheet" href="../css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://anchorsolwall.com/learn/pullout-testing-mse-walls.html#article",
+      "headline": "Pullout Testing for MSE Walls: BS 8006 Annex G, ASTM D6706",
+      "description": "Pullout testing procedure for MSE wall reinforcement: test rig, loading sequence, results interpretation, interaction coefficient.",
+      "image": "https://anchorsolwall.com/assets/images/Reinforcement.jpg",
+      "datePublished": "2026-05-12",
+      "dateModified": "2026-05-12",
+      "author": [
+        {"@type": "Person", "@id": "https://anchorsolwall.com/#founder", "name": "Dr. Ir. Lai Yip Poon", "jobTitle": "Founder, Chief Designer & Managing Director", "worksFor": {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}, "knowsAbout": ["Mechanically Stabilized Earth walls", "Anchored Soil retention", "Slope stability", "Geotechnical engineering", "Ground improvement"]},
+        {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}
+      ],
+      "publisher": {"@id": "https://anchorsolwall.com/#organization"},
+      "mainEntityOfPage": "https://anchorsolwall.com/learn/pullout-testing-mse-walls.html",
+      "wordCount": 1900,
+      "inLanguage": "en-MY"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anchorsolwall.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Knowledge Base", "item": "https://anchorsolwall.com/learn/"},
+        {"@type": "ListItem", "position": 3, "name": "Pullout Testing for MSE Walls", "item": "https://anchorsolwall.com/learn/pullout-testing-mse-walls.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is a pullout test in MSE wall design?",
+         "acceptedAnswer": {"@type": "Answer", "text": "A pullout test measures the resistance of a reinforcement strip (steel strip, geogrid, or anchored tendon) to being pulled out of confined backfill. The reinforcement is embedded in a large soil box, the box is loaded with vertical confining pressure to simulate the overburden at the relevant depth in the wall, and the reinforcement is pulled by a hydraulic jack while load and displacement are measured. The result is used to derive the interaction coefficient that calibrates pullout resistance in the wall design."}},
+        {"@type": "Question", "name": "What is the standard procedure for an MSE wall pullout test?",
+         "acceptedAnswer": {"@type": "Answer", "text": "The two standard procedures are BS 8006-1:2010 Annex G (UK, used in Malaysian practice) and ASTM D6706 (US, widely cited in FHWA NHI-10-024). Both prescribe a soil box of minimum dimensions (typically 1.5 m wide x 1.5 m long x 0.6 m deep), a confining pressure applied via a top plate, embedment length of the reinforcement equal to the planned in-wall length, displacement-controlled pullout at a slow rate (typically 1 mm/min), and continuous measurement of pullout load and displacement."}},
+        {"@type": "Question", "name": "How are pullout test results used in MSE wall design?",
+         "acceptedAnswer": {"@type": "Answer", "text": "The peak pullout load divided by the resisting area (2 x reinforcement length x reinforcement width for two-sided strips, or 2 x length x width for geogrids) gives the unit pullout resistance. Dividing this by 2 x sigma_v x tan(phi) gives the interaction coefficient alpha, which directly enters the design equation Pr = 2 x Le x alpha x sigma_v x tan(phi). Typical alpha values run 0.6 to 1.2 depending on reinforcement type, surface texture, and backfill gradation."}}
+      ]
+    }
+  ]
+}
+</script>
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_CODE" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBPBK6RL1G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DBPBK6RL1G', { anonymize_ip: true });
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="nav"><div class="wrap"><div class="nav__in">
+  <a class="brand" href="../" aria-label="AnchorSOL Wall, Home">
+    <img src="../assets/images/logo-white.png" alt="" data-no-picture decoding="async">
+    <span class="wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
+  </a>
+</div></div></header>
+
+<main id="main" class="article">
+<div class="wrap article__wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="../">Home</a> · <a href="./">Knowledge Base</a> · <span>Pullout Testing for MSE Walls</span>
+</nav>
+
+<article>
+<header class="article__head">
+  <span class="article__tag">Testing &amp; QA guide</span>
+  <h1>Pullout testing for MSE walls: BS 8006 Annex G and ASTM D6706.</h1>
+  <p class="article__lede">The pullout test is the most important element-level test in MSE wall design. The internal stability of the wall depends entirely on each reinforcement layer staying anchored in the resistant zone behind the active wedge, and the pullout test is what calibrates the equation that predicts this. <b>BS 8006-1:2010 Annex G</b> and <b>ASTM D6706</b> are the two reference procedures. This guide explains the test rig, the loading sequence, the data reduction, and how the results feed back into the wall design.</p>
+  <p class="article__meta">By <b>Dr. Ir. Lai Yip Poon</b>, Founder & Chief Designer · AnchorSOL® Wall Sdn. Bhd. · ~8 min read</p>
+</header>
+
+<section>
+<h2>Why pullout testing matters</h2>
+<p>The internal stability design equation for friction-based MSE is:</p>
+<p><b>P_r = 2 · L_e · α · σ_v · tan(φ)</b></p>
+<p>where P_r is the pullout resistance per metre of reinforcement, L_e is the embedded length beyond the active wedge, σ_v is the effective vertical stress (the overburden pressure), φ is the friction angle of the backfill, and <b>α (alpha) is the interaction coefficient</b>. Alpha captures everything that's not soil-on-soil friction: the reinforcement geometry, the surface texture, the bond between the soil grains and the reinforcement at the interface, the difference between active failure and pull-out failure.</p>
+<p>For a smooth flat strip, α might be 0.4 to 0.6. For a ribbed steel strip, 0.8 to 1.2. For a punched-and-drawn geogrid, 0.7 to 1.0. The only way to know α for a specific reinforcement-backfill combination is to test it.</p>
+<p>For anchored MSE walls (AnchorSOL®), the pullout resistance is not governed by α at all, it's governed by the passive earth pressure at the deadman block. But the AnchorSOL® system is still tested with element-level pull-out tests to verify the tendon-to-deadman connection capacity and the passive resistance mobilisation under realistic backfill conditions.</p>
+</section>
+
+<section>
+<h2>The standards</h2>
+<table class="article__table">
+<thead><tr><th>Standard</th><th>Origin</th><th>Scope</th></tr></thead>
+<tbody>
+<tr><td><b>BS 8006-1:2010 Annex G</b></td><td>UK (BSI)</td><td>Pullout testing for reinforced soil applications, the Malaysian-practice default</td></tr>
+<tr><td><b>ASTM D6706</b></td><td>US (ASTM)</td><td>Standard test method for pullout resistance of geosynthetic reinforcement in soil</td></tr>
+<tr><td><b>EN 13738</b></td><td>Europe (CEN)</td><td>Pullout test for geosynthetics in soil, European equivalent of ASTM D6706</td></tr>
+<tr><td><b>FHWA NHI-10-024</b></td><td>US (Federal Highway Admin)</td><td>Parametric design tables for α derived from a database of pullout tests</td></tr>
+</tbody>
+</table>
+<p>On Malaysian projects, BS 8006 Annex G is the procedure cited in tenders. ASTM D6706 is broadly compatible and the FHWA database is a useful sanity check on test results.</p>
+</section>
+
+<section>
+<h2>The test rig</h2>
+<p>A pullout test rig consists of five components:</p>
+
+<h3>The soil box</h3>
+<p>A rigid steel box of typical dimensions 1.5 m wide × 1.5 m long × 0.6 to 1.0 m deep. The reinforcement is embedded along the centreline of the box. The walls of the box are lined with low-friction membranes (greased polyethylene) to reduce side-wall friction that would otherwise corrupt the result.</p>
+
+<h3>The confining pressure system</h3>
+<p>A top plate, loaded by hydraulic jacks or dead-weight to apply a uniform vertical pressure on the backfill. Typical confining pressures range from 25 kPa (for shallow reinforcement) to 200 kPa (for deep reinforcement). The wall design's internal stability check requires α values at the deepest reinforcement level, so tests are commonly run at the upper end of this range.</p>
+
+<h3>The pullout assembly</h3>
+<p>A hydraulic actuator outside the box that grips the reinforcement and pulls it through a slot in the box wall. Modern rigs use a servo-controlled actuator with displacement control. The grip on the reinforcement must be strong enough not to slip at the design pullout load (which is typically 50 to 200 kN for the size of reinforcement used in MSE walls).</p>
+
+<h3>The instrumentation</h3>
+<ul>
+<li><b>Load cell</b> in series with the pullout actuator, recording total pullout force</li>
+<li><b>Displacement transducer (LVDT)</b> on the reinforcement clamp, recording head displacement</li>
+<li>Optional: <b>strain gauges along the embedded reinforcement</b>, recording strain distribution along the length (this gives the load transfer profile, not just the average resistance)</li>
+<li>Optional: <b>earth pressure cells</b> in the backfill, recording lateral pressure at the reinforcement interface</li>
+</ul>
+
+<h3>The backfill</h3>
+<p>The backfill in the box must match the project's reinforced-fill spec: friction angle, gradation, moisture content, compaction. Standard practice is to compact in lifts to 95% of modified Proctor density at optimum moisture, identical to site practice.</p>
+</section>
+
+<section>
+<h2>The procedure</h2>
+
+<h3>Preparation</h3>
+<ol>
+<li>Sample the project's reinforced-fill material, characterise gradation and compaction</li>
+<li>Place reinforcement at the centreline of the soil box at the planned in-wall length (or a representative length, typically 1.0 m of embedded length beyond the box mouth)</li>
+<li>Backfill in lifts of 100 to 150 mm, compact to 95% modified Proctor at optimum moisture, level the top surface</li>
+<li>Install the top plate and apply the confining pressure incrementally to the target value</li>
+<li>Allow consolidation (typically 24 hours minimum) before pullout</li>
+</ol>
+
+<h3>The pullout phase</h3>
+<ol>
+<li>Apply pullout displacement at a slow controlled rate, typically 1 mm/min</li>
+<li>Record pullout load and head displacement continuously</li>
+<li>Continue until either (a) peak load is reached and load drops by 20%, or (b) head displacement reaches 100 mm</li>
+<li>If using strain gauges along the reinforcement, record the strain distribution at multiple load steps to capture the load-transfer profile</li>
+</ol>
+
+<h3>Repeat tests</h3>
+<p>The standards require multiple tests at different confining pressures (typically 3 to 5 values across the design range) to derive α as a function of σ_v. They also require repeat tests at each confining pressure (typically 3) to capture scatter.</p>
+</section>
+
+<section>
+<h2>Data reduction and interpretation</h2>
+
+<h3>Peak pullout load and design pullout resistance</h3>
+<p>For each test, identify the peak pullout load P_peak. The unit pullout resistance is:</p>
+<p>τ_pullout = P_peak / (2 · L_e · b)</p>
+<p>where L_e is the embedded length (the length actually inside the box beyond the box mouth), b is the width of the reinforcement, and the factor of 2 accounts for both sides of the strip contributing to resistance (for one-sided reinforcement like geogrids embedded between two soil layers, the factor of 2 still applies because both top and bottom surfaces engage with the backfill).</p>
+
+<h3>Interaction coefficient α</h3>
+<p>The interaction coefficient is the ratio of the measured pullout shear resistance to the theoretical soil-on-soil shear resistance at the same confining pressure:</p>
+<p>α = τ_pullout / (σ_v · tan(φ))</p>
+<p>For each test, calculate α at peak load. Plot α vs σ_v to confirm whether α is approximately constant across the design range or varies with confining pressure. For most reinforcement types, α decreases slowly as σ_v increases (dilatancy suppression at high confining pressure).</p>
+
+<h3>Typical α values</h3>
+<table class="article__table">
+<thead><tr><th>Reinforcement</th><th>Backfill</th><th>α (typical range)</th></tr></thead>
+<tbody>
+<tr><td>Smooth flat steel strip</td><td>Sand, φ = 35°</td><td>0.4 to 0.6</td></tr>
+<tr><td>Ribbed (deformed) steel strip</td><td>Sand or gravel, φ = 35 to 40°</td><td>0.8 to 1.4</td></tr>
+<tr><td>Deformed steel bar (AnchorSOL® tendon)</td><td>Crusher run, φ = 34 to 36°</td><td>1.0 to 1.5 (plus passive resistance at deadman)</td></tr>
+<tr><td>HDPE punched-and-drawn geogrid</td><td>Sand or gravel, φ = 35°</td><td>0.7 to 1.0</td></tr>
+<tr><td>PET woven geogrid</td><td>Sand or gravel, φ = 35°</td><td>0.6 to 0.9</td></tr>
+<tr><td>Steel welded wire mesh</td><td>Sand or gravel, φ = 35 to 40°</td><td>1.0 to 1.6</td></tr>
+</tbody>
+</table>
+<p>These ranges are indicative. Project-specific testing is required where the backfill or reinforcement is non-standard.</p>
+
+<h3>Load-displacement curve interpretation</h3>
+<p>The shape of the pullout load-displacement curve reveals the failure mechanism:</p>
+<ul>
+<li><b>Ductile (gradual peak followed by slow softening)</b>, typical of friction-based reinforcement in well-graded granular backfill. The reinforcement progressively yields at the most-loaded end and load redistributes along the length.</li>
+<li><b>Brittle (sharp peak followed by rapid drop)</b>, typical of bonded interfaces or rigid anchorages. The connection breaks at peak load and resistance falls off rapidly.</li>
+<li><b>Strain-hardening (load continues to climb past initial peak)</b>, typical of dilatant backfill at low confining pressure, where the soil dilates against the reinforcement and mobilises additional resistance.</li>
+</ul>
+</section>
+
+<section>
+<h2>Pullout testing for AnchorSOL® systems</h2>
+<p>The AnchorSOL® anchored MSE system is verified with two test programmes:</p>
+<ol>
+<li><b>Tendon-to-fill friction tests</b>, similar to a conventional MSE pullout test, to confirm that the tendon transfers load to the backfill at the design rate. Typical α values 1.0 to 1.5 for the deformed-bar tendon in crusher-run backfill.</li>
+<li><b>Deadman passive-resistance tests</b>, where a deadman block of design dimensions is embedded in the backfill and the tendon is pulled. This measures the passive earth pressure mobilised at the design displacement. Test results validate the design equation P_r = (K_p − K_a) · γ · z · A_block where A_block is the projected area of the deadman block normal to the pull direction.</li>
+</ol>
+<p>Both tests are run during the design development phase, on first-of-kind applications, and where the project specification requires it.</p>
+</section>
+
+<section>
+<h2>Frequently asked questions</h2>
+
+<h3>Do I need to run a pullout test for every MSE wall project?</h3>
+<p>No. The standard practice is to use established α values from a previous test programme or from the FHWA database, with project-specific verification only if the backfill is unusual or the reinforcement is non-standard. AnchorSOL® has a calibrated α database for its tendon system across the typical range of Malaysian crusher-run backfills.</p>
+
+<h3>How long does a pullout test programme take?</h3>
+<p>A full programme of 15 to 20 tests (5 confining pressures × 3 repeats, plus calibration) takes 4 to 6 weeks including soil box preparation, backfill placement and consolidation, the pullout phase, and data reduction.</p>
+
+<h3>What confining pressure should I test at?</h3>
+<p>Test at the range of σ_v values that match the design wall. For a 10 m wall on level ground, that's roughly 0 to 200 kPa effective vertical stress at depth, with the deepest reinforcement seeing the highest pressure. Tests at 25, 50, 100, and 200 kPa cover most design ranges.</p>
+
+<h3>Can pullout tests be run in the field instead of the lab?</h3>
+<p>Yes, in principle, but rare. Field pullout tests on instrumented wall sections give a more realistic boundary condition than a lab box, but the difficulty of controlling the confining pressure and backfill density makes the lab test the practical default for design calibration.</p>
+</section>
+
+</article>
+
+<aside class="article__related">
+  <span class="tech-label">Read next</span>
+  <div class="article__related-grid">
+    <a class="kb-card" href="mse-wall-design.html">
+      <span class="kb-card__tag">Design guide</span>
+      <h3>MSE Wall Design Methodology</h3>
+      <p>External + internal stability, BS 8006 limit-state framework, pullout in context.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="load-testing-mse-walls.html">
+      <span class="kb-card__tag">Testing</span>
+      <h3>Load Testing for MSE Walls</h3>
+      <p>Static, cyclic, and in-service monitoring. The full QA stack.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="../projects/">
+      <span class="kb-card__tag">Field record</span>
+      <h3>Reinforcement proven in service</h3>
+      <p>The tendon-deadman system tested on 500+ AnchorSOL® projects since 1999.</p>
+      <span class="kb-card__cta">Browse portfolio →</span>
+    </a>
+  </div>
+</aside>
+
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="grid">
+    <div>
+      <h4>AnchorSOL® Wall</h4>
+      <p>Malaysia's most-specified anchored MSE wall. Modular precast, factory-built, mobilised lean. Since 1999.</p>
+    </div>
+    <div>
+      <h4>System</h4>
+      <ul>
+        <li><a href="../#system">The System</a></li>
+        <li><a href="../applications/">Applications</a></li>
+        <li><a href="../projects/">All projects (500+)</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#contact">Contact</a></li>
+        <li><a href="./">Knowledge Base</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <span>© 2026 AnchorSOL® Wall Sdn. Bhd. · 199901015121 (490021-M)</span>
+    <span>ENGINEERED TO RETAIN EARTH.</span>
+  </div>
+</div></footer>
+
+<nav class="tabbar" aria-label="Section navigation">
+  <div class="tabbar__scroll">
+    <a class="tabbar__tab" href="../#hero"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 11 L12 3 L21 11"/><path d="M5 10 V21 H19 V10"/></svg><span class="tabbar__lbl">Home</span></a>
+    <a class="tabbar__tab" href="../#mse"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8 V8.01" stroke-width="2.5"/><path d="M12 11 V17"/></svg><span class="tabbar__lbl">Basics</span></a>
+    <a class="tabbar__tab" href="../#system"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="tabbar__lbl">System</span></a>
+    <a class="tabbar__tab" href="../applications/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 L3 8 L12 13 L21 8 L12 3 Z"/><path d="M3 12 L12 17 L21 12"/><path d="M3 16 L12 21 L21 16"/></svg><span class="tabbar__lbl">Apps</span></a>
+    <a class="tabbar__tab" href="../#why"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 V21"/><path d="M6 8 H18"/><path d="M3 14 L6 8 L9 14 Z"/><path d="M15 14 L18 8 L21 14 Z"/></svg><span class="tabbar__lbl">Compare</span></a>
+    <a class="tabbar__tab" href="../#lean"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M13 2 L4 14 H11 L11 22 L20 10 H13 L13 2 Z"/></svg><span class="tabbar__lbl">Lean</span></a>
+    <a class="tabbar__tab" href="../projects/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 16 L8 11 L13 16 L17 12 L21 16"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/></svg><span class="tabbar__lbl">Projects</span></a>
+    <a class="tabbar__tab" href="../#about"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21 V19 C4 16 7 14 12 14 C17 14 20 16 20 19 V21"/></svg><span class="tabbar__lbl">About</span></a>
+    <a class="tabbar__tab" href="../#contact"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="6" width="18" height="13"/><path d="M3 7 L12 14 L21 7"/></svg><span class="tabbar__lbl">Contact</span></a>
+    <a class="tabbar__tab is-active" href="./"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4 H12 V20 H4 Z"/><path d="M12 4 H20 V20 H12 Z"/><path d="M4 8 L20 8" stroke-dasharray="2 2"/></svg><span class="tabbar__lbl">Learn</span></a>
+    <a class="tabbar__tab tabbar__tab--whatsapp" href="https://wa.me/60122362159?text=Hi%20AnchorSOL%2C%20project%20enquiry%20from%20your%20website." target="_blank" rel="noopener"><span class="tabbar__icon-wrap"><span class="tabbar__pulse" aria-hidden="true"></span><svg class="tabbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg></span><span class="tabbar__lbl">Chat</span></a>
+  </div>
+</nav>
+
+<script src="../js/site.js" defer></script>
+</body>
+</html>
