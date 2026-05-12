@@ -429,11 +429,9 @@
     var ex = extras(title, qty);
     var here = siteHook(ex, locTxt);   // e.g., " at Cheras (Fasa 2A) along KM10"
     var sz = scaleHook(ex);            // e.g., ", a headline-scale corridor by m²,"
-    // Specific client + contractor names if present in data
-    var client = cleanField(p.client || '');
-    var contractor = cleanField(p.contractor || '');
-    var clientHook = client ? ' Specified by <b>' + client + '</b>.' : '';
-    var contractorHook = contractor ? ' Delivered with main contractor <b>' + contractor + '</b>.' : '';
+    // Client + contractor stay in the meta row, not inline in the prose
+    var clientHook = '';
+    var contractorHook = '';
 
     var constraint, solution;
 
@@ -528,8 +526,6 @@
       html +=   '<div class="proj-row__body">';
       html +=     '<h4>' + title + '</h4>';
       html +=     '<div class="proj-row__meta">';
-      if (client)     html += '<span class="proj-row__client"><b>Client:</b> ' + client + '</span>';
-      if (contractor) html += '<span class="proj-row__client"><b>Main contractor:</b> ' + contractor + '</span>';
       if (qty)        html += '<span class="proj-row__qty"><b>Wall area:</b> ' + qty + ' m²</span>';
       html +=     '</div>';
       html +=     '<p class="proj-row__solution"><b>Constraint:</b> ' + copy.constraint + '</p>';
