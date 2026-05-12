@@ -1988,8 +1988,8 @@ section.hero { padding: 0; }
   grid-area: title;
   font-family: var(--ff-display);
   font-weight: 900;
-  font-size: 32px;
-  letter-spacing: -.025em;
+  font-size: clamp(18px, 2.2vw, 24px);
+  letter-spacing: -.02em;
   text-transform: uppercase;
   color: var(--ink);
   line-height: 1.05;
@@ -2039,8 +2039,10 @@ section.hero { padding: 0; }
 
 @media (max-width: 600px) {
   .contact-cta { padding: 28px 24px; }
-  .contact-cta__title { font-size: 24px; }
-  .contact-cta__icon { width: 40px; height: 40px; }
+  .contact-cta__title { font-size: 18px; }
+  .contact-cta__icon { width: 36px; height: 36px; }
+  .contact-cta__eyebrow { font-size: 10px; }
+  .contact-cta__sub { font-size: 11px; }
 }
 
 /* -------- Press card -------- */
