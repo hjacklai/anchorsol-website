@@ -27,7 +27,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="image" href="assets/videos/wall-linear-poster.jpg" fetchpriority="high" />
 <link rel="preload" as="video" href="assets/videos/wall-linear.mp4" type="video/mp4" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
 <link rel="stylesheet" href="css/style.css" />
 <!-- Cloudflare Web Analytics (privacy-friendly, no cookies, no banner) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_CF_ANALYTICS_TOKEN"}'></script>
@@ -213,7 +215,7 @@
 <!-- NAV -->
 <header class="nav"><div class="wrap"><div class="nav__in">
   <a class="brand" href="#" aria-label="AnchorSOL Wall, Home">
-    <img src="assets/images/logo-white.png" alt="" data-no-picture />
+    <img src="assets/images/logo-white.png" alt="" data-no-picture decoding="async">
     <span class="wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
   </a>
 </div></div></header>
@@ -241,7 +243,7 @@
            width="1280" height="720"
            aria-label="AnchorSOL® Wall at Central Park Damansara, drone aerial">
       <source src="assets/videos/wall-linear.mp4" type="video/mp4">
-      <img src="assets/videos/wall-linear-poster.jpg" alt="AnchorSOL Wall at Central Park Damansara, drone aerial" />
+      <img src="assets/videos/wall-linear-poster.jpg" fetchpriority="high" alt="AnchorSOL Wall at Central Park Damansara, drone aerial" decoding="async">
     </video>
     <div class="ovl">
       <h4>CENTRAL PARK DAMANSARA</h4>
@@ -303,19 +305,19 @@
     </div>
     <div class="mse__pics">
       <figure class="mse__pic">
-        <img src="assets/images/Components-04-1.jpg" alt="Octagonal precast facing panels stacked in factory yard" loading="lazy" />
+        <img src="assets/images/Components-04-1.jpg" alt="Octagonal precast facing panels stacked in factory yard" loading="lazy" decoding="async">
         <figcaption><b>01</b> · Precast facing in factory</figcaption>
       </figure>
       <figure class="mse__pic">
-        <img src="assets/images/Reinforcement.jpg" alt="Steel soil reinforcement" loading="lazy" />
+        <img src="assets/images/Reinforcement.jpg" alt="Steel soil reinforcement" loading="lazy" decoding="async">
         <figcaption><b>02</b> · Steel soil reinforcement</figcaption>
       </figure>
       <figure class="mse__pic">
-        <img src="assets/images/AnchorBlock-01.jpg" alt="Deadman anchor block" loading="lazy" />
+        <img src="assets/images/AnchorBlock-01.jpg" alt="Deadman anchor block" loading="lazy" decoding="async">
         <figcaption><b>03</b> · Deadman anchor block</figcaption>
       </figure>
       <figure class="mse__pic">
-        <img src="assets/images/RetainingWall-15-1.jpg" alt="MSE wall in service" loading="lazy" />
+        <img src="assets/images/RetainingWall-15-1.jpg" alt="MSE wall in service" loading="lazy" decoding="async">
         <figcaption><b>04</b> · Composite mass in service</figcaption>
       </figure>
     </div>
@@ -478,7 +480,7 @@
   <div class="usecases-grid">
 
     <article class="usecase">
-      <div class="usecase__media"><img src="assets/images/RoadEmbmt-11.jpg" alt="AnchorSOL wall on a federal highway embankment" loading="lazy" width="800" height="533" /></div>
+      <div class="usecase__media"><img src="assets/images/RoadEmbmt-11.jpg" alt="AnchorSOL wall on a federal highway embankment" loading="lazy" width="800" height="533" decoding="async"></div>
       <div class="usecase__body">
         <span class="usecase__eyebrow">Long-run linear retention at scale?</span>
         <h3 class="usecase__title">Highway Embankments</h3>
@@ -490,7 +492,7 @@
     </article>
 
     <article class="usecase">
-      <div class="usecase__media"><img src="assets/images/BridgeAbmt-04-2.jpg" alt="AnchorSOL bridge abutment wall with inverted-T precast facing" loading="lazy" width="800" height="533" /></div>
+      <div class="usecase__media"><img src="assets/images/BridgeAbmt-04-2.jpg" alt="AnchorSOL bridge abutment wall with inverted-T precast facing" loading="lazy" width="800" height="533" decoding="async"></div>
       <div class="usecase__body">
         <span class="usecase__eyebrow">Structural transition at the deck?</span>
         <h3 class="usecase__title">Bridge Abutments</h3>
@@ -502,7 +504,7 @@
     </article>
 
     <article class="usecase">
-      <div class="usecase__media"><img src="assets/images/HillWall-2.jpg" alt="AnchorSOL wall stabilising a sloped hillside, creating a buildable platform" loading="lazy" width="800" height="533" /></div>
+      <div class="usecase__media"><img src="assets/images/HillWall-2.jpg" alt="AnchorSOL wall stabilising a sloped hillside, creating a buildable platform" loading="lazy" width="800" height="533" decoding="async"></div>
       <div class="usecase__body">
         <span class="usecase__eyebrow">Sloped hillside, no flat ground?</span>
         <h3 class="usecase__title">Hill Stabilisation</h3>
@@ -514,7 +516,7 @@
     </article>
 
     <article class="usecase">
-      <div class="usecase__media"><img src="assets/images/Submerged-04.jpg" alt="AnchorSOL wall at a riverbank with marine retention" loading="lazy" width="800" height="533" /></div>
+      <div class="usecase__media"><img src="assets/images/Submerged-04.jpg" alt="AnchorSOL wall at a riverbank with marine retention" loading="lazy" width="800" height="533" decoding="async"></div>
       <div class="usecase__body">
         <span class="usecase__eyebrow">Building next to water?</span>
         <h3 class="usecase__title">Submerged &amp; Marine</h3>
@@ -526,7 +528,7 @@
     </article>
 
     <article class="usecase">
-      <div class="usecase__media"><img src="assets/images/proj_ktm_sungai_buaya.jpg" alt="AnchorSOL wall under a national rail corridor" loading="lazy" width="800" height="533" /></div>
+      <div class="usecase__media"><img src="assets/images/proj_ktm_sungai_buaya.jpg" alt="AnchorSOL wall under a national rail corridor" loading="lazy" width="800" height="533" decoding="async"></div>
       <div class="usecase__body">
         <span class="usecase__eyebrow">Cyclic + seismic loads to design for?</span>
         <h3 class="usecase__title">Under-Railway &amp; Heavy Civils</h3>
@@ -538,7 +540,7 @@
     </article>
 
     <article class="usecase">
-      <div class="usecase__media"><img src="assets/images/RetainingWall-18.jpg" alt="AnchorSOL wall with architectural finish and custom logo cast into precast panel" loading="lazy" width="800" height="533" /></div>
+      <div class="usecase__media"><img src="assets/images/RetainingWall-18.jpg" alt="AnchorSOL wall with architectural finish and custom logo cast into precast panel" loading="lazy" width="800" height="533" decoding="async"></div>
       <div class="usecase__body">
         <span class="usecase__eyebrow">Architect needs a finish?</span>
         <h3 class="usecase__title">Architectural &amp; Custom</h3>
@@ -633,7 +635,7 @@
     <div class="lean-process__strip">
       <figure class="lean-step">
         <span class="lean-step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="9" width="18" height="12"/><path d="M3 9 L7 4 H17 L21 9"/><rect x="9" y="13" width="6" height="8"/></svg></span>
-        <img src="assets/images/Components-03.jpg" alt="Precast facing panels cast in controlled factory" loading="lazy" />
+        <img src="assets/images/Components-03.jpg" alt="Precast facing panels cast in controlled factory" loading="lazy" decoding="async">
         <figcaption>
           <h4>Factory cast</h4>
           <p>Inverted-T or octagonal facing panels poured in a controlled plant, Grade 30 MPa, no on-site curing, architectural finishes available.</p>
@@ -641,7 +643,7 @@
       </figure>
       <figure class="lean-step">
         <span class="lean-step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="2" y="9" width="13" height="9"/><path d="M15 12 H19 L22 15 V18 H15"/><circle cx="6" cy="20" r="2"/><circle cx="18" cy="20" r="2"/></svg></span>
-        <img src="assets/images/Industry-02.jpg" alt="Lean mobilisation, panels delivered direct to site" loading="lazy" />
+        <img src="assets/images/Industry-02.jpg" alt="Lean mobilisation, panels delivered direct to site" loading="lazy" decoding="async">
         <figcaption>
           <h4>Lean mobilised</h4>
           <p>Panels and tendons road-freighted just-in-time. No staging yard. Smaller working aisle than RC. Less site disruption.</p>
@@ -649,7 +651,7 @@
       </figure>
       <figure class="lean-step">
         <span class="lean-step__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 20 V18 C3 15 6 13 9 13 C12 13 15 15 15 18 V20"/><path d="M16 20 V18 C16 16 17 15 19 15 C20.5 15 21 16 21 18 V20"/></svg></span>
-        <img src="assets/images/EffectiveProgress.jpg" alt="Site erection of an AnchorSOL wall" loading="lazy" />
+        <img src="assets/images/EffectiveProgress.jpg" alt="Site erection of an AnchorSOL wall" loading="lazy" decoding="async">
         <figcaption>
           <h4>Erected, no vibration</h4>
           <p>3–4 person crew. Each layer placed, tendon attached, deadman anchor block buried. Crusher-run backfill compacted by hand or mini-compactor, no heavy vibration plant on site.</p>
@@ -782,39 +784,39 @@
   </div>
   <div class="proj">
     <a class="proj__a proj__lead" href="#contact">
-      <img src="assets/images/templer-hills-img.jpg" alt="Templer Hills retaining wall" loading="lazy" />
+      <img src="assets/images/templer-hills-img.jpg" alt="Templer Hills retaining wall" loading="lazy" decoding="async">
       <div class="proj__cap"><span class="proj__tag">[ Lead project ]</span><h5>Templer Hills</h5><span>Hill stabilisation · Selangor</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/istana-negara-1.jpg" alt="Istana Negara" loading="lazy" />
+      <img src="assets/images/istana-negara-1.jpg" alt="Istana Negara" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>Istana Negara</h5><span>National Palace · Kuala Lumpur</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/Submerged-04.jpg" alt="AnchorSOL urban riverbank wall, Malaysia" loading="lazy" />
+      <img src="assets/images/Submerged-04.jpg" alt="AnchorSOL urban riverbank wall, Malaysia" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>Urban Riverbank</h5><span>Riverbank retention · Malaysia</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/proj_jkr_bandar_sri_iskandar.jpg" alt="JKR Bandar Sri Iskandar federal road wall" loading="lazy" />
+      <img src="assets/images/proj_jkr_bandar_sri_iskandar.jpg" alt="JKR Bandar Sri Iskandar federal road wall" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>Bandar Sri Iskandar</h5><span>JKR federal road · Perak</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/proj_nkve_jalan_meru.jpg" alt="NKVE Jalan Meru Link expressway wall" loading="lazy" />
+      <img src="assets/images/proj_nkve_jalan_meru.jpg" alt="NKVE Jalan Meru Link expressway wall" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>NKVE Jalan Meru</h5><span>PLUS expressway · Selangor</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/Submerged-img-03-1.jpg" alt="Sungai Buaya KTM rail corridor wall" loading="lazy" />
+      <img src="assets/images/Submerged-img-03-1.jpg" alt="Sungai Buaya KTM rail corridor wall" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>Sungai Buaya</h5><span>KTMB rail corridor · Selangor</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/proj_kajang_private_dev.jpg" alt="Kajang private residential development wall" loading="lazy" />
+      <img src="assets/images/proj_kajang_private_dev.jpg" alt="Kajang private residential development wall" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>Kajang Residential</h5><span>Private development · Selangor</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/IpohWall-img-1.jpg" alt="Ipoh Sultan Iskandar interchange wall" loading="lazy" />
+      <img src="assets/images/IpohWall-img-1.jpg" alt="Ipoh Sultan Iskandar interchange wall" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>Ipoh Interchange</h5><span>Highway retention · Perak</span></div>
     </a>
     <a class="proj__t" href="#contact">
-      <img src="assets/images/ArchBridge-01-1.jpg" alt="Arch bridge abutment" loading="lazy" />
+      <img src="assets/images/ArchBridge-01-1.jpg" alt="Arch bridge abutment" loading="lazy" decoding="async">
       <div class="proj__cap"><h5>Arch Bridge</h5><span>Bridge abutment · Kuala Lumpur</span></div>
     </a>
   </div>
@@ -864,7 +866,7 @@
 
   <!-- Founder portrait stays on top, takes natural width -->
   <div class="about-portrait about-portrait--centered">
-    <img src="assets/images/dr_lai_yip_poon.webp" alt="Dr. Ir. Lai Yip Poon, Founder, Chief Designer & CEO of AnchorSOL Wall Sdn. Bhd." loading="lazy" />
+    <img src="assets/images/dr_lai_yip_poon.webp" alt="Dr. Ir. Lai Yip Poon, Founder, Chief Designer & CEO of AnchorSOL Wall Sdn. Bhd." loading="lazy" decoding="async">
     <div class="about-portrait__cap">
       <span class="tech-label">Founder · Chief Designer · MD</span>
       <h4>Dr. Ir. Lai Yip Poon</h4>
@@ -987,7 +989,7 @@
   <div class="grid">
     <div>
       <a class="footer-logo" href="#" aria-label="AnchorSOL Wall, Home">
-        <img src="assets/images/logo-white.png" alt="" data-no-picture />
+        <img src="assets/images/logo-white.png" alt="" data-no-picture decoding="async">
         <span class="footer-logo__wm">
           <span>ANCHORSOL<sup>®</sup></span>
           <small>WALL SYSTEMS · EST. 1999</small>

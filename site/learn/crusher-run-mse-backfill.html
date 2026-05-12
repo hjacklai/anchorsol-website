@@ -22,7 +22,9 @@
 <link rel="icon" type="image/png" href="../favicon.png" sizes="any" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
 <link rel="stylesheet" href="../css/style.css" />
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_CF_ANALYTICS_TOKEN"}'></script>
 <script type="application/ld+json">
@@ -75,7 +77,7 @@
 
 <header class="nav"><div class="wrap"><div class="nav__in">
   <a class="brand" href="../" aria-label="AnchorSOL Wall, Home">
-    <img src="../assets/images/logo-white.png" alt="" data-no-picture />
+    <img src="../assets/images/logo-white.png" alt="" data-no-picture decoding="async">
     <span class="wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
   </a>
   </div></div>
@@ -235,7 +237,7 @@
   <div class="grid">
     <div>
       <a class="footer-logo" href="../" aria-label="AnchorSOL Wall, Home">
-        <img src="../assets/images/logo-white.png" alt="" data-no-picture />
+        <img src="../assets/images/logo-white.png" alt="" data-no-picture decoding="async">
         <span class="footer-logo__wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
       </a>
       <p class="footer-blurb">Malaysia's most-specified anchored MSE wall. Modular precast, factory-built, mobilised lean. Since 1999.</p>
