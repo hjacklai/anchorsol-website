@@ -25,7 +25,9 @@
 <link rel="icon" type="image/png" href="../favicon.png" sizes="any" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
 <link rel="stylesheet" href="../css/style.css" />
 <script type="application/ld+json">
 {
@@ -93,7 +95,7 @@
 <!-- NAV -->
 <header class="nav"><div class="wrap"><div class="nav__in">
   <a class="brand" href="../" aria-label="AnchorSOL Wall, Home">
-    <img src="../assets/images/logo-white.png" alt="" data-no-picture />
+    <img src="../assets/images/logo-white.png" alt="" data-no-picture decoding="async">
     <span class="wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
   </a>
   </div></div></header>
@@ -143,7 +145,7 @@
 <p>MSE walls flip this problem. Instead of fighting the soil pressure with a heavy external mass, MSE walls <b>recruit the retained soil itself</b> to act as the resisting mass. Horizontal reinforcement layers, embedded inside the granular fill, distribute the tensile forces that would otherwise tear the soil apart. The resulting composite, soil plus reinforcement, behaves like a single gravity block, but built from material already on site.</p>
 <p>The facing panels on the front of the wall do not carry the bulk of the load. Their primary job is to hold the soil surface in alignment, anchor the reinforcement layers, and provide a finished appearance. This is why MSE facing can be relatively thin precast concrete (typically 140-150 mm) rather than a massive concrete cross-section.</p>
 <figure class="article__figure">
-<img src="../assets/images/RetainingWall-15-1.jpg" alt="AnchorSOL MSE wall in service, showing precast facing panels" loading="lazy" width="1500" height="1000" />
+<img src="../assets/images/RetainingWall-15-1.jpg" alt="AnchorSOL MSE wall in service, showing precast facing panels" loading="lazy" width="1500" height="1000" decoding="async">
 <figcaption>A finished anchored MSE wall in service. The precast facing panels hold the alignment; the structural work happens inside the soil mass.</figcaption>
 </figure>
 </section>
