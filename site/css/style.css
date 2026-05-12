@@ -1758,8 +1758,8 @@ section.hero { padding: 0; }
    Apple-style stat cards, big amber numbers, lean labels. */
 .trust-stats {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
   margin-bottom: 40px;
   padding-bottom: 32px;
   border-bottom: 1px solid var(--rule);
@@ -1785,11 +1785,7 @@ section.hero { padding: 0; }
   max-width: 100%;
   overflow-wrap: anywhere;
 }
-/* Long text-only stat (e.g., 'MY · IN · LK · VN') uses smaller font */
-.trust-stat:last-child .trust-stat__num {
-  font-size: clamp(16px, 1.8vw, 26px);
-  letter-spacing: -.015em;
-}
+/* (Patent-jurisdictions stat removed; no special last-child rule needed) */
 .trust-stat__lbl {
   font-family: var(--ff-mono);
   font-size: 11px;
