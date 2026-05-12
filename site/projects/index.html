@@ -104,9 +104,9 @@
   <!-- ALL 161 PROJECTS, FILTERABLE LIST -->
   <section class="proj-all"><div class="wrap">
     <div class="proj-all__head">
-      <span class="tech-label">Full list</span>
-      <h2>Every wall, since <span class="hi">1999.</span></h2>
-      <p>All 161 named projects from the AnchorSOL® portfolio. Use the filter to scope by sector. Some projects span multiple sectors and appear in more than one filter.</p>
+      <span class="tech-label">A sampler from our portfolio</span>
+      <h2>Selected walls, <span class="hi">since 1999.</span></h2>
+      <p>A curated sample of named AnchorSOL® projects. The actual portfolio is larger and continues to grow with each programme. Use the filter to scope by sector.</p>
       <div class="proj-all__filters" role="tablist" aria-label="Filter by sector">
         <button class="proj-all__filter is-active" data-filter="all">All <span class="proj-all__count" data-count="all">·</span></button>
         <button class="proj-all__filter" data-filter="expressway">Expressways &amp; Highways</button>
@@ -267,51 +267,185 @@
 <script src="../js/site.js" defer></script>
 <script>
 (function(){
-  // Categorise + render all 161 projects from window.ANCHORSOL_PROJECTS
-  function categorise(title) {
+  // --- DATA CLEANING --------------------------------------------------------
+  // Strip page header artifacts that bled into client/contractor/qty fields
+  // from the table-mode PDF extraction.
+  function cleanField(s) {
+    if (!s) return '';
+    return s
+      .replace(/\s*Page \d+\s*/gi, '')
+      .replace(/\s*AnchorSOL Wall Sdn\.?\s*Bhd\.?\s*/gi, '')
+      .replace(/\s*Sdn\.?\s*Bhd\.?\s*2,\s*$/i, '')
+      .replace(/^\s*\d{1,3}\s+/, '')
+      .replace(/\s+/g, ' ')
+      .replace(/^\s*[.,]\s*/, '')
+      .trim();
+  }
+  function cleanTitle(t) {
+    return cleanField(t).replace(/\.+$/, '').replace(/\s*-\s*$/, '');
+  }
+  function cleanQty(q) {
+    if (!q) return '';
+    // strip orphan letters at front like "d. 12,452" -> "12,452"
+    return q.replace(/^[a-z]+\.?\s*/i, '').replace(/[^\d,]/g, '').replace(/^,/, '');
+  }
+
+  // --- KEYWORD EXTRACTION ---------------------------------------------------
+  // Detects specific signals in each project title for richer copy.
+  function detect(title) {
     var t = title.toLowerCase();
+    return {
+      // sectors
+      isFederal:     /jkr|jabatan kerja raya|kementerian|federal|persekutuan/.test(t),
+      isExpressway:  /lebuhraya|expressway|highway|nkve|plus|llm|duke|suke|ekve|wce|ecrl|sprint|tolling|tol/.test(t),
+      isUrban:       /kuala lumpur|k\.l|k\.lumpur|wilayah|petaling|cheras|kajang|shah alam|subang|damansara|gombak|setapak|bukit/.test(t),
+      isBridge:      /(jambatan|bridge)/.test(t),
+      isRoad:        /jalan|laluan|persimpangan|bypass|simpang/.test(t),
+      isHousing:     /(perumahan|housing|kediaman|rumah|pangsapuri|terrace|teres|villa|pernumah)/.test(t),
+      isMixed:       /(pembangunan bercampur|mixed development|mixed-use|township|bandar|taman|estate)/.test(t),
+      isIndustrial:  /(kilang|perindustrian|industrial|factory|warehouse|gudang|business park|industri)/.test(t),
+      isCommercial:  /(commercial|perniagaan|kedai|shop|office|pejabat|pusat)/.test(t),
+      isPalace:      /(istana|palace|royal)/.test(t),
+      isGovBldg:     /(sekolah|hospital|polis|tldm|rmaf|pulrek|kompleks pendidikan|institut|universiti|tentera)/.test(t),
+      isReservoir:   /(reservoir|tank|kolam|bekalan air|water treatment|langat 2)/.test(t),
+      isFlood:       /(banjir|flood|pengairan|saliran|tebatan)/.test(t),
+      isRiver:       /(sungai|sg\.|tasik|kenyir)/.test(t),
+      isRail:        /(ktm|rail|lrt|mrt|prasarana|transit|ecrl|erl|keretapi)/.test(t),
+      isSlope:       /(cerun|slope|stabilis|soil nail|pembaikan cerun|slope failure|rectif)/.test(t),
+      isReclamation: /(reclam|reclaim|waterfront|coastal|pantai)/.test(t),
+      isRamp:        /(ramp|interchange|persimpangan bertingkat)/.test(t),
+      isPhased:      /(phase|fasa|pakej|package|seksyen|stage|tingkat)/.test(t),
+      isHilly:       /(bukit|hill|highland|cameron|genting|pesisir)/.test(t)
+    };
+  }
+
+  // --- LOCATION EXTRACTION --------------------------------------------------
+  function locationFrom(title) {
+    var states = [
+      'Selangor', 'Pahang', 'Kelantan', 'Terengganu', 'Perak', 'Kedah', 'Perlis',
+      'Negeri Sembilan', 'Melaka', 'Johor', 'Sabah', 'Sarawak', 'Pulau Pinang',
+      'Penang', 'Wilayah Persekutuan', 'Putrajaya', 'Kuala Lumpur', 'Labuan'
+    ];
+    for (var i = 0; i < states.length; i++) {
+      var re = new RegExp('\\b' + states[i].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+      if (re.test(title)) return states[i];
+    }
+    return '';
+  }
+
+  // --- CATEGORISATION (for filter buttons + colour-coded tag) ---------------
+  function categorise(title) {
+    var d = detect(title);
     var cats = [];
-    if (/lebuhraya|expressway|highway|nkve|plus|llm|duke|suke|ekve|wce|ecrl|sprint/.test(t)) cats.push('expressway');
-    if (/(jambatan|bridge)/.test(t)) cats.push('bridge');
-    if (/jalan|federal|state road|laluan persekutuan|persimpangan|bypass/.test(t)) cats.push('road');
-    if (/(perumahan|pembangunan|housing|kediaman|taman|township|residential|mixed development|rumah|pangsapuri|condo|villa|park|estate)/.test(t)) cats.push('township');
-    if (/(istana|palace|government|kementerian|pejabat|kompleks pendidikan|sekolah|polis|hospital|tldm|rmaf|tlmd|royal)/.test(t)) cats.push('government');
-    if (/(kilang|perindustrian|industrial|factory|warehouse|gudang|business park|industri)/.test(t)) cats.push('industrial');
-    if (/(reservoir|tank|air|langat|water treatment|bekalan air|pengairan|saliran|banjir|sungai.*ban|flood)/.test(t)) cats.push('water');
-    if (/(rail|ktm|lrt|mrt|prasarana|transit|ecrl|erl|jambatan keretapi|keretapi)/.test(t)) cats.push('rail');
-    if (/(cerun|slope|stabilisation|stabilization|soil nail|slope failure|pembaikan cerun)/.test(t)) cats.push('slope');
+    if (d.isExpressway) cats.push('expressway');
+    if (d.isBridge) cats.push('bridge');
+    if (d.isRail) cats.push('rail');
+    if (d.isPalace || d.isGovBldg) cats.push('government');
+    if (d.isHousing || d.isMixed) cats.push('township');
+    if (d.isIndustrial) cats.push('industrial');
+    if (d.isReservoir || d.isFlood || (d.isRiver && !d.isRoad)) cats.push('water');
+    if (d.isSlope) cats.push('slope');
+    if (d.isRoad && !d.isExpressway && !d.isBridge) cats.push('road');
     if (cats.length === 0) cats.push('general');
     return cats;
   }
 
-  function challengeFor(cats, title) {
-    if (cats.indexOf('expressway') >= 0) return 'A live or under-construction expressway corridor needing engineered retention along cut and embankment sections, with traffic-management constraints.';
-    if (cats.indexOf('bridge') >= 0) return 'Bridge approach abutments requiring structural retention at the deck transition with tight tolerance at the bearing line.';
-    if (cats.indexOf('rail') >= 0) return 'A rail corridor requiring retention designed for cyclic and dynamic loading from live train pass-bys.';
-    if (cats.indexOf('government') >= 0) return 'A government or national-significance compound needing engineered retention with architectural finish quality.';
-    if (cats.indexOf('township') >= 0) return 'A multi-phase residential, township or mixed-use development needing engineered retention to stage platform build-out.';
-    if (cats.indexOf('industrial') >= 0) return 'An industrial platform or business park needing engineered retention for heavy-load build-out.';
-    if (cats.indexOf('water') >= 0) return 'A water-retention, flood-mitigation or drainage structure needing engineered retention with wet-exposure durability.';
-    if (cats.indexOf('slope') >= 0) return 'An unstable slope or failed cut face requiring engineered retention to restore stability.';
-    if (cats.indexOf('road') >= 0) return 'A federal or state road alignment needing engineered retention through cut and embankment sections, on a JKR or authority programme.';
-    return 'A site needing engineered retention to release the build-out programme.';
-  }
+  // --- COPY GENERATION ------------------------------------------------------
+  // For each project, generate three paragraphs:
+  //   - Constraint:    what the SITE brought to us
+  //   - Wall delivered: what AnchorSOL® specifically built
+  //   - Value created:  what the wall UNLOCKED for the client
+  // Pulls in location, scale and constraint-specific keywords for variety.
+  function copyFor(p, title) {
+    var d = detect(title);
+    var loc = locationFrom(title);
+    var qty = cleanQty(p.qty);
+    var qtyTxt = qty ? qty : '';
+    var locTxt = loc ? ' in ' + loc : '';
+    var areaSuffix = qtyTxt ? ' (~' + qtyTxt + ' m² of wall)' : '';
 
-  function solutionFor(cats) {
-    if (cats.indexOf('expressway') >= 0) return 'Delivering AnchorSOL® anchored MSE wall under staged traffic management, modular precast facing erected in days, zero heavy vibration plant on the operating corridor.';
-    if (cats.indexOf('bridge') >= 0) return 'Building inverted-T precast facing with integral ground beam, soil reinforcement terminated at a discrete deadman anchor block.';
-    if (cats.indexOf('rail') >= 0) return 'Delivering AnchorSOL® anchored MSE wall, cyclic-load capable, composite soil mass yielding elastically and recovering under live rail loading.';
-    if (cats.indexOf('government') >= 0) return 'Delivering AnchorSOL® anchored MSE wall with architectural precast facing, finishes specified to the gazetted aesthetic standard.';
-    if (cats.indexOf('township') >= 0) return 'Delivering AnchorSOL® anchored MSE wall across the platform, opening the lot-by-lot build-out on a coordinated phasing programme.';
-    if (cats.indexOf('industrial') >= 0) return 'Delivering AnchorSOL® anchored MSE wall to set the load-bearing industrial platform, mobilised lean and erected in days.';
-    if (cats.indexOf('water') >= 0) return 'Delivering AnchorSOL® anchored MSE wall with hot-dip galvanised tendons, designed for long service life under wet exposure.';
-    if (cats.indexOf('slope') >= 0) return 'Delivering AnchorSOL® anchored MSE wall to rectify the slope, precast facing stitched into the recovered fill mass.';
-    if (cats.indexOf('road') >= 0) return 'Delivering AnchorSOL® anchored MSE wall along the road formation, factory-precast panels erected in days behind the earthworks.';
-    return 'Delivering AnchorSOL® anchored MSE wall, modular precast erected in days, zero heavy vibration plant on site.';
-  }
+    var constraint, solution, value;
 
-  function cleanTitle(t) {
-    return t.replace(/\s+/g, ' ').replace(/Page \d+/gi, '').trim();
+    // PALACE / ROYAL / HERITAGE
+    if (d.isPalace) {
+      constraint = 'A national-significance royal compound' + locTxt + ' requiring engineered retention that meets <b>both structural performance and the gazetted architectural finish</b> for the precinct.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall with architectural precast facing — custom textures and surface treatments cast to the palace specification, programme aligned with the institution\'s commissioning schedule.';
+      value = 'Opening' + areaSuffix + ' of structurally and architecturally specified retention at a site that carries the visual signature of the Malaysian Crown.';
+    }
+    // GOVERNMENT BUILDINGS (schools, hospitals, police, military)
+    else if (d.isGovBldg) {
+      constraint = 'A federal government institution' + locTxt + ' (schools, hospitals, public-service infrastructure) needing engineered retention to set the level platform for the institutional build-out, on a Kementerian or JKR delivery programme.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall to government specification — Grade 30 MPa precast facing, hot-dip galvanised tendon, hand-compacted crusher-run backfill compatible with JKR Standard Specification.';
+      value = 'Releasing' + areaSuffix + ' of certified retention, the institution\'s buildings progressing on programme without the cost or delay of a cast-in-situ RC alternative.';
+    }
+    // EXPRESSWAY / TOLLED CONCESSION
+    else if (d.isExpressway) {
+      constraint = 'A ' + (d.isUrban ? 'tolled urban' : 'federal') + ' expressway alignment' + locTxt + ' with extensive cut and embankment retention along ' + (d.isRamp ? 'interchange ramps and side-hill cuts' : 'the live operating corridor') + ', needing structural retention designed for cyclic traffic loads on a concession or JKR commissioning schedule.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall under staged traffic management, modular precast facing erected by a <b>3–4 person crew in days</b>. Hand- or mini-compactor backfill keeps vibration <b>zero on the operating corridor</b>, no impact to the adjacent live traffic.';
+      value = 'Opening' + areaSuffix + ' of stabilised expressway platform delivered alongside the concessionaire\'s construction schedule, the highway network operational throughout.';
+    }
+    // BRIDGE ABUTMENTS
+    else if (d.isBridge) {
+      constraint = 'Bridge approach abutments' + locTxt + ' requiring <b>structural retention at the deck transition with tight tolerance at the bearing line</b>, designed to absorb traffic-load transitions from road formation onto the deck.';
+      solution = 'Building inverted-T precast facing with integral ground beam, soil reinforcement terminated at a discrete deadman anchor block. Grade 30 MPa precast, hot-dip galvanised tendons, panel-to-panel interlock providing the structural certainty the abutment demands.';
+      value = 'Setting up' + areaSuffix + ' of engineered abutment retention that opens the bridge to live traffic on programme, without the multi-week curing wait of a cast-in-situ RC abutment.';
+    }
+    // RAIL CORRIDOR
+    else if (d.isRail) {
+      constraint = 'A rail corridor' + locTxt + ' requiring retention designed for <b>cyclic and dynamic loading from live train pass-bys</b>, with construction sequenced around the rail operator\'s permitted maintenance windows.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall — <b>cyclic-load capable</b>, composite soil mass yielding elastically and recovering under live rail loading. Modular precast facing erected in lap-by-lap segments to fit the rail operator\'s construction windows.';
+      value = 'Securing' + areaSuffix + ' of rail-corridor retention that performs through every train pass-by, where rigid RC walls develop cracks under cyclic load.';
+    }
+    // FLOOD MITIGATION
+    else if (d.isFlood) {
+      constraint = 'Flood-mitigation works on a sensitive river or drainage corridor' + locTxt + ', needing engineered retention with <b>wet-exposure durability</b> and construction sequenced around the seasonal flood window.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall with hot-dip galvanised tendons (sacrificial-thickness allowance designed in) and Grade 30 MPa precast facing rated for long service in wet exposure.';
+      value = 'Opening' + areaSuffix + ' of retention along a sensitive water corridor, the flood-mitigation programme protected for decades in conditions that would corrode standard steel reinforcement.';
+    }
+    // RESERVOIR / WATER TREATMENT
+    else if (d.isReservoir) {
+      constraint = 'A water-treatment plant or reservoir' + locTxt + ' requiring engineered retention with <b>marine-grade durability</b> and structural certainty at the water-containing perimeter.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall with hot-dip galvanised tendons, precast facing designed for long service life under wet exposure. Construction sequenced around the plant\'s operational schedule.';
+      value = 'Setting up' + areaSuffix + ' of durable retention at a critical water-infrastructure site, designed for decades of wet-exposure service.';
+    }
+    // SLOPE RECTIFICATION
+    else if (d.isSlope) {
+      constraint = 'A slope failure or unstable cut face' + locTxt + ' needing engineered retention to <b>restore stability and return the site to use</b>, often combined with soil nail and temporary protection scope.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall to rectify the slope — modular precast facing stitched into the recovered fill mass, anchored at a discrete deadman block. Construction sequenced to restore service quickly.';
+      value = 'Restoring' + areaSuffix + ' of slope-stable corridor, the original road or development returning to service on a programme that doesn\'t wait months for a cast-in-situ alternative.';
+    }
+    // INDUSTRIAL / BUSINESS PARK
+    else if (d.isIndustrial) {
+      constraint = 'An industrial platform or business park' + locTxt + ' needing engineered retention for <b>heavy-load, structural-grade level-platform creation</b> across multiple lots, with tenant-readiness on a developer programme.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall to set the load-bearing industrial platform — flexible interface absorbs differential settlement that would crack a rigid RC wall, modular panels erected in days, crusher-run backfill from local quarries.';
+      value = 'Releasing' + areaSuffix + ' of structural-grade industrial platform that\'s <b>tenant-ready in weeks, not months</b>, the developer\'s leasing programme moving on schedule.';
+    }
+    // TOWNSHIP / HOUSING / MIXED DEVELOPMENT
+    else if (d.isHousing || d.isMixed) {
+      constraint = 'A ' + (d.isPhased ? 'multi-phase' : '') + ' residential, mixed-use or township development' + locTxt + ' on ' + (d.isHilly ? 'sloped, hill-cut' : 'cut and fill') + ' platform geometry, needing engineered retention to <b>stage the lot-by-lot build-out</b> for residential, commercial and infrastructure scope.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall across the platform — modular precast factory-built and erected in days, flexible interface absorbing differential settlement, crusher-run backfill from local quarries meaning <b>no premium granular fill is needed</b>.';
+      value = 'Releasing' + areaSuffix + ' of buildable platform for stage-by-stage residential or commercial roll-out, the developer\'s marketing and construction phasing progressing without cross-block disruption.';
+    }
+    // RECLAMATION / COASTAL / WATERFRONT
+    else if (d.isReclamation) {
+      constraint = 'A reclamation or waterfront development' + locTxt + ' needing engineered retention with <b>marine-grade durability and tide-line resilience</b>, on a programme that often runs to the dry-season window.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall with hot-dip galvanised tendons and architectural precast facing, designed for long service under coastal-exposure conditions.';
+      value = 'Opening' + areaSuffix + ' of marine-grade retention at the waterfront perimeter, the development phasing protected against decades of tidal cycling.';
+    }
+    // FEDERAL / STATE ROAD (general)
+    else if (d.isRoad) {
+      constraint = 'A ' + (d.isFederal ? 'federal' : 'state or arterial') + ' road alignment' + locTxt + ' needing engineered retention through ' + (d.isHilly ? 'hilly cut faces and side-hill formation' : 'cut and embankment sections') + ', on a JKR or local-authority programme.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall along the road formation — factory-precast panels erected behind the earthworks, hand-compacted crusher-run backfill, <b>zero heavy vibration plant</b> on the alignment.';
+      value = 'Setting up' + areaSuffix + ' of road-corridor retention that lets the formation works progress without curing wait, the road on programme for public commissioning.';
+    }
+    // GENERIC / FALLBACK
+    else {
+      constraint = 'A site' + locTxt + ' needing engineered retention to <b>release the build-out programme</b> — typically against soft ground, sloped terrain or tight site geometry.';
+      solution = 'Delivering AnchorSOL® anchored MSE wall — modular precast facing erected in days by a 3–4 person crew, crusher-run backfill from local quarries, <b>zero heavy vibration plant</b> on site.';
+      value = 'Releasing' + areaSuffix + ' of engineered retention, the project programme advancing without the multi-week curing wait of a cast-in-situ RC alternative.';
+    }
+
+    return { constraint: constraint, solution: solution, value: value };
   }
 
   function render() {
@@ -322,24 +456,32 @@
     window.ANCHORSOL_PROJECTS.forEach(function(p) {
       var title = cleanTitle(p.title);
       if (!title) return;
+      var client = cleanField(p.client);
+      var contractor = cleanField(p.contractor);
+      var qty = cleanQty(p.qty);
       var cats = categorise(title);
       cats.forEach(function(c) { counts[c] = (counts[c] || 0) + 1; });
       counts.all++;
+      var copy = copyFor({ qty: qty, client: client }, title);
       var dataCats = cats.join(' ');
+
       html += '<article class="proj-row" data-cats="' + dataCats + '">';
       html +=   '<div class="proj-row__num">' + p.item + '</div>';
       html +=   '<div class="proj-row__body">';
       html +=     '<h4>' + title + '</h4>';
-      if (p.client) html += '<span class="proj-row__client"><b>Client:</b> ' + p.client + '</span> ';
-      if (p.qty)    html += '<span class="proj-row__qty"><b>Wall area:</b> ' + p.qty + ' m²</span>';
-      html +=     '<p class="proj-row__solution"><b>Constraint:</b> ' + challengeFor(cats, title) + '</p>';
-      html +=     '<p class="proj-row__solution"><b>Wall delivered:</b> ' + solutionFor(cats) + '</p>';
+      html +=     '<div class="proj-row__meta">';
+      if (client)     html += '<span class="proj-row__client"><b>Client:</b> ' + client + '</span>';
+      if (contractor) html += '<span class="proj-row__client"><b>Main contractor:</b> ' + contractor + '</span>';
+      if (qty)        html += '<span class="proj-row__qty"><b>Wall area:</b> ' + qty + ' m²</span>';
+      html +=     '</div>';
+      html +=     '<p class="proj-row__solution"><b>Constraint:</b> ' + copy.constraint + '</p>';
+      html +=     '<p class="proj-row__solution"><b>Wall delivered:</b> ' + copy.solution + '</p>';
+      html +=     '<p class="proj-row__solution proj-row__solution--value"><b>Value created:</b> ' + copy.value + '</p>';
       html +=   '</div>';
       html += '</article>';
     });
     list.innerHTML = html;
 
-    // Update filter counts
     document.querySelectorAll('.proj-all__count[data-count]').forEach(function(el) {
       var k = el.getAttribute('data-count');
       if (counts[k] != null) el.textContent = counts[k];
