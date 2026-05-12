@@ -1642,33 +1642,53 @@ section.hero { padding: 0; }
 
 .about-portrait { background: var(--bg-surface); border: 1px solid var(--rule); }
 .about-portrait img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: top; background: #fff; }
-.about-portrait__cap { padding: 28px 24px 32px; }
+.about-portrait__cap { padding: 28px 28px 32px; display: flex; flex-direction: column; gap: 8px; }
+.about-portrait__cap .tech-label { color: var(--amber); }
 .about-portrait__cap h4 {
   font-family: var(--ff-display);
   font-weight: 900;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: -.02em;
   text-transform: uppercase;
   color: var(--ink);
-  margin: 6px 0 12px;
+  margin: 0 0 4px;
+  line-height: 1.05;
 }
-.about-portrait__cap p { font-size: 14px; line-height: 1.55; color: var(--mut); }
+.about-portrait__cap p { font-size: 14px; line-height: 1.55; color: var(--mut); margin: 0; }
 
-/* Portrait, full-width centered above the pillars on wide screens */
+/* Portrait + bio sit side-by-side on wide screens. Image is capped so it
+   doesn't dwarf the bio. On mobile the image stacks above. */
 .about-portrait--centered {
-  max-width: 720px;
-  margin: 0 auto 3rem;
+  max-width: 960px;
+  margin: 0 auto 2.5rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
+  align-items: stretch;
+}
+.about-portrait--centered img {
+  aspect-ratio: 4 / 5;
+  max-height: 380px;
+  object-position: center top;
 }
 @media (min-width: 900px) {
   .about-portrait--centered {
-    grid-template-columns: 1fr 1.3fr;
-    gap: 0;
-    max-width: 1080px;
-    align-items: stretch;
+    /* portrait column ~280-300px, bio gets the rest */
+    grid-template-columns: 300px 1fr;
   }
+  .about-portrait--centered img {
+    aspect-ratio: 4 / 5;
+    max-height: none;
+    height: 100%;
+  }
+  .about-portrait--centered .about-portrait__cap {
+    padding: 32px 36px 32px;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  .about-portrait--centered { grid-template-columns: 320px 1fr; max-width: 1080px; }
+  .about-portrait--centered .about-portrait__cap { padding: 36px 40px; }
 }
 
 /* 3-pillar block, full container width below portrait for breathing room.
@@ -1749,20 +1769,24 @@ section.hero { padding: 0; }
   min-width: 0;
 }
 .trust-stat__num {
+  display: block;
   font-family: var(--ff-display);
   font-weight: 900;
-  /* clamp tuned so 700,000+ fits in a ~200px column at 1100-1300 viewports */
-  font-size: clamp(22px, 2.4vw, 36px);
+  font-size: clamp(20px, 2vw, 32px);
   line-height: 1.05;
-  letter-spacing: -.035em;
+  letter-spacing: -.03em;
   color: var(--amber);
   font-variant-numeric: tabular-nums;
-  word-break: break-word;
+  text-align: left;
+  /* Defensive: text fits its container, scales down if needed */
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
-/* Long text-only stat (e.g., 'MY · IN · LK · VN') wraps gracefully */
+/* Long text-only stat (e.g., 'MY · IN · LK · VN') uses smaller font */
 .trust-stat:last-child .trust-stat__num {
-  font-size: clamp(18px, 2.2vw, 30px);
-  letter-spacing: -.02em;
+  font-size: clamp(16px, 1.8vw, 26px);
+  letter-spacing: -.015em;
 }
 .trust-stat__lbl {
   font-family: var(--ff-mono);
@@ -1772,14 +1796,12 @@ section.hero { padding: 0; }
   color: var(--mut);
   line-height: 1.4;
 }
-/* Generous spacing again on wider screens where there's room */
-@media (min-width: 1400px) { .trust-stat__num { font-size: 40px; } }
 @media (max-width: 900px) {
   .trust-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-  .trust-stat__num { font-size: clamp(26px, 5vw, 36px); }
+  .trust-stat__num { font-size: clamp(24px, 4.5vw, 32px); }
 }
 @media (max-width: 480px) {
-  .trust-stat__num { font-size: 24px; }
+  .trust-stat__num { font-size: 22px; }
 }
 
 /* -------- [07] Contact section (form + aside) -------- */
