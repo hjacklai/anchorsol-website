@@ -4642,3 +4642,245 @@ a:not(.btn):not(.nav__cta):not(.tabbar__tab):not(.wa-fab) {
 /* -- Smooth scroll w/ correct offset for sticky nav -- */
 html { scroll-padding-top: 120px; }
 @media (max-width: 1100px) { html { scroll-padding-top: 80px; } }
+
+/* =============================================================================
+   TABLET OPTIMIZATION PASS (~600 - 1100px)
+   Targets iPad Mini portrait (768), iPad portrait (810/834), iPad Pro 11"
+   (834), iPad Pro 12.9" portrait (1024), Android tablets (600-1280).
+   ============================================================================= */
+
+/* --- Tablet container gutters: tighter than desktop, generous vs mobile --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  :root { --container-x: 36px; }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  :root { --container-x: 48px; }
+}
+
+/* --- Tablet hero: stack on portrait, keep side-by-side on landscape --- */
+/* Portrait tablets (and very small landscape tablets): stack text above video */
+@media (max-width: 899px) and (min-width: 600px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    max-height: none;
+  }
+  .hero__l {
+    padding: 56px 40px 40px;
+    max-width: none;
+    z-index: 2;
+  }
+  .hero__r {
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+    aspect-ratio: 16 / 9;
+    min-height: 320px;
+  }
+  .hero h1 {
+    font-size: clamp(56px, 9vw, 80px);
+    line-height: .9;
+  }
+  .hero p.lede {
+    font-size: 16px;
+    max-width: 56ch;
+  }
+}
+/* Landscape tablets (900-1100): keep side-by-side but rein in the type */
+@media (min-width: 900px) and (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 560px;
+    max-height: 78vh;
+  }
+  .hero__l {
+    padding: 56px 40px;
+  }
+  .hero h1 {
+    font-size: clamp(60px, 7.5vw, 86px);
+  }
+  .hero p.lede {
+    font-size: 16px;
+    max-width: 42ch;
+  }
+}
+
+/* --- Trust strip: 3 chip columns on portrait tablet, 4 on landscape --- */
+@media (min-width: 600px) and (max-width: 899px) {
+  .trust-strip { padding: 56px 0 48px; }
+  .trust-strip__row { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .trust-strip__chip { padding: 14px 12px; }
+  .trust-strip__chip b { font-size: 12.5px; }
+}
+
+/* --- Section padding: tighter on tablet --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  section { padding: 56px 0; }
+}
+
+/* --- Article TOC: 2-column on tablet+ so 12-item lists don't stretch --- */
+@media (min-width: 600px) {
+  .article__toc ol {
+    column-count: 2;
+    column-gap: 32px;
+  }
+  .article__toc li {
+    break-inside: avoid;
+  }
+}
+@media (min-width: 1100px) {
+  .article__toc ol { column-count: 2; column-gap: 48px; }
+}
+
+/* --- Article tables: horizontal scroll on tablet so wide tables don't blow
+       out the layout. Wraps the table in an implicit scroll container. --- */
+@media (max-width: 1100px) {
+  .article__table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    font-size: 13.5px;
+  }
+  .article__table th, .article__table td {
+    white-space: normal;
+    min-width: 140px;
+  }
+}
+
+/* --- Article body: comfortable reading width on tablet --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .article__wrap { max-width: 720px; padding: 0 28px; }
+  .article h1 { font-size: clamp(36px, 4.8vw, 52px); line-height: 1.05; }
+  .article h2 { font-size: clamp(26px, 3.4vw, 34px); }
+  .article h3 { font-size: 20px; }
+  .article__lede { font-size: 17px; line-height: 1.55; }
+  .article p, .article li { font-size: 16px; line-height: 1.65; }
+  .article section { margin: 40px 0; }
+  .article__head { margin: 24px 0 36px; }
+  .article__related { margin-top: 56px; padding-top: 36px; }
+}
+
+/* --- Related-cards grid: keep 2-up on tablet, drop to 1-up < 600 --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .article__related-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+/* --- KB cards: 2-up on tablet (already 2-up at 1000), tighten gap --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .kb-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .kb-card {
+    padding: 24px;
+  }
+  .kb-card h3 { font-size: 19px; }
+}
+
+/* --- Footer: tighter 3-column grid on tablet --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  footer .grid {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+/* --- Tab bar: scale icon + label nicely on tablet --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .tabbar__tab {
+    min-width: 76px;
+    padding: 8px 6px 10px;
+  }
+  .tabbar__icon { width: 22px; height: 22px; }
+  .tabbar__lbl { font-size: 10px; }
+}
+
+/* --- Breadcrumb: don't wrap weirdly on tablet --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .breadcrumb { font-size: 13px; flex-wrap: wrap; }
+}
+
+/* --- Tablet-specific kb-hero, proj-hero: smaller bold text --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .kb-hero h1, .proj-hero__h1 {
+    font-size: clamp(36px, 5.5vw, 56px);
+    line-height: 1.05;
+  }
+  .proj-hero { padding: 56px 0 40px; }
+  .proj-hero__lede { font-size: 16px; max-width: 60ch; }
+  .proj-hero__stats { gap: 16px; flex-wrap: wrap; }
+}
+
+/* --- Project list / filter pills: wrap nicely on tablet --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  .proj-all__filters {
+    gap: 6px;
+  }
+  .proj-all__filter {
+    padding: 8px 12px;
+    font-size: 11.5px;
+  }
+}
+
+/* --- Applications / Locations specific: TOC list looks great as 2-col,
+       handled by .article__toc rule above. Add per-section breathing
+       room and prevent over-stretched h2 underlines on tablet. --- */
+@media (min-width: 600px) and (max-width: 1100px) {
+  /* Section anchor offset for sticky nav + tab bar */
+  .article section[id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* --- Hero entrance/animation overrides for stacked tablet view: the
+       desktop "row drift" looks awkward when stacked; flatten on portrait. --- */
+@media (max-width: 899px) and (min-width: 600px) {
+  .hero__l > .rank,
+  .hero__l > p.lede,
+  .hero__l > .hero__btns,
+  .hero__l > h1 .row {
+    transform: none !important;
+  }
+}
+
+/* --- The "vfeature" full-bleed cinematic break: shrink min-height on
+       portrait tablet so it doesn't dominate the viewport. --- */
+@media (max-width: 899px) and (min-width: 600px) {
+  .vfeature { min-height: 480px; }
+  .vfeature__inner { padding: 32px; }
+  .vfeature__h2 { font-size: clamp(36px, 6vw, 56px); }
+}
+
+/* --- Anatomy / system cards: 2-column on tablet, full at desktop --- */
+@media (min-width: 600px) and (max-width: 899px) {
+  .apps, .caps-grid, .lean-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* --- Brochure / contact block on tablet --- */
+@media (min-width: 600px) and (max-width: 899px) {
+  .brochure { grid-template-columns: 1fr; gap: 32px; }
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* --- Ensure videos in editorial layouts respect tablet width --- */
+@media (max-width: 1100px) {
+  .hero__r video,
+  .hero__r > img,
+  .vfeature__video {
+    max-width: 100%;
+  }
+}
+
+/* --- About / Founder split: stack on portrait tablet --- */
+@media (max-width: 899px) and (min-width: 600px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
