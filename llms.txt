@@ -144,6 +144,13 @@ In-depth engineering reference articles, all original content authored by Anchor
 - [Load Testing for MSE Walls](https://anchorsolwall.com/learn/load-testing-mse-walls.html), ~1,950 words. Static, cyclic, in-service monitoring with strain gauges, inclinometers, settlement plates. BS 8006, FHWA, ASTM standards.
 - [Pullout Testing for MSE Walls](https://anchorsolwall.com/learn/pullout-testing-mse-walls.html), ~1,900 words. BS 8006 Annex G, ASTM D6706, test rig setup, loading sequence, results interpretation, interaction coefficient derivation.
 
+### Construction and specification
+- [MSE Wall Construction Sequence](https://anchorsolwall.com/learn/mse-wall-construction-sequence.html), ~2,400 words. Step-by-step site guide: site preparation, foundation, panel placement, tendon/deadman, drainage, backfill, per-lift QA, capping, monitoring handover. Crew, equipment, programme details. HowTo schema.
+- [MSE Wall Foundation Design](https://anchorsolwall.com/learn/mse-wall-foundation-design.html), ~2,300 words. Bearing capacity, settlement, soft-ground options (PVDs, stone columns, jet grouting, partial replacement), piled foundations with load transfer platforms, site investigation requirements.
+- [Design Life and Corrosion](https://anchorsolwall.com/learn/mse-wall-design-life-corrosion.html), ~2,250 words. 75/100/120-year design, BS 8006 Annex B sacrificial-thickness, hot-dip galvanizing, BS 8500 exposure classes, marine and aggressive environment durability, 27-year AnchorSOL field record.
+- [Drainage Design Behind Walls](https://anchorsolwall.com/learn/mse-wall-drainage-design.html), ~2,300 words. Why drainage matters (2-3x lateral pressure if saturated), geocomposite vs granular blanket, collection pipes, weep holes, hillside drainage, surface diversion, MASMA + BS 8006 references.
+- [MSE Wall Specification Template](https://anchorsolwall.com/learn/mse-wall-specification-template.html), ~2,400 words. Tender clauses across 8 sections: scope, pre-qualification, materials, design, workmanship, QA, drawings, handover. JKR + BS 8006 + FHWA aligned. Sample clauses for direct use.
+
 ## Reference pages
 
 - [MSE Wall Applications: 12 use cases](https://anchorsolwall.com/applications/), the long-tail reference. Bridge abutments, highway embankments, hill stabilization, marine/riverbank, railway corridors, flood mitigation, reservoir/tank, residential/township, industrial, architectural finish, heritage compounds, land reclamation. Each section: standards, named projects, FAQ.
