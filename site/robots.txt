@@ -1,10 +1,46 @@
+# =====================================================================
+# AnchorSOL® Wall - robots.txt
+# Sitemap: https://anchorsolwall.com/sitemap.xml
+# LLM/AI summary: https://anchorsolwall.com/llms.txt
+# =====================================================================
+
+# Default: everything is crawlable, dev folders disallowed
 User-agent: *
 Allow: /
 Disallow: /research/
 Disallow: /extracted/
+Disallow: /tools/
+Disallow: /handoff/
+Disallow: /originals/
 
-# Search engine crawlers welcome
+# Search engine crawlers, explicit welcome
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI / LLM crawlers, allowed (with a structured summary at /llms.txt)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap reference (every crawler reads this)
 Sitemap: https://anchorsolwall.com/sitemap.xml
-
-# LLM / AI crawlers, content summary at /llms.txt
-# (see https://llmstxt.org for the spec)
