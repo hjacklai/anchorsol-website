@@ -105,9 +105,16 @@
   }
 
   // ---------- Animated counters [data-counter] ----------
-  // Usage: <span class="spec-card__num" data-counter="33" data-suffix="+">0</span>
+  // Usage: <span data-counter="700000" data-suffix="+">0</span>
+  // Big numbers (>=1000) get thousand-separator commas automatically.
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const counters = document.querySelectorAll('[data-counter]');
+  const fmt = (value, decimals, target) => {
+    const v = value.toFixed(decimals);
+    // Insert commas only if the TARGET is >= 1000 (so 25 stays "25", 700000 becomes "700,000")
+    if (Math.abs(target) >= 1000) return Number(v).toLocaleString('en-US');
+    return v;
+  };
   if (counters.length && 'IntersectionObserver' in window) {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -119,17 +126,17 @@
         const prefix = el.dataset.prefix || '';
         const decimals = parseInt(el.dataset.decimals || '0', 10);
         if (reduceMotion || isNaN(target)) {
-          el.textContent = prefix + target.toFixed(decimals) + suffix;
+          el.textContent = prefix + fmt(target, decimals, target) + suffix;
           return;
         }
-        const duration = parseInt(el.dataset.duration || '1100', 10);
+        const duration = parseInt(el.dataset.duration || '1400', 10);
         const start = performance.now();
         const tick = (now) => {
           const t = Math.min(1, (now - start) / duration);
           // easeOutCubic
           const eased = 1 - Math.pow(1 - t, 3);
           const value = target * eased;
-          el.textContent = prefix + value.toFixed(decimals) + suffix;
+          el.textContent = prefix + fmt(value, decimals, target) + suffix;
           if (t < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
