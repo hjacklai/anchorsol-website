@@ -60,7 +60,11 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 }
 html, body { margin: 0; padding: 0; }
 /* Hard rule: page must never scroll horizontally on any device. */
-html, body { overflow-x: hidden; max-width: 100vw; }
+/* overflow-x: hidden suppresses horizontal scrolling.
+   Use 100% (not 100vw) so the body doesn't extend past the visible
+   viewport when a vertical scrollbar is present — that was causing
+   centered content to sit slightly left of visual center on desktop. */
+html, body { overflow-x: hidden; max-width: 100%; }
 /* Anywhere we use CSS grid with implicit min-content sizing, allow shrink */
 .hero, .split, .anatomy, .vs, .apps, .caps-grid, .lean-grid,
 .proj, .gallery-grid, .footer .grid, .cta__in, .strip__in,
