@@ -60,7 +60,11 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 }
 html, body { margin: 0; padding: 0; }
 /* Hard rule: page must never scroll horizontally on any device. */
-html, body { overflow-x: hidden; max-width: 100vw; }
+/* overflow-x: hidden suppresses horizontal scrolling.
+   Use 100% (not 100vw) so the body doesn't extend past the visible
+   viewport when a vertical scrollbar is present, that was causing
+   centered content to sit slightly left of visual center on desktop. */
+html, body { overflow-x: hidden; max-width: 100%; }
 /* Anywhere we use CSS grid with implicit min-content sizing, allow shrink */
 .hero, .split, .anatomy, .vs, .apps, .caps-grid, .lean-grid,
 .proj, .gallery-grid, .footer .grid, .cta__in, .strip__in,
@@ -501,64 +505,37 @@ body.nav-open { overflow: hidden; }
   border-bottom: 1px solid var(--rule);
   overflow: hidden; /* contains video scale + gradient overlays */
 }
-/* On wide screens, give the hero a centered container with side gutters.
-   The video stretches further left (wider visible area) and the text
-   floats above the first ~40% of it via z-index + gradient backdrop.
-   More overlap, more cinematic. */
+/* On wide screens: centered container with gutters, clean side-by-side
+   split (text left, video right). No overlap, no negative margins. */
 @media (min-width: 1101px) {
   .hero {
     max-width: var(--container);
     margin: 0 auto;
     padding-inline: var(--container-x);
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 0.95fr 1.05fr;
     border-bottom: 0;
     background: transparent;
+    column-gap: 32px;
   }
   .hero__l {
-    z-index: 3;
+    z-index: 2;
     position: relative;
-    padding: 80px 0 80px 0;
-    max-width: 700px;
-    /* Push the text rightward INTO the video column for more overlap */
-    margin-right: -180px;
-  }
-  /* Soft navy backdrop that fades through the overlap region.
-     Solid on the left, gentle fade on the right edge to keep
-     text readable while letting the video texture show through. */
-  .hero__l::after {
-    content: "";
-    position: absolute;
-    /* Gradient stays strictly inside .hero__l so it can't dim
-       the .ovl label or .pin badges inside .hero__r. */
-    inset: 0 0 0 -60vw;
-    background: linear-gradient(90deg,
-      var(--bg) 0%,
-      var(--bg) 70%,
-      rgba(10, 20, 38, .6) 90%,
-      rgba(10, 20, 38, 0) 100%);
-    z-index: -1;
-    pointer-events: none;
+    padding: 80px 0;
+    max-width: 640px;
   }
 }
 @media (min-width: 1600px) {
   .hero {
-    grid-template-columns: 0.78fr 1.22fr;
+    grid-template-columns: 0.9fr 1.1fr;
     min-height: 640px;
     max-height: 78vh;
+    column-gap: 48px;
   }
-  .hero__l {
-    padding: 96px 0 96px 0;
-    margin-right: -220px;
-    max-width: 760px;
-  }
+  .hero__l { padding: 96px 0; max-width: 700px; }
 }
 @media (min-width: 1920px) {
   .hero { max-height: 720px; }
-  .hero__l {
-    padding: 104px 0 104px 0;
-    max-width: 800px;
-    margin-right: -260px;
-  }
+  .hero__l { padding: 104px 0; max-width: 740px; }
 }
 .hero__l {
   padding: 64px 56px;
@@ -3469,14 +3446,29 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 
 /* -------- Trust strip (replaces basic .strip) -------- */
 .trust-strip {
-  padding: 56px 0;
+  padding: 80px 0 64px;
   background: var(--bg-2);
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
-  /* Defensive: own stacking context, nothing from siblings can bleed over */
+  /* Defensive: own stacking context, opaque background, nothing from
+     siblings can ever bleed over the top edge. */
   position: relative;
-  z-index: 5;
+  z-index: 10;
   isolation: isolate;
+  /* Hard top boundary so the amber stats can't be clipped by anything */
+  margin-top: 0;
+  clip-path: inset(0 0 0 0);
+}
+/* Belt-and-suspenders: a solid bar at the top edge of the trust strip
+   that visually severs it from whatever section sits above. */
+.trust-strip::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--amber);
+  opacity: .35;
+  z-index: 1;
 }
 .trust-strip__head {
   margin-bottom: 28px;
