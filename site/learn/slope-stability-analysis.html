@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Slope Stability Analysis: Bishop, Spencer, Morgenstern-Price Methods (Malaysia)</title>
+<meta name="description" content="Slope stability analysis for retaining walls and hillside platforms: Bishop simplified, Spencer, Morgenstern-Price methods. Global FoS, drained vs undrained, seismic, saturated conditions. Malaysian practice." />
+<meta name="keywords" content="slope stability analysis, Bishop method, Spencer method, Morgenstern-Price, global slope stability, slope FoS, slope stability MSE wall, retaining wall global stability, slope stability Malaysia" />
+<meta name="theme-color" content="#0a1426" />
+<link rel="canonical" href="https://anchorsolwall.com/learn/slope-stability-analysis.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="AnchorSOL® Wall" />
+<meta property="og:locale" content="en_MY" />
+<meta property="og:title" content="Slope Stability Analysis: Bishop, Spencer, Morgenstern-Price" />
+<meta property="og:description" content="Global stability methods for retaining walls and hillside platforms in Malaysian practice." />
+<meta property="og:image" content="https://anchorsolwall.com/assets/images/HillWall-2.jpg" />
+<meta property="og:url" content="https://anchorsolwall.com/learn/slope-stability-analysis.html" />
+<meta property="article:author" content="AnchorSOL® Wall Sdn. Bhd." />
+<meta property="article:published_time" content="2026-05-12" />
+<meta property="article:section" content="Engineering" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/png" href="../favicon.png" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" /></noscript>
+<link rel="stylesheet" href="../css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "Article", "@id": "https://anchorsolwall.com/learn/slope-stability-analysis.html#article",
+     "headline": "Slope Stability Analysis: Bishop, Spencer, Morgenstern-Price",
+     "description": "Slope stability methods for retaining wall and hillside platform design. Global FoS in Malaysian practice.",
+     "image": "https://anchorsolwall.com/assets/images/HillWall-2.jpg",
+     "datePublished": "2026-05-12", "dateModified": "2026-05-12",
+     "author": [
+       {"@type": "Person", "@id": "https://anchorsolwall.com/#founder", "name": "Dr. Ir. Lai Yip Poon", "jobTitle": "Founder, Chief Designer & Managing Director", "worksFor": {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}, "knowsAbout": ["Mechanically Stabilized Earth walls", "Anchored Soil retention", "Slope stability", "Geotechnical engineering", "Ground improvement"]},
+       {"@type": "Organization", "name": "AnchorSOL® Wall Sdn. Bhd.", "url": "https://anchorsolwall.com/"}
+     ],
+     "publisher": {"@id": "https://anchorsolwall.com/#organization"},
+     "mainEntityOfPage": "https://anchorsolwall.com/learn/slope-stability-analysis.html",
+     "wordCount": 2100, "inLanguage": "en-MY"},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anchorsolwall.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Knowledge Base", "item": "https://anchorsolwall.com/learn/"},
+      {"@type": "ListItem", "position": 3, "name": "Slope Stability Analysis", "item": "https://anchorsolwall.com/learn/slope-stability-analysis.html"}
+    ]},
+    {"@type": "FAQPage", "mainEntity": [
+      {"@type": "Question", "name": "What is global slope stability and why does it matter for retaining walls?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Global slope stability is the analysis of a potential failure surface that wraps around the retaining wall and includes the wall, the retained soil, the foundation, and any deeper weak layer. A wall can pass all its external stability checks (sliding, overturning, bearing) and still fail by global rotation about a deep slip surface. Every retaining wall design must include a global stability check, typically with target FoS greater than 1.5 permanent, greater than 1.3 during construction or rainy-season saturation."}},
+      {"@type": "Question", "name": "Which slope stability method should I use?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Bishop's simplified method is the standard for circular slip surfaces (most natural slope failures). Spencer's method is the rigorous benchmark for arbitrary slip-surface shapes and is the default in modern commercial software (Slide2, SLOPE/W, PLAXIS LE). Morgenstern-Price is similar to Spencer with a different inter-slice force assumption. For Malaysian practice, Bishop is sufficient for routine work, Spencer or Morgenstern-Price is used for critical or unusual geometry."}},
+      {"@type": "Question", "name": "What FoS target should I use for slope stability in Malaysia?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Malaysian JKR and JMG practice target FoS greater than 1.5 for permanent slopes (drained, long-term), FoS greater than 1.3 to 1.4 for temporary construction conditions, and FoS greater than 1.1 to 1.2 under design seismic event. For saturated rainy-season conditions, FoS greater than 1.2 to 1.3 with raised groundwater table. High-consequence sites adjacent to occupied buildings often target FoS greater than 2.0 for permanent works."}}
+    ]}
+  ]
+}
+</script>
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_CODE" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBPBK6RL1G"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-DBPBK6RL1G', { anonymize_ip: true });</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="nav"><div class="wrap"><div class="nav__in">
+  <a class="brand" href="../" aria-label="AnchorSOL Wall, Home">
+    <img src="../assets/images/logo-white.png" alt="" data-no-picture decoding="async">
+    <span class="wm"><span>ANCHORSOL<sup>®</sup></span><small>WALL SYSTEMS · EST. 1999</small></span>
+  </a>
+</div></div></header>
+
+<main id="main" class="article">
+<div class="wrap article__wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="../">Home</a> · <a href="./">Knowledge Base</a> · <span>Slope Stability Analysis</span>
+</nav>
+
+<article>
+<header class="article__head">
+  <span class="article__tag">Analysis guide</span>
+  <h1>Slope stability analysis: Bishop, Spencer, Morgenstern-Price.</h1>
+  <p class="article__lede">A retaining wall can pass every external stability check (sliding, overturning, bearing) and still <b>fail by global rotation</b> about a slip surface that wraps around the wall, through the foundation, and back up to the slope surface. The global stability check, sometimes called <b>compound failure</b> or <b>deep-seated failure</b>, is the analysis that catches this failure mode. This guide covers the three standard methods (Bishop, Spencer, Morgenstern-Price), the design conditions to analyse (drained, undrained, seismic, saturated), and how the global check folds into the overall wall design under JKR and BS 8002 practice.</p>
+  <p class="article__meta">By <b>Dr. Ir. Lai Yip Poon</b>, Founder & Chief Designer · AnchorSOL® Wall Sdn. Bhd. · ~10 min read</p>
+</header>
+
+<section>
+<h2>Why global slope stability matters for retaining walls</h2>
+<p>Most retaining-wall failures in the historical record are not pure overturning, sliding, or bearing failures. They are <b>compound failures</b> in which a slip surface initiates at depth, propagates around the wall foundation, and emerges at the retained soil surface behind the wall. The wall rides the failure as a rigid body, often coming away intact while the slope around it collapses. Examples: the 1993 Highland Towers tower-1 collapse (Hulu Klang) was a global slope failure; the 2008 Bukit Antarabangsa landslide involved global failure of the slope on which retaining walls had been built.</p>
+<p>The mathematical reason: external stability checks examine the wall as a free body, with the soil treated as a load. Global stability examines the wall and the soil as a single body, with internal slip surfaces examined. The two analyses look at different failure mechanisms.</p>
+</section>
+
+<section>
+<h2>The limit-equilibrium method (the foundation of all three approaches)</h2>
+<p>All slope-stability methods start with the same idea: <b>assume a slip surface, compute the ratio of resisting forces to driving forces along that surface, and the result is the FoS for that surface.</b> Repeat for many trial surfaces; the lowest FoS is the design value, and the corresponding surface is the "critical" slip surface.</p>
+<p>Mathematically, on a circular slip surface of radius R passing through the slope:</p>
+<p><b>FoS = (Σ resisting moments) / (Σ driving moments)</b></p>
+<p>The slip surface is divided into vertical slices. Each slice has weight W, base length l, base inclination α from horizontal, and shear resistance τ available along its base. The driving moment is W · sin α · R; the resisting moment is τ · l · R, where τ = c' + (σ_n − u) · tan φ'.</p>
+<p>The difficulty: the normal stress σ_n on each slice base depends on the inter-slice forces between slices, which the slice-by-slice formulation does not directly solve. The three methods differ in how they handle this indeterminacy.</p>
+</section>
+
+<section>
+<h2>The three methods, ranked</h2>
+
+<h3>Bishop's simplified method (1955)</h3>
+<p>Bishop's simplified method assumes the inter-slice forces are purely horizontal and equal in magnitude on both sides of each slice. This gives a closed-form expression for normal stress on each slice base, and FoS becomes the solution to a one-variable iterative equation. Easy to compute by hand or spreadsheet.</p>
+<p>Restricted to <b>circular slip surfaces</b>. Accurate for natural slopes where the critical slip surface is approximately circular, which describes most homogeneous slope failures.</p>
+<p>Where it falls down: layered soils with strong contrast in shear strength, slopes with weak horizontal layers, slopes with internal reinforcement (MSE walls). For these cases the critical slip surface is not circular, and Bishop will miss or under-estimate it.</p>
+
+<h3>Spencer's method (1967)</h3>
+<p>Spencer's method assumes the inter-slice forces have a single constant inclination across all slices (the inclination is determined by the analysis, not assumed in advance). This produces both force and moment equilibrium and gives a unique FoS for an arbitrary slip surface shape.</p>
+<p>Spencer is the <b>rigorous benchmark</b> for slope stability and is the default in modern commercial software. Slightly more computationally intensive than Bishop but feasible on any computer.</p>
+
+<h3>Morgenstern-Price method (1965)</h3>
+<p>Morgenstern-Price is similar to Spencer but assumes a more general functional form for the inter-slice force inclination (the inclination can vary along the slip surface following an analyst-chosen function f(x), where x is the distance along the slip surface). The analyst typically uses a half-sine function f(x), which is the practical default in commercial software.</p>
+<p>Equivalent in accuracy to Spencer for most geometries. Slightly more flexible for unusual geometry. Same computational class.</p>
+
+<h3>Other methods</h3>
+<ul>
+<li><b>Janbu's simplified method</b>, for non-circular slip surfaces, force-equilibrium only (no moment), conservative bias. Use as a check.</li>
+<li><b>Fellenius / Swedish slice method</b>, ignores inter-slice forces entirely. Conservative bias, mostly of historical interest now.</li>
+<li><b>Finite-element strength reduction analysis</b>, the modern alternative to limit-equilibrium. PLAXIS, ABAQUS, FLAC. Captures stress-deformation effects but more demanding on input parameters.</li>
+</ul>
+</section>
+
+<section>
+<h2>What conditions to analyse</h2>
+
+<h3>Effective vs total stress</h3>
+<p>For long-term permanent stability of granular fills and weathered residual soils, use <b>effective stress analysis</b> with drained strength parameters c', φ', and an assumed groundwater table position.</p>
+<p>For short-term temporary stability of cohesive soils (during construction, before consolidation), use <b>total stress analysis</b> with undrained shear strength c_u and φ_u = 0. Total stress is the conservative-bound check during cut excavation.</p>
+<p>For Malaysian residual soils, both checks are required: effective for permanent works, total for temporary cut faces.</p>
+
+<h3>Groundwater conditions</h3>
+<p>Three groundwater scenarios are typically analysed:</p>
+<ol>
+<li><b>Dry / dry-season:</b> groundwater table well below the slip-surface depth, no pore-pressure contribution</li>
+<li><b>Long-term steady-state:</b> typical wet-season groundwater table, with flow lines computed by a seepage analysis</li>
+<li><b>Saturated / 1-in-25-year rainstorm:</b> groundwater raised to near the surface, maximum pore pressure on the slip surface</li>
+</ol>
+<p>The saturated case is design-critical for Malaysian slopes and is the case where FoS often drops below 1.0 if drainage and reinforcement are inadequate.</p>
+
+<h3>Seismic loading</h3>
+<p>For Malaysian sites, pseudo-static seismic analysis with horizontal coefficient k_h = 0.05 to 0.10 (peninsular) or 0.10 to 0.15 (Sabah). The seismic coefficient adds a horizontal body force k_h · W to each slice, increasing the driving moment and reducing FoS.</p>
+<p>Target seismic FoS ≥ 1.1 to 1.2 with the design seismic event. For high-consequence sites, dynamic time-history analysis with finite-element software may be required.</p>
+</section>
+
+<section>
+<h2>Including reinforcement in the analysis</h2>
+<p>For an MSE wall or a soil-nail wall, the reinforcement elements are tensile members that cross potential slip surfaces. The slope stability analysis includes their resistance as an additional resisting force.</p>
+
+<h3>MSE reinforcement</h3>
+<p>Each reinforcement layer is modelled as a horizontal tensile force at its depth. The tensile capacity is the smaller of:</p>
+<ul>
+<li>The long-term tensile design strength of the reinforcement (T_d = T_ult / γ partial factors)</li>
+<li>The pullout resistance behind the slip surface (P_r = friction or anchorage contribution behind the slip)</li>
+</ul>
+<p>For AnchorSOL®'s anchored MSE, the pullout resistance depends on whether the slip surface intersects ahead of or behind the deadman block. If ahead, the full passive resistance of the deadman is available; if behind, only the friction along the tendon up to the slip surface contributes.</p>
+
+<h3>Soil nails</h3>
+<p>Each nail is modelled as an inclined tensile force at its installation angle (typically 10 to 30° from horizontal). Tensile capacity is the smaller of bar tensile strength, grout-bar bond, and grout-soil bond.</p>
+
+<h3>Tied-back anchors (post-tensioned)</h3>
+<p>Each anchor contributes its applied prestress force as a resisting force along its angle of installation. The anchor's design load capacity (typically 60 to 75% of ultimate tendon strength) is the resisting force.</p>
+</section>
+
+<section>
+<h2>Typical FoS targets in Malaysian practice</h2>
+<table class="article__table">
+<thead><tr><th>Condition</th><th>FoS target</th><th>Reference</th></tr></thead>
+<tbody>
+<tr><td>Permanent, drained, long-term</td><td>≥ 1.5</td><td>JKR Specification for Earthworks</td></tr>
+<tr><td>Permanent, drained, high-consequence (residential adjacent)</td><td>≥ 2.0</td><td>JMG hillside guidelines</td></tr>
+<tr><td>Saturated, rainy season</td><td>≥ 1.2 to 1.3</td><td>BS 8002</td></tr>
+<tr><td>Temporary, construction</td><td>≥ 1.3 to 1.4</td><td>JKR / BS 6031</td></tr>
+<tr><td>Design seismic event (pseudo-static)</td><td>≥ 1.1 to 1.2</td><td>JMG / international practice</td></tr>
+<tr><td>Post-seismic residual</td><td>≥ 1.0</td><td>JMG hillside guidelines</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Software in Malaysian practice</h2>
+<p>The standard tools for slope stability analysis on Malaysian engineering practice:</p>
+<ul>
+<li><b>Slide2 / Slide3 (Rocscience)</b>, the most-common limit-equilibrium tool. Bishop, Spencer, Morgenstern-Price, Janbu all available. Supports reinforcement, distributed loads, seismic, water table, multiple soil layers.</li>
+<li><b>SLOPE/W (GeoStudio)</b>, the long-time alternative. Same method coverage, broadly comparable workflow.</li>
+<li><b>PLAXIS 2D / 3D</b>, finite-element analysis. Strength-reduction-FoS option for slope stability, plus deformation analysis. Used for high-consequence projects.</li>
+<li><b>FLAC / FLAC3D</b>, finite-difference analysis. Specialist use, large-deformation problems.</li>
+<li><b>Geo5</b>, integrated geotechnical suite popular in some Malaysian practices.</li>
+</ul>
+<p>For routine retaining-wall design, Slide2 or SLOPE/W is sufficient. PLAXIS or FLAC is justified where deformation prediction matters (sensitive existing structures), where complex soil constitutive models are needed (creep, anisotropy), or where the project is high-consequence.</p>
+</section>
+
+<section>
+<h2>The check sequence for an AnchorSOL® hillside wall</h2>
+<ol>
+<li><b>Characterise the soil profile</b> from the site investigation: layered strength, unit weights, groundwater table, residual vs intact strength parameters</li>
+<li><b>Define the wall geometry</b>: facing height, embedment depth, reinforcement length and spacing, deadman position</li>
+<li><b>Run drained-condition slope stability</b> with Bishop's simplified for the initial check, then Spencer or Morgenstern-Price for the critical surface refinement. Include reinforcement.</li>
+<li><b>Run saturated-condition slope stability</b> with raised groundwater table. Re-check FoS targets.</li>
+<li><b>Run seismic pseudo-static analysis</b> for sites with design seismic event &gt; M5.5</li>
+<li><b>Iterate the wall design</b>: adjust reinforcement length, deadman position, or wall geometry until FoS targets are met in all conditions</li>
+<li><b>For high-consequence sites:</b> run finite-element verification in PLAXIS with strength-reduction option, plus deformation prediction</li>
+</ol>
+<p>The output: a design report with critical slip surface, FoS in each condition, reinforcement layout, and the input parameters justified from the site investigation. This is the engineering certification deliverable for the project.</p>
+</section>
+
+<section>
+<h2>Frequently asked questions</h2>
+
+<h3>What is the difference between FoS and partial factor design?</h3>
+<p>FoS (factor of safety) is a single overall ratio of resisting to driving forces. Partial factor design applies separate factors to each parameter (γ_φ on friction angle, γ_c on cohesion, γ_R on resistance, γ_f on actions). Modern codes (Eurocode 7, BS 8006) use partial factors. For routine Malaysian slope stability work, the legacy FoS framework is still common because of its conceptual simplicity, but the partial-factor framework is more rigorous.</p>
+
+<h3>How deep is the critical slip surface usually?</h3>
+<p>Depends on the slope geometry, soil layering, and reinforcement. For homogeneous slopes, the critical surface depth scales with slope height. For layered slopes, the critical surface often follows a weak layer interface. For reinforced slopes, the critical surface is often forced deeper than the reinforcement zone or above it.</p>
+
+<h3>Do I need to do slope stability for a flat-site retaining wall?</h3>
+<p>Yes, always. Even on a flat site, the foundation soil may have a weak layer below that initiates a deep-seated failure surface. The minimum routine check is a Bishop's simplified analysis for surfaces passing through the wall base and back up to the slope surface (or to the original ground level for flat sites). FoS &gt; 1.5 should hold easily on competent foundations; if it doesn't, the foundation is the problem.</p>
+
+<h3>Can I use Bishop's method alone for an MSE wall design?</h3>
+<p>For routine projects, yes, as long as the critical surface is approximately circular. For atypical geometry (tall walls, sloping backfill, weak foundation layer below), use Spencer or Morgenstern-Price. Modern software runs both with the same input data so there's little reason not to.</p>
+</section>
+
+</article>
+
+<aside class="article__related">
+  <span class="tech-label">Read next</span>
+  <div class="article__related-grid">
+    <a class="kb-card" href="slope-retaining-wall-design.html">
+      <span class="kb-card__tag">Design guide</span>
+      <h3>Slope Retaining Wall Design</h3>
+      <p>Hillside wall types, design checks, JKR + JMG guidelines, the Malaysian context.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="mse-wall-design.html">
+      <span class="kb-card__tag">Design guide</span>
+      <h3>MSE Wall Design Methodology</h3>
+      <p>External + internal stability checks, BS 8006 limit states.</p>
+      <span class="kb-card__cta">Read guide →</span>
+    </a>
+    <a class="kb-card" href="../applications/#hill-stabilization">
+      <span class="kb-card__tag">Application</span>
+      <h3>Hillside Stabilization</h3>
+      <p>500+ AnchorSOL® hillside projects: where slope stability becomes the design driver.</p>
+      <span class="kb-card__cta">See application →</span>
+    </a>
+  </div>
+</aside>
+
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="grid">
+    <div><h4>AnchorSOL® Wall</h4><p>Malaysia's most-specified anchored MSE wall. Modular precast, factory-built, mobilised lean. Since 1999.</p></div>
+    <div><h4>System</h4><ul><li><a href="../#system">The System</a></li><li><a href="../applications/">Applications</a></li><li><a href="../projects/">All projects (500+)</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../#about">About</a></li><li><a href="../#contact">Contact</a></li><li><a href="./">Knowledge Base</a></li></ul></div>
+  </div>
+  <div class="bottom"><span>© 2026 AnchorSOL® Wall Sdn. Bhd. · 199901015121 (490021-M)</span><span>ENGINEERED TO RETAIN EARTH.</span></div>
+</div></footer>
+
+<nav class="tabbar" aria-label="Section navigation">
+  <div class="tabbar__scroll">
+    <a class="tabbar__tab" href="../#hero"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M3 11 L12 3 L21 11"/><path d="M5 10 V21 H19 V10"/></svg><span class="tabbar__lbl">Home</span></a>
+    <a class="tabbar__tab" href="../#mse"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8 V8.01" stroke-width="2.5"/><path d="M12 11 V17"/></svg><span class="tabbar__lbl">Basics</span></a>
+    <a class="tabbar__tab" href="../#system"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="tabbar__lbl">System</span></a>
+    <a class="tabbar__tab" href="../applications/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 L3 8 L12 13 L21 8 L12 3 Z"/><path d="M3 12 L12 17 L21 12"/><path d="M3 16 L12 21 L21 16"/></svg><span class="tabbar__lbl">Apps</span></a>
+    <a class="tabbar__tab" href="../#why"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3 V21"/><path d="M6 8 H18"/><path d="M3 14 L6 8 L9 14 Z"/><path d="M15 14 L18 8 L21 14 Z"/></svg><span class="tabbar__lbl">Compare</span></a>
+    <a class="tabbar__tab" href="../#lean"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M13 2 L4 14 H11 L11 22 L20 10 H13 L13 2 Z"/></svg><span class="tabbar__lbl">Lean</span></a>
+    <a class="tabbar__tab" href="../projects/"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 16 L8 11 L13 16 L17 12 L21 16"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/></svg><span class="tabbar__lbl">Projects</span></a>
+    <a class="tabbar__tab" href="../#about"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21 V19 C4 16 7 14 12 14 C17 14 20 16 20 19 V21"/></svg><span class="tabbar__lbl">About</span></a>
+    <a class="tabbar__tab" href="../#contact"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="3" y="6" width="18" height="13"/><path d="M3 7 L12 14 L21 7"/></svg><span class="tabbar__lbl">Contact</span></a>
+    <a class="tabbar__tab is-active" href="./"><svg class="tabbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4 H12 V20 H4 Z"/><path d="M12 4 H20 V20 H12 Z"/><path d="M4 8 L20 8" stroke-dasharray="2 2"/></svg><span class="tabbar__lbl">Learn</span></a>
+    <a class="tabbar__tab tabbar__tab--whatsapp" href="https://wa.me/60122362159?text=Hi%20AnchorSOL%2C%20project%20enquiry%20from%20your%20website." target="_blank" rel="noopener"><span class="tabbar__icon-wrap"><span class="tabbar__pulse" aria-hidden="true"></span><svg class="tabbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg></span><span class="tabbar__lbl">Chat</span></a>
+  </div>
+</nav>
+
+<script src="../js/site.js" defer></script>
+</body>
+</html>
