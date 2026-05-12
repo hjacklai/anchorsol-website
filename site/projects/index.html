@@ -429,11 +429,9 @@
     var ex = extras(title, qty);
     var here = siteHook(ex, locTxt);   // e.g., " at Cheras (Fasa 2A) along KM10"
     var sz = scaleHook(ex);            // e.g., ", a headline-scale corridor by m²,"
-    // Specific client + contractor names if present in data
-    var client = cleanField(p.client || '');
-    var contractor = cleanField(p.contractor || '');
-    var clientHook = client ? ' Specified by <b>' + client + '</b>.' : '';
-    var contractorHook = contractor ? ' Delivered with main contractor <b>' + contractor + '</b>.' : '';
+    // Client + contractor stay in the meta row, not inline in the prose
+    var clientHook = '';
+    var contractorHook = '';
 
     var constraint, solution;
 
