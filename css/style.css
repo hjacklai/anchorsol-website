@@ -4373,13 +4373,33 @@ body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0)); }
   margin-bottom: 6px;
 }
 .proj-row__client b, .proj-row__qty b { color: var(--amber); margin-right: 4px; }
+.proj-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 4px 0 12px;
+}
 .proj-row__solution {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--mut);
+  padding-left: 12px;
+  border-left: 2px solid var(--rule);
 }
 .proj-row__solution b { color: var(--ink); margin-right: 6px; }
+.proj-row__solution > b:first-of-type {
+  color: var(--amber);
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 0 4px;
+}
+.proj-row__solution--value { border-left-color: var(--amber); background: rgba(212, 162, 58, .04); padding: 10px 12px; }
+.proj-row__solution--value > b:first-of-type { color: var(--amber); }
+.proj-row__solution b { color: var(--ink); }
 .proj-all__cta {
   text-align: center;
   margin-top: 32px;
