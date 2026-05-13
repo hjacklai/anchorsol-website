@@ -235,6 +235,74 @@ Expect first impressions in Search Console within 1-3 weeks of submitting the si
 
 ---
 
+---
+
+## Competitor counter-moves (from Geoquest + Nehemiah audit)
+
+A research audit on the two principal Malaysian retaining-wall competitors revealed three gaps we should close to dominate them on search:
+
+### A. Downloads / Brochures hub (matches Geoquest)
+
+Geoquest has a `Brochures` hub under News & Media with PDF downloads per product family. We have one (the master catalogue PDF link on homepage) but not a dedicated hub.
+
+**Action**: Create `site/resources/index.html` listing:
+- AnchorSOL Wall System catalogue (24 MB PDF, already at /assets/docs/anchorsol-wall-catalogue.pdf)
+- Anchored MSE design datasheet (to create: 1-pager with spec)
+- Method statement template (to create)
+- Specification template (already at /learn/mse-wall-specification-template.html, but offer Word download)
+- Project portfolio sample PDF (to extract from existing catalogue)
+- Standard details / CAD blocks (to create or compile)
+
+Time: 4 to 8 hours to assemble PDFs + 1 hour for the index page.
+
+### B. Project geo-visualization map (counters Nehemiah's "tallest wall" moat)
+
+Nehemiah's strongest position is the 42m Cheras wall record + named KL-Karak / KTM Double Track / JKR projects. Their "Our Projects" page is a list, not a map.
+
+**Action**: Add an interactive Malaysia map to `site/projects/` (or new `site/map/`) with project pins:
+- 500+ pins clustered by state
+- Click each pin: project name, client, year, m², image, link
+- Highlight the marquee projects (EKVE 25k m², DUKE 22k m², SUKE 22k m², Pesisiran Pantai 23k m², Sungai Kedah 15k m², Kuantan Port City 14.5k m², etc.)
+- Implementation: Leaflet.js + OpenStreetMap tiles, lightweight (~30 KB JS + 10 KB CSS)
+
+Time: 1 to 2 days for map + project data lat/lon enrichment.
+
+### C. Cost / wall-height estimator (neither competitor has)
+
+Differentiator: a quick interactive form that gives an indicative cost band for any project. Drives lead capture.
+
+**Action**: Build `site/quote/index.html` with a form:
+- Wall height (1-30 m slider)
+- Soil type (granular / mixed / cohesive radio)
+- Application (highway / hill / bridge / marine / township / industrial select)
+- Backfill source available (premium granular / crusher run / site-won granular)
+- Wall length (m, numeric)
+
+Output (client-side JS, no backend):
+- Indicative cost band: RM X to RM Y per m^2
+- Recommended system (anchored MSE, friction MSE, RC, etc.)
+- 2 to 3 most-relevant case studies from `data/cost-bands.json`
+- WhatsApp button pre-filled with the inputs
+
+Time: 1 day for the form + cost band logic + matching case studies.
+
+### D. Application-segmented landing pages (matches Geoquest's RETAIN/CROSS/PROTECT/STRENGTHEN)
+
+Geoquest groups its content into 4 application categories. Our `/applications/` page has 12 use cases (better, more long-tail), but they're all on one page. Splitting each into its own page would multiply ranking surface.
+
+**Action** (optional, low-priority): Convert `/applications/index.html` into 12 separate pages:
+- `/applications/highway-embankments/`
+- `/applications/bridge-abutments/`
+- `/applications/hill-stabilization/`
+- `/applications/marine-riverbank/`
+- ... etc.
+
+Each one would inherit the section content from the current /applications/ index but become its own indexable page. Sitemap grows by 12 URLs.
+
+Time: 4 hours via the same Perl template generator approach.
+
+---
+
 ## Quick stats — where we stand
 
 - **38 indexable pages** (homepage + applications + locations + projects + 34 learn pages)
