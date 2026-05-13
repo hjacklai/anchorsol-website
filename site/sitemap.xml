@@ -43,6 +43,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url><loc>https://anchorsolwall.com/locations/selangor/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.92</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/kuala-lumpur/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.92</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/putrajaya/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/johor/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/pahang/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/perak/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/penang/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/kedah/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/negeri-sembilan/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/melaka/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/terengganu/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/kelantan/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.82</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/perlis/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/sabah/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/sarawak/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority></url>
+  <url><loc>https://anchorsolwall.com/locations/labuan/</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
   <url>
     <loc>https://anchorsolwall.com/learn/</loc>
     <lastmod>2026-05-13</lastmod>
