@@ -340,7 +340,7 @@ sub render_page {
 <p><b>Geology and terrain.</b> $s->{geology}</p>
 <p><b>Economic and infrastructure context.</b> $s->{economic_context}</p>
 <p><b>Why anchored MSE fits $name.</b> $s->{why_us_here}</p>
-<p class="article__lai-quote" style="border-left:3px solid var(--amber); padding:14px 20px; margin:20px 0; background:rgba(255,255,255,.03); font-style:italic; color:var(--ink);">$s->{lai_note} <span style="display:block; margin-top:8px; font-style:normal; font-size:12px; color:var(--mut); letter-spacing:.06em; text-transform:uppercase;">— Dr. Ir. Lai Yip Poon, Founder &amp; Chief Designer</span></p>
+<p class="article__field-note" style="border-left:3px solid var(--amber); padding:14px 20px; margin:20px 0; background:rgba(255,255,255,.03); color:var(--ink);">$s->{lai_note}</p>
 </section>
 
 <section>
@@ -498,7 +498,7 @@ $s->{projects}
   <span class="article__tag">Location reference, $name</span>
   <h1>$h1</h1>
   $lede
-  <p class="article__meta">By <b>Dr. Ir. Lai Yip Poon</b>, Founder &amp; Chief Designer · AnchorSOL® Wall Sdn. Bhd. · ~10 min read</p>
+  <p class="article__meta">By <b>AnchorSOL® Wall Sdn. Bhd.</b> &middot; Engineering reference &middot; ~10 min read</p>
 </header>
 
 $body
