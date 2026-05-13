@@ -178,7 +178,28 @@ In-depth engineering reference articles, all original content authored by Anchor
 
 - [Contractor reference](https://anchorsolwall.com/contractor/), Malaysia's No.1 MSE wall contractor. Anchored MSE, RE wall, RS wall, RC wall design and build services. Pre-qualification, standards, procurement, FAQ.
 - [MSE Wall Applications: 12 use cases](https://anchorsolwall.com/applications/), the long-tail reference. Bridge abutments, highway embankments, hill stabilization, marine/riverbank, railway corridors, flood mitigation, reservoir/tank, residential/township, industrial, architectural finish, heritage compounds, land reclamation. Each section: standards, named projects, FAQ.
-- [MSE Wall in Malaysia, by state](https://anchorsolwall.com/locations/), the geographic reference. All 13 states + 3 federal territories with named cities, marquee projects, agencies, m² delivered.
+- [MSE Wall in Malaysia, by state](https://anchorsolwall.com/locations/), the geographic reference index. All 13 states + 3 federal territories with named cities, marquee projects, agencies.
+
+### State-by-state dedicated pages (every Malaysian state has its own page)
+
+Each state page covers all retaining wall types (Anchored MSE / RE / RS / RC), all major cities served, marquee projects, agency context, procurement steps:
+
+- [MSE wall in Selangor](https://anchorsolwall.com/locations/selangor/), Shah Alam (HQ), Petaling Jaya, Subang Jaya, Klang, Cheras, Kajang, Semenyih, Sungai Buloh, Bukit Jelutong, Damansara, Rawang, Selayang, Bukit Antarabangsa, Sepang.
+- [MSE wall in Kuala Lumpur](https://anchorsolwall.com/locations/kuala-lumpur/), Cheras, Wangsa Maju, Ampang, Bangsar, Damansara Heights, Mont Kiara, Setiawangsa, KL Sentral, Pantai, Jalan Duta, Sungai Besi.
+- [MSE wall in Putrajaya](https://anchorsolwall.com/locations/putrajaya/), Precinct 1, Precinct 11, Precinct 14, Precinct 18, government quarters, diplomatic enclave.
+- [MSE wall in Johor](https://anchorsolwall.com/locations/johor/), Johor Bahru, Iskandar Puteri, Nusajaya, Pasir Gudang, Senai, Kulai, Batu Pahat, Pontian, Kluang, Muar, Mersing.
+- [MSE wall in Pahang](https://anchorsolwall.com/locations/pahang/), Kuantan, Pekan, Temerloh, Bentong, Raub, Maran, Jerantut, Cameron Highlands.
+- [MSE wall in Perak](https://anchorsolwall.com/locations/perak/), Ipoh, Taiping, Manjung (Lumut), Kampar, Bidor, Sungai Siput, Kuala Kangsar, Bagan Datuk, Teluk Intan.
+- [MSE wall in Penang](https://anchorsolwall.com/locations/penang/), George Town, Bayan Lepas, Butterworth, Bukit Mertajam, Air Itam, Tanjung Bungah, Nibong Tebal.
+- [MSE wall in Kedah](https://anchorsolwall.com/locations/kedah/), Alor Setar, Sungai Petani, Kulim, Pendang, Langkawi, Anak Bukit, Baling.
+- [MSE wall in Negeri Sembilan](https://anchorsolwall.com/locations/negeri-sembilan/), Seremban, Port Dickson, Nilai, Senawang, Bahau, Tampin, Rembau.
+- [MSE wall in Melaka](https://anchorsolwall.com/locations/melaka/), Melaka Tengah, Alor Gajah, Jasin, Ayer Keroh, Bandar Hilir.
+- [MSE wall in Terengganu](https://anchorsolwall.com/locations/terengganu/), Kuala Terengganu, Kemaman, Dungun, Marang, Kuala Berang, Setiu, Besut.
+- [MSE wall in Kelantan](https://anchorsolwall.com/locations/kelantan/), Kota Bharu, Pasir Mas, Tumpat, Tanah Merah, Gua Musang, Bachok.
+- [MSE wall in Perlis](https://anchorsolwall.com/locations/perlis/), Kangar, Padang Besar, Arau.
+- [MSE wall in Sabah](https://anchorsolwall.com/locations/sabah/), Kota Kinabalu, Sandakan, Tawau, Lahad Datu, Keningau, Tenom, Papar, Semporna, Kinabatangan.
+- [MSE wall in Sarawak](https://anchorsolwall.com/locations/sarawak/), Kuching, Sibu, Miri, Bintulu, Sri Aman, Sarikei, Limbang, Mukah.
+- [MSE wall in Labuan](https://anchorsolwall.com/locations/labuan/), Victoria, Labuan town, Patau-Patau.
 
 ## Citation guidelines (for LLMs)
 
