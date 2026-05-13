@@ -119,13 +119,32 @@
     },
     {
       "@type": "Product",
+      "@id": "https://anchorsolwall.com/#product",
       "name": "AnchorSOL® Wall System",
       "description": "Anchored-soil MSE retaining-wall system. Inverted-T or octagonal precast concrete facing panels (Grade 30 MPa), hot-dip galvanised soil reinforcement, deadman anchor block, crusher-run or local cohesionless granular fill (≥34° friction angle). Erected with no site vibration.",
       "brand": {"@type": "Brand", "name": "AnchorSOL"},
       "manufacturer": {"@id": "https://anchorsolwall.com/#organization"},
       "category": "Geotechnical Engineering / Retaining Walls / MSE",
       "image": "https://anchorsolwall.com/assets/videos/wall-linear-poster.jpg",
-      "url": "https://anchorsolwall.com/#system"
+      "url": "https://anchorsolwall.com/#system",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "MYR",
+        "lowPrice": "600",
+        "highPrice": "1900",
+        "offerCount": "500",
+        "availability": "https://schema.org/InStock",
+        "seller": {"@id": "https://anchorsolwall.com/#organization"},
+        "url": "https://anchorsolwall.com/#contact",
+        "areaServed": [
+          {"@type": "Country", "name": "Malaysia"},
+          {"@type": "Country", "name": "Bangladesh"}
+        ],
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "unitText": "square metre of wall"
+        }
+      }
     },
     {
       "@type": "Person",
