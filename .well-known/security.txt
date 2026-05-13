@@ -1,0 +1,7 @@
+# RFC 9116 security.txt for anchorsolwall.com
+Contact: mailto:lai@anchorsolwall.com
+Contact: tel:+60-12-236-2159
+Expires: 2027-05-13T00:00:00.000Z
+Preferred-Languages: en, ms
+Canonical: https://anchorsolwall.com/.well-known/security.txt
+Policy: https://anchorsolwall.com/
