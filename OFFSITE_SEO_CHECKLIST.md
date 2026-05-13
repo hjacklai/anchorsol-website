@@ -156,7 +156,7 @@ Statements:
 | `field of work (P101)` | earth retention |
 | `notable work (P800)` | AnchorSOL Wall System |
 
-The Ph.D. AIT 2007 + decades of practice + founding of AnchorSOL® Wall easily clear the notability bar. Once accepted, Dr. Lai becomes a Wikidata entity that AI search engines cite by name.
+The Ph.D. AIT 2007 + decades of practice + founding of AnchorSOL® Wall + the 4-jurisdiction patent (Malaysia, India, Sri Lanka, Vietnam) easily clear the notability bar. Once accepted, Dr. Lai becomes a Wikidata entity that AI search engines cite by name.
 
 ### 7. Patent database listing (Malaysia)
 
