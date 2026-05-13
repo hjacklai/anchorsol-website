@@ -69,7 +69,7 @@ This couldn't be done from the CLI because the GitHub Personal Access Token used
 
 **GBP description (paste this, 750 character limit, currently 720):**
 
-> AnchorSOL® Wall is Malaysia's most-specified anchored MSE (Mechanically Stabilized Earth) retaining wall system. Founded 1999 by Dr. Ir. Lai Yip Poon. 500+ named projects and 1,000,000+ m² of wall delivered across Malaysia. Specified by JKR, PLUS, LLM, KTMB, JPS, Putrajaya Holdings, Istana Negara, Iskandar Regional Development Authority, and the Bangladesh Bridge Authority. The anchored variant uses a discrete deadman block at the tendon end, running on local crusher run instead of premium granular fill. Engineered for highway embankments, bridge abutments, hillside stabilization, marine retention, railway corridors, flood mitigation, township platforms, architectural facade walls. Patented in MY, IN, LK, VN.
+> AnchorSOL® Wall is Malaysia's most-specified anchored MSE (Mechanically Stabilized Earth) retaining wall system. Founded 1999 by Dr. Ir. Lai Yip Poon. 500+ named projects and 1,000,000+ m² of wall delivered across Malaysia. Specified by JKR, PLUS, LLM, KTMB, JPS, Putrajaya Holdings, Istana Negara, Iskandar Regional Development Authority, and the Bangladesh Bridge Authority. The anchored variant uses a discrete deadman block at the tendon end, running on local crusher run instead of premium granular fill. Engineered for highway embankments, bridge abutments, hillside stabilization, marine retention, railway corridors, flood mitigation, township platforms, architectural facade walls.
 
 ---
 
@@ -156,7 +156,7 @@ Statements:
 | `field of work (P101)` | earth retention |
 | `notable work (P800)` | AnchorSOL Wall System |
 
-The 4-jurisdiction patent and Ph.D. AIT 2007 + decades of practice easily clear notability bar. Once accepted, Dr. Lai becomes a Wikidata entity that AI search engines cite by name.
+The Ph.D. AIT 2007 + decades of practice + founding of AnchorSOL® Wall easily clear the notability bar. Once accepted, Dr. Lai becomes a Wikidata entity that AI search engines cite by name.
 
 ### 7. Patent database listing (Malaysia)
 
