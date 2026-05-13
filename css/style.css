@@ -2998,7 +2998,7 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   .kb-cta__box h2 { font-size: 32px; }
 }
 
-/* Article page — transparent so the body's blueprint grid shows through */
+/* Article page, transparent so the body's blueprint grid shows through */
 .article { padding: 64px 0 96px; background: transparent; }
 .article__wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
 .article__head { margin: 32px 0 48px; }
