@@ -2268,8 +2268,67 @@ footer .bottom {
 
   /* Tightened section vertical padding */
   section { padding: 56px 0; }
-  #system, #why, #lean, #applications, #projects, #about, #contact, #capabilities, .mse, .gallery-strip, .vfeature { padding: 56px 0; }
-  .vfeature { min-height: auto; }
+  #system, #why, #lean, #applications, #projects, #about, #contact, #capabilities, .mse, .gallery-strip { padding: 56px 0; }
+
+  /* vfeature: stack video above text on mobile so the meta box does
+     not cover the drone aerial. Video at top with natural 16:9 ratio,
+     text content flows below on solid background. */
+  .vfeature {
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    overflow: visible;
+    isolation: auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-2);
+  }
+  .vfeature__video {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    z-index: auto;
+    filter: contrast(1.05) brightness(.85) saturate(.95);
+    order: -1;
+  }
+  .vfeature::before,
+  .vfeature::after {
+    display: none;
+  }
+  .vfeature__inner {
+    position: relative;
+    inset: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    padding: 28px 20px 36px;
+    background: var(--bg-2);
+    gap: 16px;
+  }
+  .vfeature__l {
+    gap: 12px;
+  }
+  .vfeature__h2 {
+    font-size: clamp(28px, 7.5vw, 42px);
+    line-height: 1.02;
+  }
+  .vfeature__r {
+    padding: 14px 16px;
+    background: var(--bg-surface);
+    border-left: 3px solid var(--amber);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .vfeature__meta {
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+  .vfeature__chips {
+    gap: 6px;
+  }
 
   /* WhatsApp FAB smaller, closer to edge */
   .wa-fab { bottom: 16px; right: 16px; width: 52px; height: 52px; }
