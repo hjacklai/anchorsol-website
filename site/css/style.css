@@ -667,8 +667,8 @@ body.nav-open { overflow: hidden; }
 .strip__in b { color: #fff; }
 
 /* -------- Section shell -------- */
-section { padding: 64px 0; border-bottom: 1px solid var(--rule); position: relative; }
-section.cta-band, section.cta { padding: 120px 0; }
+section { padding: 44px 0; border-bottom: 1px solid var(--rule); position: relative; }
+section.cta-band, section.cta { padding: 80px 0; }
 section.hero { padding: 0; }
 
 .secmark {
@@ -2077,7 +2077,7 @@ section.hero { padding: 0; }
 .press__q::before { content: ""; display: block; width: 32px; height: 2px; background: var(--hi); margin-bottom: 14px; }
 
 /* -------- CTA section -------- */
-.cta { padding: 120px 0; background: var(--bg-2); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
+.cta { padding: 80px 0; background: var(--bg-2); border-bottom: 1px solid var(--rule); position: relative; overflow: hidden; }
 .cta::before {
   content: "";
   position: absolute; inset: 0;
@@ -2775,7 +2775,7 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 
 /* Section head--center on dark sections (already inherits) */
 .section--dark { background: var(--bg-2); }
-.cta-band { background: var(--bg-2); padding: 120px 0; border-bottom: 1px solid var(--rule); }
+.cta-band { background: var(--bg-2); padding: 80px 0; border-bottom: 1px solid var(--rule); }
 .cta-band__bg { display: none; }
 .cta-band .container { text-align: center; }
 .cta-band h2 { color: var(--ink); max-width: 22ch; margin: 1rem auto; font-size: clamp(40px, 5vw + 1rem, 88px); line-height: .9; }
@@ -2924,7 +2924,7 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 /* =========================================================================
    KNOWLEDGE BASE / ARTICLES (/learn/)
    ========================================================================= */
-.kb-hero { padding: 80px 0 56px; background: transparent; border-bottom: 1px solid var(--rule); }
+.kb-hero { padding: 56px 0 40px; background: transparent; border-bottom: 1px solid var(--rule); }
 .breadcrumb {
   font-family: var(--ff-mono);
   font-size: 11px;
@@ -3007,7 +3007,7 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 .kb-hero__lede { font-size: 17px; line-height: 1.6; color: var(--mut); max-width: 56ch; margin: 0; }
 @media (max-width: 700px) { .kb-hero h1 { font-size: 40px; } }
 
-.kb-grid { padding: 64px 0; }
+.kb-grid { padding: 44px 0; }
 .kb-section-title {
   font-family: var(--ff-display);
   font-weight: 900;
@@ -3091,7 +3091,7 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 }
 .kb-card:hover .kb-card__cta { color: var(--hi); }
 
-.kb-cta { padding: 80px 0 96px; background: transparent; border-top: 1px solid var(--rule); }
+.kb-cta { padding: 56px 0 64px; background: transparent; border-top: 1px solid var(--rule); }
 .kb-cta__box {
   padding: 56px 64px;
   background: var(--bg-surface);
@@ -3115,7 +3115,7 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 }
 
 /* Article page, transparent so the body's blueprint grid shows through */
-.article { padding: 64px 0 96px; background: transparent; }
+.article { padding: 44px 0 64px; background: transparent; }
 .article__wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
 .article__head { margin: 32px 0 48px; }
 .article__tag {
@@ -3166,7 +3166,7 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
 .article__toc a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--mut-2); }
 .article__toc a:hover { color: var(--amber); border-bottom-color: var(--amber); }
 
-.article section { margin: 48px 0; }
+.article section { margin: 28px 0; }
 .article h2 {
   font-family: var(--ff-display);
   font-weight: 900;
@@ -4794,8 +4794,8 @@ html { scroll-padding-top: 120px; }
   .article__tag { font-size: 10px; }
   .article__meta { font-size: 11.5px; }
   .article__wrap { padding: 0 18px; }
-  .article { padding: 32px 0 56px; }
-  .article section { margin: 28px 0; }
+  .article { padding: 24px 0 40px; }
+  .article section { margin: 20px 0; }
   .article__head { margin: 16px 0 24px; }
 }
 
@@ -4971,7 +4971,7 @@ html { scroll-padding-top: 120px; }
   .article__meta { font-size: 12px; }
   .article__tag { font-size: 10.5px; }
   .article__toc li { font-size: 13px; }
-  .article section { margin: 36px 0; }
+  .article section { margin: 22px 0; }
   .article__head { margin: 20px 0 32px; }
   .article__related { margin-top: 48px; padding-top: 32px; }
   .breadcrumb { font-size: 12px; }
