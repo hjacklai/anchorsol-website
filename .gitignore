@@ -28,3 +28,7 @@ Thumbs.db
 .idea/
 
 # Keep .claude/launch.json + .claude/serve.ps1 (useful for local preview)
+
+# Internal-only — never commit
+*.pdf
+!site/assets/papers/*.pdf
