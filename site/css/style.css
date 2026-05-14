@@ -3210,6 +3210,50 @@ code { font-family: var(--ff-mono); font-size: .85em; background: rgba(255,255,2
   border-bottom: 1px solid rgba(212,162,58,.3);
 }
 .article a:hover { color: var(--hi); border-bottom-color: var(--hi); }
+
+/* Inline mid-page CTA, injected halfway down long article/learn/location pages */
+.article-cta {
+  margin: 48px 0;
+  padding: 28px 28px 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--amber);
+}
+.article-cta__lead {
+  font-family: var(--ff-display);
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 8px;
+  border: none;
+  padding: 0;
+}
+.article-cta p:not(.article-cta__lead) {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--mut);
+  margin: 0 0 18px;
+}
+.article-cta__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.article-cta__btns .btn {
+  font-size: 12px;
+  padding: 12px 18px;
+}
+@media (max-width: 600px) {
+  .article-cta { margin: 28px 0; padding: 20px 18px 18px; }
+  .article-cta__lead { font-size: 17px; }
+  .article-cta p:not(.article-cta__lead) { font-size: 13.5px; }
+  .article-cta__btns { gap: 8px; }
+  .article-cta__btns .btn { font-size: 11.5px; padding: 11px 16px; flex: 1; text-align: center; min-width: 0; }
+}
 .article__equation {
   padding: 16px 24px !important;
   background: var(--bg-2);
