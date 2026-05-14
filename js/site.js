@@ -363,4 +363,39 @@
   // (The legacy sticky callback bar is removed, the T1-navy <div class="top">
   // top-bar already provides the same live status + HQ contact, so injecting
   // another bar would duplicate it.)
+
+  // ---------- Small ® superscript wrap ----------
+  // Walks body text nodes after DOM ready and wraps each ® character in
+  // <sup class="reg">®</sup> so it renders small + superscripted.
+  // Skips <title>, <meta>, <script>, <style>, <noscript>, <textarea>, <code>,
+  // <pre> so titles/JSON-LD/code blocks stay intact.
+  const REG_SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TITLE', 'TEXTAREA', 'CODE', 'PRE', 'SUP']);
+  const wrapRegMark = (root) => {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: (node) => {
+        if (node.nodeValue.indexOf('®') === -1) return NodeFilter.FILTER_REJECT;
+        const parent = node.parentNode;
+        if (!parent || REG_SKIP.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const targets = [];
+    let n;
+    while ((n = walker.nextNode())) targets.push(n);
+    targets.forEach((node) => {
+      const parts = node.nodeValue.split('®');
+      const frag = document.createDocumentFragment();
+      parts.forEach((part, i) => {
+        if (part) frag.appendChild(document.createTextNode(part));
+        if (i < parts.length - 1) {
+          const sup = document.createElement('sup');
+          sup.className = 'reg';
+          sup.textContent = '®';
+          frag.appendChild(sup);
+        }
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  };
+  if (document.body) wrapRegMark(document.body);
 })();
