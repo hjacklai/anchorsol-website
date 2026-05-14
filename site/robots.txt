@@ -13,6 +13,31 @@ Disallow: /tools/
 Disallow: /handoff/
 Disallow: /originals/
 
+# Legacy WordPress paths - the site used to run on WordPress.
+# These URLs no longer exist on the current static site, but Google still
+# tries to crawl them. Disallowing them tells Google to stop wasting crawl
+# budget on URLs that will only ever return 404.
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /wp-json/
+Disallow: /?p=
+Disallow: /?page_id=
+Disallow: /feed/
+Disallow: /*/feed/
+Disallow: /comments/feed/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /author/
+Disallow: /industries-category/
+Disallow: /industries/
+Disallow: /faqs/
+# Old WordPress spam/injected posts (drop these so Google forgets them):
+Disallow: /for-the-wealthy-work-is-the-new-retirement/
+Disallow: /top-5-tips-for-solving-the-email-security-problem/
+
 # Search engine crawlers, explicit welcome
 User-agent: Googlebot
 Allow: /
