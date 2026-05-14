@@ -114,7 +114,6 @@ Core trade: AnchorSOL takes a difficult site (live traffic, soft ground, sloped 
 - [Full Project List, 500+ projects](https://anchorsolwall.com/projects/)
 - [Applications, 12 use cases](https://anchorsolwall.com/applications/)
 - [Locations, all Malaysian states](https://anchorsolwall.com/locations/)
-- [Brochure (PDF)](https://anchorsolwall.com/assets/docs/anchorsol-wall-catalogue.pdf)
 - [Sitemap (XML)](https://anchorsolwall.com/sitemap.xml)
 - [AI training & citation policy](https://anchorsolwall.com/ai.txt)
 - [robots.txt](https://anchorsolwall.com/robots.txt)
