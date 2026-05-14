@@ -28,13 +28,30 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "CollectionPage",
+      "@type": ["CollectionPage", "LearningResource"],
       "@id": "https://anchorsolwall.com/learn/#page",
       "name": "MSE Wall Knowledge Base",
       "url": "https://anchorsolwall.com/learn/",
-      "description": "Engineer's reference on Mechanically Stabilized Earth walls in Malaysia.",
+      "description": "Engineer's reference on Mechanically Stabilized Earth walls in Malaysia. 50+ in-depth articles covering wall types, design standards, cost economics, construction methodology, monitoring, and Malaysian application contexts.",
       "isPartOf": {"@id": "https://anchorsolwall.com/#website"},
-      "publisher": {"@id": "https://anchorsolwall.com/#organization"}
+      "publisher": {"@id": "https://anchorsolwall.com/#organization"},
+      "learningResourceType": ["Knowledge Base", "Engineering Reference", "Technical Guide"],
+      "educationalLevel": "Professional",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "professional",
+        "name": "Civil engineers, geotechnical engineers, quantity surveyors, project managers, asset owners, JKR / PLUS / LLM / KTMB / JPS technical reviewers, students and academic researchers in geotechnical engineering."
+      },
+      "inLanguage": "en-MY",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "teaches": [
+        "MSE wall design under BS 8006-1:2010, FHWA NHI-10-024, AASHTO LRFD, Eurocode 7",
+        "Retaining wall selection by application: highway, hill, bridge, rail, marine, industrial, data centre",
+        "Cost estimation and BOQ structuring for anchored MSE wall packages",
+        "Construction sequence, method statement, and CIDB-aligned safety procedures",
+        "Instrumentation, monitoring, and asset-management practice for 100-year service life"
+      ]
     },
     {
       "@type": "BreadcrumbList",
