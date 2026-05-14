@@ -1191,6 +1191,7 @@ section.hero { padding: 0; }
 }
 .proj__lead { grid-column: span 2; grid-row: span 2; }
 .proj__t { grid-column: span 1; grid-row: span 1; }
+.proj__t--wide { grid-column: span 3; }
 .proj__tag {
   display: inline-block;
   padding: 4px 10px;
@@ -2149,6 +2150,7 @@ footer .bottom {
   .proj { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
   .proj__lead { grid-column: span 2; grid-row: span 2; }
   .proj__t { grid-column: span 1; grid-row: auto; }
+  .proj__t--wide { grid-column: span 2; }
 
   /* Gallery 2-col */
   .gallery-grid { grid-template-columns: 1fr 1fr; }
