@@ -32,3 +32,17 @@ Thumbs.db
 # Internal-only — never commit
 *.pdf
 !site/assets/papers/*.pdf
+
+# Internal strategy docs and content generators — kept locally, not public.
+# Reveal too much of our SEO playbook and content templates if exposed.
+*.md
+BACKLINKS_PLAYBOOK.md
+OFFSITE_SEO_CHECKLIST.md
+
+# All tools/ scripts except the CI image optimiser (which the GitHub
+# Action needs to build the site).
+tools/*.pl
+tools/*.sh
+tools/*.py
+tools/inject-tabbar.mjs
+!tools/optimise-images.mjs
