@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-15T11:13:28.146Z",
+  "generated": "2026-05-15T11:17:33.065Z",
   "entries": [
     {
       "file": "AnchorBlock-01.jpg",
@@ -179,6 +179,18 @@
       "webp": 225322,
       "avif": 202333,
       "recompress": "1343390 → 276500"
+    },
+    {
+      "file": "wall-circular-poster.jpg",
+      "origSize": 300802,
+      "webp": 213394,
+      "avif": 198695
+    },
+    {
+      "file": "wall-linear-poster.jpg",
+      "origSize": 241544,
+      "webp": 148334,
+      "avif": 131837
     }
   ]
 }
