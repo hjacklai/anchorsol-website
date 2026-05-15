@@ -26,7 +26,13 @@ import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const IMG_DIR = path.join(ROOT, "site", "assets", "images");
+// Scan multiple asset folders: site/assets/images/ (project + system images) AND
+// site/assets/videos/ (video poster JPGs that need AVIF/WebP for LCP).
+const IMG_DIRS = [
+  path.join(ROOT, "site", "assets", "images"),
+  path.join(ROOT, "site", "assets", "videos"),
+];
+const IMG_DIR = IMG_DIRS[0]; // primary, for manifest path
 const HTML_GLOB = path.join(ROOT, "site");
 const MANIFEST = path.join(IMG_DIR, "_manifest.json");
 
@@ -45,10 +51,21 @@ const REWRITE_HTML = args.has("--rewrite-html");
 const RX_RASTER = /\.(jpe?g|png)$/i;
 
 async function listImages() {
-  const entries = await fs.readdir(IMG_DIR, { withFileTypes: true });
-  return entries
-    .filter(e => e.isFile() && RX_RASTER.test(e.name) && !e.name.startsWith("_"))
-    .map(e => path.join(IMG_DIR, e.name));
+  const all = [];
+  for (const dir of IMG_DIRS) {
+    let entries;
+    try {
+      entries = await fs.readdir(dir, { withFileTypes: true });
+    } catch {
+      continue; // folder may not exist on a stripped build
+    }
+    for (const e of entries) {
+      if (e.isFile() && RX_RASTER.test(e.name) && !e.name.startsWith("_")) {
+        all.push(path.join(dir, e.name));
+      }
+    }
+  }
+  return all;
 }
 
 async function safeStat(p) {
@@ -161,7 +178,8 @@ async function rewriteHtml(htmlDir) {
 
 (async () => {
   console.log(`▸ optimise-images.mjs ${DRY_RUN ? "(dry-run)" : ""}`);
-  console.log(`  IMG_DIR = ${IMG_DIR}`);
+  console.log(`  Scanning ${IMG_DIRS.length} directories:`);
+  for (const d of IMG_DIRS) console.log(`    - ${path.relative(ROOT, d)}`);
 
   const files = await listImages();
   console.log(`  ${files.length} raster images to consider.`);

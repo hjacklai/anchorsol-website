@@ -5,6 +5,8 @@ node_modules/
 site/assets/images/*.webp
 site/assets/images/*.avif
 site/assets/images/_manifest.json
+site/assets/videos/*.webp
+site/assets/videos/*.avif
 # Exceptions: hand-added webp/avif files that should be tracked
 !site/assets/images/dr_lai_yip_poon.webp
 
