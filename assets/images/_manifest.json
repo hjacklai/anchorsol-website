@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-16T04:28:49.221Z",
+  "generated": "2026-05-16T04:36:51.548Z",
   "entries": [
     {
       "file": "AnchorBlock-01.jpg",
@@ -115,6 +115,54 @@
       "origSize": 76252,
       "webp": 53798,
       "avif": 48383
+    },
+    {
+      "file": "brochure-arch-bridge.jpg",
+      "origSize": 448576,
+      "webp": 228064,
+      "avif": 228474
+    },
+    {
+      "file": "brochure-crew-compacting.jpg",
+      "origSize": 356259,
+      "webp": 259114,
+      "avif": 239126
+    },
+    {
+      "file": "brochure-cut-and-fill-culvert.jpg",
+      "origSize": 299566,
+      "webp": 166816,
+      "avif": 167704
+    },
+    {
+      "file": "brochure-engineers-on-site.jpg",
+      "origSize": 475757,
+      "webp": 239324,
+      "avif": 215490
+    },
+    {
+      "file": "brochure-hillside-construction.jpg",
+      "origSize": 377911,
+      "webp": 220484,
+      "avif": 216584
+    },
+    {
+      "file": "brochure-istana-negara-approach.jpg",
+      "origSize": 404561,
+      "webp": 198860,
+      "avif": 181295
+    },
+    {
+      "file": "brochure-reinforcement-layout.jpg",
+      "origSize": 310851,
+      "webp": 201852,
+      "avif": 198272
+    },
+    {
+      "file": "brochure-templer-hills-vegetated.jpg",
+      "origSize": 467213,
+      "webp": 226980,
+      "avif": 246438
     },
     {
       "file": "istana-negara-1.jpg",
