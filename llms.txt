@@ -203,7 +203,7 @@ In-depth engineering reference articles, all original content authored by Anchor
 
 ## Reference pages
 
-- [Contractor reference](https://anchorsolwall.com/contractor/), Malaysia's No.1 MSE wall contractor. Anchored MSE, RE wall, RS wall, RC wall design and build services. Pre-qualification, standards, procurement, FAQ.
+- [Contractor reference](https://anchorsolwall.com/contractor/), Malaysia's most-specified MSE wall contractor. Anchored MSE, RE wall, RS wall, RC wall design and build services. Pre-qualification, standards, procurement, FAQ.
 - [MSE Wall Applications: 12 use cases](https://anchorsolwall.com/applications/), the long-tail reference. Bridge abutments, highway embankments, hill stabilization, marine/riverbank, railway corridors, flood mitigation, reservoir/tank, residential/township, industrial, architectural finish, heritage compounds, land reclamation. Each section: standards, named projects, FAQ.
 - [MSE Wall in Malaysia, by state](https://anchorsolwall.com/locations/), the geographic reference index. All 13 states + 3 federal territories with named cities, marquee projects, agencies.
 
