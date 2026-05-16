@@ -1,61 +1,56 @@
 {
-  "generated": "2026-05-16T05:09:18.685Z",
+  "generated": "2026-05-16T06:49:59.515Z",
   "entries": [
     {
       "file": "AnchorBlock-01.jpg",
-      "origSize": 3088606,
-      "webp": 470638,
-      "avif": 408477,
-      "recompress": "3088606 → 546815"
+      "origSize": 892733,
+      "webp": 548148,
+      "avif": 480797,
+      "recompress": "no gain — kept original"
     },
     {
       "file": "ArchBridge-01-1.jpg",
-      "origSize": 1287076,
-      "webp": 202252,
-      "avif": 196856,
-      "recompress": "1287076 → 238261"
+      "origSize": 496948,
+      "webp": 198906,
+      "avif": 188035
     },
     {
       "file": "BridgeAbmt-04-2.jpg",
-      "origSize": 812356,
-      "webp": 185680,
-      "avif": 162679,
-      "recompress": "812356 → 252739"
+      "origSize": 297715,
+      "webp": 185440,
+      "avif": 164706
     },
     {
       "file": "Components-03.jpg",
-      "origSize": 879782,
-      "webp": 178358,
-      "avif": 156857,
-      "recompress": "879782 → 203393"
+      "origSize": 271225,
+      "webp": 178084,
+      "avif": 156689
     },
     {
       "file": "Components-04-1.jpg",
-      "origSize": 2173948,
-      "webp": 379908,
-      "avif": 331011,
-      "recompress": "2173948 → 470309"
+      "origSize": 702300,
+      "webp": 455812,
+      "avif": 399348,
+      "recompress": "no gain — kept original"
     },
     {
       "file": "EffectiveProgress.jpg",
-      "origSize": 1775026,
-      "webp": 256790,
-      "avif": 200289,
-      "recompress": "1775026 → 354730"
+      "origSize": 594927,
+      "webp": 283126,
+      "avif": 222069
     },
     {
       "file": "HillWall-2.jpg",
-      "origSize": 2743194,
-      "webp": 318132,
-      "avif": 262810,
-      "recompress": "2743194 → 422406"
+      "origSize": 744239,
+      "webp": 345726,
+      "avif": 296383,
+      "recompress": "no gain — kept original"
     },
     {
       "file": "Industry-02.jpg",
-      "origSize": 1132548,
-      "webp": 143608,
-      "avif": 104594,
-      "recompress": "1132548 → 242634"
+      "origSize": 403172,
+      "webp": 154406,
+      "avif": 113769
     },
     {
       "file": "IpohWall-img-1.jpg",
@@ -65,38 +60,35 @@
     },
     {
       "file": "Reinforcement.jpg",
-      "origSize": 1437082,
-      "webp": 399482,
-      "avif": 354283,
-      "recompress": "1437082 → 380642"
+      "origSize": 588153,
+      "webp": 398930,
+      "avif": 353296
     },
     {
       "file": "RetainingWall-15-1.jpg",
-      "origSize": 1782048,
-      "webp": 233534,
-      "avif": 187794,
-      "recompress": "1782048 → 336033"
+      "origSize": 569265,
+      "webp": 259138,
+      "avif": 208708
     },
     {
       "file": "RetainingWall-18.jpg",
-      "origSize": 896554,
-      "webp": 126688,
-      "avif": 93215,
-      "recompress": "896554 → 215754"
+      "origSize": 349549,
+      "webp": 136630,
+      "avif": 103323
     },
     {
       "file": "RoadEmbmt-11.jpg",
-      "origSize": 2579954,
-      "webp": 478790,
-      "avif": 415741,
-      "recompress": "2579954 → 526864"
+      "origSize": 794444,
+      "webp": 560140,
+      "avif": 496164,
+      "recompress": "no gain — kept original"
     },
     {
       "file": "Submerged-04.jpg",
-      "origSize": 2275430,
-      "webp": 257208,
-      "avif": 213005,
-      "recompress": "2275430 → 362112"
+      "origSize": 614945,
+      "webp": 283962,
+      "avif": 245441,
+      "recompress": "no gain — kept original"
     },
     {
       "file": "bd_anchor_soil_road.jpg",
@@ -166,10 +158,9 @@
     },
     {
       "file": "istana-negara-1.jpg",
-      "origSize": 1139876,
-      "webp": 151562,
-      "avif": 128865,
-      "recompress": "1139876 → 209953"
+      "origSize": 331392,
+      "webp": 147826,
+      "avif": 131780
     },
     {
       "file": "/home/runner/work/anchorsol-website/anchorsol-website/site/assets/images/logo-white.png",
@@ -223,10 +214,9 @@
     },
     {
       "file": "templer-hills-img.jpg",
-      "origSize": 1343390,
-      "webp": 225322,
-      "avif": 202333,
-      "recompress": "1343390 → 276500"
+      "origSize": 422816,
+      "webp": 223188,
+      "avif": 204557
     },
     {
       "file": "wall-circular-poster.jpg",
