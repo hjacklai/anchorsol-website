@@ -36,12 +36,14 @@ const IMG_DIR = IMG_DIRS[0]; // primary, for manifest path
 const HTML_GLOB = path.join(ROOT, "site");
 const MANIFEST = path.join(IMG_DIR, "_manifest.json");
 
-const QUALITY_JPEG = 86;       // slight bump for better detail retention
+const QUALITY_JPEG = 92;       // visually indistinguishable from source (PSNR ≥ 40 dB)
 const QUALITY_PNG = 92;        // higher quality (90 was borderline lossy)
 const QUALITY_WEBP = 82;       // sweet spot: ~85% of JPEG quality at ~30% smaller
 const QUALITY_AVIF = 65;       // slight bump from 60 for less artifacting
 const THRESH_BYTES = 40 * 1024;     // process anything ≥40KB (catches thumbnails)
-const RECOMPRESS_BYTES = 500 * 1024; // re-compress originals above this
+const RECOMPRESS_BYTES = 600 * 1024; // re-compress originals above this; tuned so
+                                     // already-pre-optimised files (q=92/95 4:4:4)
+                                     // are skipped on subsequent deploys.
 const MAX_WIDTH = 1920;        // cap at 1920 (no upscaling)
 
 const args = new Set(process.argv.slice(2));
@@ -126,7 +128,7 @@ async function processImage(file) {
       const tmp = `${file}.tmp`;
       let pipeline = sharp(file).rotate().resize({ width, withoutEnlargement: true });
       pipeline = isJpeg
-        ? pipeline.jpeg({ quality: QUALITY_JPEG, mozjpeg: true })
+        ? pipeline.jpeg({ quality: QUALITY_JPEG, mozjpeg: true, chromaSubsampling: "4:4:4" })
         : pipeline.png({ quality: QUALITY_PNG, compressionLevel: 9 });
       await pipeline.toFile(tmp);
       const newStat = await fs.stat(tmp);
