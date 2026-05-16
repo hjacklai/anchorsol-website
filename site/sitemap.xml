@@ -219,6 +219,11 @@
   <url><loc>https://anchorsolwall.com/locations/selangor/cyberjaya/</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://anchorsolwall.com/locations/selangor/subang-jaya/</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://anchorsolwall.com/locations/penang/bayan-lepas/</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Legal + site index -->
+  <url><loc>https://anchorsolwall.com/privacy.html</loc><lastmod>2026-05-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://anchorsolwall.com/terms.html</loc><lastmod>2026-05-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://anchorsolwall.com/sitemap.html</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url>
     <loc>https://anchorsolwall.com/learn/anchored-vs-reinforced-soil.html</loc>
     <lastmod>2026-05-13</lastmod>
