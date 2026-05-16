@@ -34,6 +34,7 @@ Thumbs.db
 # Internal-only — never commit
 *.pdf
 !site/assets/papers/*.pdf
+!site/assets/docs/*.pdf
 
 # Internal strategy docs and content generators — kept locally, not public.
 # Reveal too much of our SEO playbook and content templates if exposed.
