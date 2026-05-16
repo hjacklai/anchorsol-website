@@ -54,6 +54,15 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
+User-agent: YandexBot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
 # AI / LLM crawlers, allowed (with a structured summary at /llms.txt)
 User-agent: GPTBot
 Allow: /
