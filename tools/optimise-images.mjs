@@ -49,7 +49,12 @@ const THRESH_BYTES = 40 * 1024;     // process anything ≥40KB (catches thumbna
 const RECOMPRESS_BYTES = 600 * 1024; // re-compress originals above this; tuned so
                                      // already-pre-optimised files (q=92/95 4:4:4)
                                      // are skipped on subsequent deploys.
-const MAX_WIDTH = 1920;        // cap at 1920 (no upscaling)
+const MAX_WIDTH = 1920;        // cap full-resolution sibling at 1920 (no upscaling)
+
+// Responsive widths emitted alongside the full sibling.
+// Files: foo-640w.avif / foo-1280w.avif / foo.avif (full ≤ 1920).
+// Widths > original are skipped automatically.
+const RESPONSIVE_WIDTHS = [640, 1280];
 
 const args = new Set(process.argv.slice(2));
 const DRY_RUN = args.has("--dry-run");
@@ -103,42 +108,56 @@ async function processImage(file) {
     height: heightOut,
   };
 
-  // WebP sibling
-  const webpPath = `${base}.webp`;
-  const webpStat = await safeStat(webpPath);
-  if (!webpStat || webpStat.mtimeMs < stat.mtimeMs) {
-    if (DRY_RUN) {
-      result.webp = "would write";
-    } else {
-      await sharp(file).rotate().resize({ width, withoutEnlargement: true })
-        .webp({ quality: QUALITY_WEBP, effort: 5 })
-        .toFile(webpPath);
-      const newStat = await fs.stat(webpPath);
-      result.webp = newStat.size;
-    }
-  } else {
-    result.webp = "up-to-date";
-  }
+  // Build the set of sibling widths: smaller responsive widths + full (capped).
+  // Skip widths >= original width (sharp's withoutEnlargement would no-op, but we
+  // also don't want to emit a sibling that's identical to the full one).
+  const widthsToEmit = [
+    ...RESPONSIVE_WIDTHS.filter(w => w < (origWidth || width)),
+    width, // full-resolution sibling, always emit
+  ];
+  result.widths = widthsToEmit;
 
-  // AVIF sibling
-  const avifPath = `${base}.avif`;
-  const avifStat = await safeStat(avifPath);
-  if (!avifStat || avifStat.mtimeMs < stat.mtimeMs) {
-    if (DRY_RUN) {
-      result.avif = "would write";
-    } else {
-      try {
-        await sharp(file).rotate().resize({ width, withoutEnlargement: true })
-          .avif({ quality: QUALITY_AVIF, effort: 4, chromaSubsampling: "4:4:4" })
-          .toFile(avifPath);
-        const newStat = await fs.stat(avifPath);
-        result.avif = newStat.size;
-      } catch (e) {
-        result.avif = `failed: ${e.message}`;
+  for (const w of widthsToEmit) {
+    const isFull = (w === width);
+    const suffix = isFull ? "" : `-${w}w`;
+
+    // WebP sibling
+    const webpPath = `${base}${suffix}.webp`;
+    const webpStat = await safeStat(webpPath);
+    if (!webpStat || webpStat.mtimeMs < stat.mtimeMs) {
+      if (DRY_RUN) {
+        result[`webp${suffix}`] = "would write";
+      } else {
+        await sharp(file).rotate().resize({ width: w, withoutEnlargement: true })
+          .webp({ quality: QUALITY_WEBP, effort: 5 })
+          .toFile(webpPath);
+        const newStat = await fs.stat(webpPath);
+        result[`webp${suffix}`] = newStat.size;
       }
+    } else {
+      result[`webp${suffix}`] = "up-to-date";
     }
-  } else {
-    result.avif = "up-to-date";
+
+    // AVIF sibling
+    const avifPath = `${base}${suffix}.avif`;
+    const avifStat = await safeStat(avifPath);
+    if (!avifStat || avifStat.mtimeMs < stat.mtimeMs) {
+      if (DRY_RUN) {
+        result[`avif${suffix}`] = "would write";
+      } else {
+        try {
+          await sharp(file).rotate().resize({ width: w, withoutEnlargement: true })
+            .avif({ quality: QUALITY_AVIF, effort: 4, chromaSubsampling: "4:4:4" })
+            .toFile(avifPath);
+          const newStat = await fs.stat(avifPath);
+          result[`avif${suffix}`] = newStat.size;
+        } catch (e) {
+          result[`avif${suffix}`] = `failed: ${e.message}`;
+        }
+      }
+    } else {
+      result[`avif${suffix}`] = "up-to-date";
+    }
   }
 
   // Re-compress original if oversized
@@ -247,24 +266,54 @@ async function rewriteHtml() {
 
       // Resolve src relative to this HTML file's directory
       const srcAbs = path.resolve(htmlDir, src);
-      const base = srcAbs.slice(0, -path.extname(srcAbs).length);
-      const avifAbs = `${base}.avif`;
-      const webpAbs = `${base}.webp`;
-      const avifExists = await safeStat(avifAbs);
-      const webpExists = await safeStat(webpAbs);
+      const baseAbs = srcAbs.slice(0, -path.extname(srcAbs).length);
+      const srcBase = src.replace(/\.[^.]+$/, ""); // URL-relative base
 
-      // Sibling URLs share the same relative path as src
-      const srcBase = src.replace(/\.[^.]+$/, "");
+      // Determine the original (full) width so we can pick which responsive
+      // widths actually exist on disk.
+      const dim = await getDimensions(srcAbs);
+      const origW = dim ? dim.width : 0;
+
+      // Candidate widths in ascending order; emit only when files exist.
+      const candidates = [
+        ...RESPONSIVE_WIDTHS.filter(w => w < origW),
+        // Full sibling is whatever the file at base.{avif,webp} actually is.
+        // We label it with origW for the srcset descriptor.
+        origW || 0,
+      ].filter(w => w > 0);
+
+      async function collectSrcset(fmt) {
+        const parts = [];
+        for (const w of candidates) {
+          const isFull = (w === origW);
+          const suffix = isFull ? "" : `-${w}w`;
+          const abs = `${baseAbs}${suffix}.${fmt}`;
+          if (await safeStat(abs)) {
+            parts.push(`${srcBase}${suffix}.${fmt} ${w}w`);
+          }
+        }
+        return parts.join(", ");
+      }
+
+      const avifSrcset = await collectSrcset("avif");
+      const webpSrcset = await collectSrcset("webp");
+
+      // Default sizes attribute. Hero / fetchpriority=high → 100vw.
+      // Detect by looking for fetchpriority="high" in the attrs.
+      const isHero = /\bfetchpriority\s*=\s*"high"/i.test(attrsBefore + attrsAfter);
+      const sizesAttr = isHero
+        ? `100vw`
+        : `(max-width: 600px) 100vw, (max-width: 1199px) 50vw, 33vw`;
+
       const sources = [];
-      if (avifExists) sources.push(`<source type="image/avif" srcset="${srcBase}.avif">`);
-      if (webpExists) sources.push(`<source type="image/webp" srcset="${srcBase}.webp">`);
+      if (avifSrcset) sources.push(`<source type="image/avif" srcset="${avifSrcset}" sizes="${sizesAttr}">`);
+      if (webpSrcset) sources.push(`<source type="image/webp" srcset="${webpSrcset}" sizes="${sizesAttr}">`);
 
       // Build the rewritten <img>: re-emit src + attrs, add width/height if absent
       const hasWidth = /\bwidth\s*=/.test(attrsBefore) || /\bwidth\s*=/.test(attrsAfter);
       const hasHeight = /\bheight\s*=/.test(attrsBefore) || /\bheight\s*=/.test(attrsAfter);
       let sizeAttrs = "";
       if (!hasWidth || !hasHeight) {
-        const dim = await getDimensions(srcAbs);
         if (dim && dim.width && dim.height) {
           if (!hasWidth) sizeAttrs += ` width="${dim.width}"`;
           if (!hasHeight) sizeAttrs += ` height="${dim.height}"`;
