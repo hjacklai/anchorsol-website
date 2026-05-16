@@ -1,165 +1,217 @@
 {
-  "generated": "2026-05-16T06:49:59.515Z",
+  "generated": "2026-05-16T13:13:48.766Z",
   "entries": [
     {
       "file": "AnchorBlock-01.jpg",
       "origSize": 892733,
-      "webp": 548148,
+      "width": 1920,
+      "height": 1280,
+      "webp": 534662,
       "avif": 480797,
       "recompress": "no gain — kept original"
     },
     {
       "file": "ArchBridge-01-1.jpg",
       "origSize": 496948,
-      "webp": 198906,
+      "width": 1500,
+      "height": 1000,
+      "webp": 189596,
       "avif": 188035
     },
     {
       "file": "BridgeAbmt-04-2.jpg",
       "origSize": 297715,
-      "webp": 185440,
+      "width": 1920,
+      "height": 978,
+      "webp": 181752,
       "avif": 164706
     },
     {
       "file": "Components-03.jpg",
       "origSize": 271225,
-      "webp": 178084,
+      "width": 900,
+      "height": 1200,
+      "webp": 175078,
       "avif": 156689
     },
     {
       "file": "Components-04-1.jpg",
       "origSize": 702300,
-      "webp": 455812,
+      "width": 1920,
+      "height": 1280,
+      "webp": 444320,
       "avif": 399348,
       "recompress": "no gain — kept original"
     },
     {
       "file": "EffectiveProgress.jpg",
       "origSize": 594927,
-      "webp": 283126,
+      "width": 1920,
+      "height": 1280,
+      "webp": 278286,
       "avif": 222069
     },
     {
       "file": "HillWall-2.jpg",
       "origSize": 744239,
-      "webp": 345726,
+      "width": 1920,
+      "height": 1280,
+      "webp": 341758,
       "avif": 296383,
       "recompress": "no gain — kept original"
     },
     {
       "file": "Industry-02.jpg",
       "origSize": 403172,
-      "webp": 154406,
+      "width": 1920,
+      "height": 1280,
+      "webp": 154182,
       "avif": 113769
     },
     {
       "file": "IpohWall-img-1.jpg",
       "origSize": 442022,
-      "webp": 47946,
+      "width": 1000,
+      "height": 667,
+      "webp": 47068,
       "avif": 42301
     },
     {
       "file": "Reinforcement.jpg",
       "origSize": 588153,
-      "webp": 398930,
+      "width": 900,
+      "height": 1200,
+      "webp": 399108,
       "avif": 353296
     },
     {
       "file": "RetainingWall-15-1.jpg",
       "origSize": 569265,
-      "webp": 259138,
+      "width": 1920,
+      "height": 1280,
+      "webp": 256462,
       "avif": 208708
     },
     {
       "file": "RetainingWall-18.jpg",
       "origSize": 349549,
-      "webp": 136630,
+      "width": 1920,
+      "height": 1280,
+      "webp": 136846,
       "avif": 103323
     },
     {
       "file": "RoadEmbmt-11.jpg",
       "origSize": 794444,
-      "webp": 560140,
+      "width": 1920,
+      "height": 1280,
+      "webp": 546694,
       "avif": 496164,
       "recompress": "no gain — kept original"
     },
     {
       "file": "Submerged-04.jpg",
       "origSize": 614945,
-      "webp": 283962,
+      "width": 1920,
+      "height": 1280,
+      "webp": 282330,
       "avif": 245441,
       "recompress": "no gain — kept original"
     },
     {
       "file": "bd_anchor_soil_road.jpg",
       "origSize": 68749,
-      "webp": 40254,
+      "width": 588,
+      "height": 675,
+      "webp": 39466,
       "avif": 38614
     },
     {
       "file": "bd_padma_bridge.jpeg",
       "origSize": 60027,
-      "webp": 38642,
+      "width": 600,
+      "height": 589,
+      "webp": 37864,
       "avif": 35994
     },
     {
       "file": "bd_riverbank_msewall.jpg",
       "origSize": 76252,
-      "webp": 53798,
+      "width": 800,
+      "height": 530,
+      "webp": 53008,
       "avif": 48383
     },
     {
       "file": "brochure-arch-bridge.jpg",
       "origSize": 448576,
-      "webp": 228064,
+      "width": 1360,
+      "height": 1020,
+      "webp": 222410,
       "avif": 228474
     },
     {
       "file": "brochure-crew-compacting.jpg",
       "origSize": 356259,
-      "webp": 259114,
+      "width": 1008,
+      "height": 756,
+      "webp": 257000,
       "avif": 239126
     },
     {
       "file": "brochure-cut-and-fill-culvert.jpg",
       "origSize": 299566,
-      "webp": 166816,
+      "width": 723,
+      "height": 964,
+      "webp": 163018,
       "avif": 167704
     },
     {
       "file": "brochure-engineers-on-site.jpg",
       "origSize": 475757,
-      "webp": 239324,
+      "width": 1270,
+      "height": 1796,
+      "webp": 234262,
       "avif": 215490
     },
     {
       "file": "brochure-hillside-construction.jpg",
       "origSize": 377911,
-      "webp": 220484,
+      "width": 1080,
+      "height": 810,
+      "webp": 217700,
       "avif": 216584
     },
     {
       "file": "brochure-istana-negara-approach.jpg",
       "origSize": 404561,
-      "webp": 198860,
+      "width": 1364,
+      "height": 1023,
+      "webp": 194972,
       "avif": 181295
     },
     {
       "file": "brochure-reinforcement-layout.jpg",
       "origSize": 310851,
-      "webp": 201852,
+      "width": 691,
+      "height": 921,
+      "webp": 200486,
       "avif": 198272
     },
     {
       "file": "brochure-templer-hills-vegetated.jpg",
       "origSize": 467213,
-      "webp": 226980,
+      "width": 1252,
+      "height": 858,
+      "webp": 222598,
       "avif": 246438
     },
     {
       "file": "istana-negara-1.jpg",
       "origSize": 331392,
-      "webp": 147826,
+      "width": 1500,
+      "height": 1001,
+      "webp": 145586,
       "avif": 131780
     },
     {
@@ -215,19 +267,25 @@
     {
       "file": "templer-hills-img.jpg",
       "origSize": 422816,
-      "webp": 223188,
+      "width": 1500,
+      "height": 1001,
+      "webp": 219392,
       "avif": 204557
     },
     {
       "file": "wall-circular-poster.jpg",
       "origSize": 300802,
-      "webp": 213394,
+      "width": 1280,
+      "height": 720,
+      "webp": 211730,
       "avif": 198695
     },
     {
       "file": "wall-linear-poster.jpg",
       "origSize": 241544,
-      "webp": 148334,
+      "width": 1280,
+      "height": 720,
+      "webp": 144488,
       "avif": 131837
     }
   ]
