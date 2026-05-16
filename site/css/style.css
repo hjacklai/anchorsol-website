@@ -87,10 +87,10 @@ body {
      glow so the page reads like a working draft, not a flat canvas. */
   background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 162, 58, .06), transparent 60%),
-    linear-gradient(rgba(244, 239, 226, .035) 1px, transparent 1px) 0 0 / 120px 120px,
-    linear-gradient(90deg, rgba(244, 239, 226, .035) 1px, transparent 1px) 0 0 / 120px 120px,
-    linear-gradient(rgba(244, 239, 226, .015) 1px, transparent 1px) 0 0 / 24px 24px,
-    linear-gradient(90deg, rgba(244, 239, 226, .015) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(rgba(244, 239, 226, .06) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(90deg, rgba(244, 239, 226, .06) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(rgba(244, 239, 226, .028) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgba(244, 239, 226, .028) 1px, transparent 1px) 0 0 / 24px 24px,
     var(--bg);
   background-attachment: fixed, fixed, fixed, fixed, fixed, fixed;
   color: var(--ink);
