@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-17T16:08:51.174Z",
+  "generated": "2026-05-22T01:44:05.348Z",
   "entries": [
     {
       "file": "AnchorBlock-01.jpg",
@@ -52,6 +52,23 @@
       "avif-1280w": 83951,
       "webp": 181752,
       "avif": 164706
+    },
+    {
+      "file": "BridgeAbmt-05-1.jpg",
+      "origSize": 419009,
+      "width": 1920,
+      "height": 1280,
+      "widths": [
+        640,
+        1280,
+        1920
+      ],
+      "webp-640w": 33304,
+      "avif-640w": 33138,
+      "webp-1280w": 104878,
+      "avif-1280w": 99174,
+      "webp": 187372,
+      "avif": 169455
     },
     {
       "file": "Components-03.jpg",
