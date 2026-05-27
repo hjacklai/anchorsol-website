@@ -1193,7 +1193,7 @@ section.hero { padding: 0; }
 .proj__t { grid-column: span 1; grid-row: span 1; }
 .proj__t--wide { grid-column: span 3; }
 
-/* "From the field" gallery on the homepage — responsive across all viewports.
+/* "From the field" gallery on the homepage - responsive across all viewports.
    Tiles use aspect-ratio so they scale smoothly with viewport width instead of
    breaking at fixed pixel heights. Column count is the only thing that flips at
    each breakpoint. */
