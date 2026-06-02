@@ -17,8 +17,9 @@ research/
 raw videos/
 design-pkg/
 
-# Personal / local-only config
-.claude/settings.local.json
+# Personal / local-only config and dev tooling - keep local (Google Drive), not on GitHub.
+# Only files the live site needs to build/deploy belong in the repo.
+.claude/
 
 # OS / editor
 .DS_Store
@@ -28,8 +29,6 @@ Thumbs.db
 *.tmp.drivedownload
 .vscode/
 .idea/
-
-# Keep .claude/launch.json + .claude/serve.ps1 (useful for local preview)
 
 # Internal-only — never commit
 *.pdf
