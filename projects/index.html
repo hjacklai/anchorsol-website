@@ -482,76 +482,218 @@
     var OPEN = ['We delivered', 'We built', 'We engineered', 'We installed', 'The answer was', 'In went', 'Our scope put in'];
     // Value-clause verbs (lead into "(~X m² of wall) of <outcome>").
     var VALUE = ['Opening', 'Adding', 'Handing over', 'Commissioning', 'Unlocking', 'Laying in', 'Establishing', 'Carving out'];
-    // Assemble a solution line: opening verb + system + spec, then value clause.
-    function sol(spec, outcome) {
-      return rot(OPEN) + ' an AnchorSOL® anchored MSE wall ' + spec
-           + contractorHook + ' ' + rot(VALUE, 4) + areaSuffix + ' of ' + outcome + '.';
+    // Independent seed offsets so constraint, spec and outcome rotate
+    // separately - two same-category projects almost never line up on all of
+    // them at once (7 openings x 8 values x ~3 constraints x ~2 specs x ~2
+    // outcomes = thousands of combinations per category).
+    function rotC(arr) { return rot(arr, 1) + clientHook; }   // constraint variant
+    // Assemble a solution line: opening verb + system + a spec variant, then a
+    // value verb + a outcome variant.
+    function sol(specs, outcomes) {
+      return rot(OPEN) + ' an AnchorSOL® anchored MSE wall ' + rot(specs, 2)
+           + contractorHook + ' ' + rot(VALUE, 4) + areaSuffix + ' of ' + rot(outcomes, 6) + '.';
     }
 
     // PALACE / ROYAL / HERITAGE
     if (d.isPalace) {
-      constraint = 'A national-significance royal compound' + here + sz + ' with a <b>gazetted aesthetic standard</b> that demands every wall surface integrate cleanly into the palace precinct\'s architectural vocabulary. Beyond structural performance, the wall face becomes part of the visual signature: every panel, joint, and finish has to read at ceremonial-grade quality. Construction sequenced around the institution\'s ceremonial calendar, with security and protocol overlays on every site access.' + clientHook;
-      solution = sol('with <b>architectural precast facing</b>, custom textures and surface treatments cast to palace specification, the programme threaded through the institution\'s ceremonial calendar.', 'structurally and architecturally specified retention at a site that carries the visual signature of the Malaysian Crown');
+      constraint = rotC([
+        'A national-significance royal compound' + here + sz + ' carries a <b>gazetted aesthetic standard</b>: every wall surface has to fold cleanly into the palace precinct\'s architectural language. Structural performance is only half the brief - each panel, joint and finish has to read at ceremonial grade. Site access runs on the institution\'s protocol calendar, with a security overlay on every shift.',
+        'A royal precinct' + here + sz + ' where the wall is as much architecture as engineering. The face becomes part of the compound\'s visual signature, so finish tolerance is held to the <b>ceremonial-grade standard the palace gazettes</b>. Works slot around state functions, protocol and security clearance gating each site entry.',
+        'Retention inside a national royal estate' + here + sz + ' where the challenge is not load but <b>finish to a gazetted palace standard</b> - panel texture, joint line and colour all have to clear the precinct\'s architectural review before sign-off, and the build threads between ceremonial dates under full escort.'
+      ]);
+      solution = sol([
+        'with <b>architectural precast facing</b>, custom textures and surface treatments cast to palace specification, the programme threaded through the institution\'s ceremonial calendar.',
+        'faced in <b>bespoke architectural precast</b>, textures and finishes cast to the palace\'s gazetted standard, every delivery cleared through protocol and slotted around state functions.'
+      ], [
+        'structurally and architecturally specified retention at a site that carries the visual signature of the Malaysian Crown',
+        'retention that satisfies both the engineering and the ceremonial-grade finish a royal precinct demands'
+      ]);
     }
     // GOVERNMENT BUILDINGS (schools, hospitals, police, military)
     else if (d.isGovBldg) {
-      constraint = 'A federal institution platform' + here + sz + ' (schools, hospitals, police complexes, military facilities) where retention must comply with <b>JKR Standard Specification</b> and be certifiable to Kementerian audit. Ground conditions vary plot-by-plot, often residual soil over weathered bedrock, but spec compliance is the gating factor: any deviation from the gazetted standard triggers redesign and programme slippage. Build-out has to complete inside the public-works fiscal year.' + clientHook;
-      solution = sol('built to government specification: Grade 30 MPa precast facing, hot-dip galvanised tendon, hand-compacted crusher-run backfill, all squared against JKR Standard Specification.', 'certified retention that keeps the institution\'s buildings on programme, without the cost or curing delay of a cast-in-situ RC alternative');
+      constraint = rotC([
+        'A federal institution platform' + here + sz + ' (schools, hospitals, police complexes, military facilities) where retention has to satisfy <b>JKR Standard Specification</b> and stand up to a Kementerian audit. Ground varies plot to plot (residual soil over weathered bedrock is typical), but spec compliance is the gate: any drift from the gazetted standard means redesign and slipped dates. Build-out lands inside the public-works fiscal year.',
+        'A government building site' + here + sz + ' on the public-works calendar. Whatever the ground shows plot by plot, the retention has to be <b>certifiable against JKR Standard Specification</b> and clean through Kementerian inspection - one non-conformance and the package waits on a redesign. The fiscal-year deadline does not move.',
+        'Retention for a federal facility' + here + sz + ' (education, health, security, defence). The controlling constraint is documentation as much as engineering: <b>JKR-compliant materials, method statements and test records</b> have to satisfy a Kementerian audit trail, and the platform has to be ready inside the allocated fiscal year whatever the residual-soil-over-rock profile underneath.'
+      ]);
+      solution = sol([
+        'built to government specification: Grade 30 MPa precast facing, hot-dip galvanised tendon, hand-compacted crusher-run backfill, all squared against JKR Standard Specification.',
+        'to full JKR specification - Grade 30 MPa precast, hot-dip galvanised tendons, crusher-run backfill compacted in controlled lifts, every input documented for the Kementerian audit trail.'
+      ], [
+        'certified retention that keeps the institution\'s buildings on programme, without the cost or curing delay of a cast-in-situ RC alternative',
+        'audit-ready retention that lands inside the fiscal year, where a cast-in-situ RC wall would have burned the programme in curing time'
+      ]);
     }
     // EXPRESSWAY / TOLLED CONCESSION
     else if (d.isExpressway) {
-      constraint = 'A ' + (d.isUrban ? 'tolled urban' : 'federal') + ' expressway alignment' + here + sz + ' running through cut-and-fill terrain with <b>live traffic on adjacent lanes</b>. ' + (d.isRamp ? 'Interchange ramps and side-hill cuts demand structural retention at the bearing line, while ' : '') + 'cyclic vehicle loading (200,000+ axles a day at design capacity), a tight working aisle inside the concessionaire\'s lane-closure plan, and zero tolerance for slope failure or face displacement that could close a lane. LLM or JKR commissioning audit on the back. Every lift logged against the concession\'s monthly schedule.' + clientHook;
-      solution = sol('under staged traffic management, the modular precast facing set by a <b>3-4 person crew in days</b>. Hand- and mini-compactor backfill held vibration <b>zero on the operating corridor</b>, no impact to the live lanes alongside.', 'stabilised expressway platform delivered in step with the concessionaire\'s construction schedule, the highway network operational throughout');
+      var xKind = d.isUrban ? 'tolled urban' : 'federal';
+      var xRamp = d.isRamp ? 'Interchange ramps and side-hill cuts add structural retention at the bearing line. ' : '';
+      constraint = rotC([
+        'A ' + xKind + ' expressway alignment' + here + sz + ' cutting through fill-and-bench terrain with <b>live traffic in the next lane</b>. ' + xRamp + 'Design carries cyclic vehicle loading (200,000+ axles a day at capacity), fits a tight aisle inside the concessionaire\'s lane-closure plan, and leaves zero room for face movement that could shut a lane. LLM or JKR audit at commissioning; every lift logged to the monthly programme.',
+        'A ' + xKind + ' expressway' + here + sz + ' where the wall goes up <b>beside running traffic</b>. ' + xRamp + 'The non-negotiables: survive relentless axle cycling, work inside the lane-closure window the concession allows, and never displace enough to threaten a closure. Each lift is signed off against the monthly schedule, with LLM or JKR commissioning waiting at the end.',
+        'Expressway retention' + here + sz + ' on a ' + xKind + ' alignment, built without taking the road out of service. ' + xRamp + '<b>Live adjacent lanes</b> mean staged possession, controlled vibration and a face that holds position under 200,000-plus axles a day. The concessionaire tracks every lift; a commissioning audit (LLM or JKR) closes the job.'
+      ]);
+      solution = sol([
+        'under staged traffic management, the modular precast facing set by a <b>3-4 person crew in days</b>. Hand- and mini-compactor backfill held vibration <b>zero on the operating corridor</b>, no impact to the live lanes alongside.',
+        'inside the concession\'s lane-closure windows, modular precast panels lifted by a small crew and backfilled with hand- and mini-compactor passes - <b>zero heavy vibration</b> reaching the running carriageway.'
+      ], [
+        'stabilised expressway platform delivered in step with the concessionaire\'s construction schedule, the highway network operational throughout',
+        'stabilised carriageway widening handed over without ever closing a live lane, the concession\'s programme intact'
+      ]);
     }
     // BRIDGE ABUTMENTS
     else if (d.isBridge) {
-      constraint = 'Bridge approach abutments' + here + sz + ' sitting at the transition between earthwork formation and structural deck. <b>Differential settlement of millimetres at the bearing line is a stress-concentrator failure mode</b>: every load cycle from a passing vehicle drives the abutment-deck joint until cracks propagate. Retention here must absorb traffic loads, soil pressures, and thermal cycling of the deck simultaneously, with no margin for settlement once the deck is poured. JKR Bridge Engineering Section sign-off required.' + clientHook;
-      solution = sol('on <b>inverted-T precast facing</b> over an integral ground beam, the soil reinforcement terminated at a discrete deadman anchor block. Grade 30 MPa precast, hot-dip galvanised tendons, panel-to-panel interlock - the structural certainty an abutment demands.', 'engineered abutment retention that opens the bridge to live traffic on programme, without the multi-week curing wait of a cast-in-situ RC abutment');
+      constraint = rotC([
+        'Bridge approach abutments' + here + sz + ' at the join between earthwork and structural deck. <b>Millimetres of differential settlement at the bearing line is a stress-concentrator failure mode</b> - every passing axle works the abutment-deck joint until cracks run. The retention takes traffic load, earth pressure and deck thermal movement at once, with no settlement budget left once the deck is cast. JKR Bridge Engineering Section signs it off.',
+        'An approach-abutment' + here + sz + ' carrying the transition from fill to bridge deck. The hard constraint is settlement: <b>a few millimetres of movement at the bearings concentrates stress</b> and propagates cracks under live load. Retention juggles vehicle loading, soil thrust and thermal cycling together, and JKR Bridge Engineering Section audits the result before traffic.',
+        'Retention at a bridge abutment' + here + sz + ' where settlement is least forgiven: once the deck is poured there is <b>no margin for movement at the bearing line</b> - any drift turns into a fatigue crack under repeated axle load. The wall resists traffic, earth and thermal effects at once and passes JKR Bridge Engineering Section sign-off.'
+      ]);
+      solution = sol([
+        'on <b>inverted-T precast facing</b> over an integral ground beam, the soil reinforcement terminated at a discrete deadman anchor block. Grade 30 MPa precast, hot-dip galvanised tendons, panel-to-panel interlock - the structural certainty an abutment demands.',
+        'with an <b>integral ground beam under inverted-T precast facing</b>, tendons anchored to a discrete deadman block and interlocked panel to panel - Grade 30 MPa, hot-dip galvanised, dimensioned for the abutment\'s no-settlement budget.'
+      ], [
+        'engineered abutment retention that opens the bridge to live traffic on programme, without the multi-week curing wait of a cast-in-situ RC abutment',
+        'a settlement-controlled abutment that takes the deck and the traffic on schedule, skipping the curing wait an RC abutment would impose'
+      ]);
     }
     // RAIL CORRIDOR
     else if (d.isRail) {
-      constraint = 'A rail corridor' + here + sz + ' (KTMB, ETS, or freight) with the retention sitting within metres of the live track. <b>Each passing train delivers a cyclic load pulse</b> that propagates into the wall mass; rigid concrete in this position develops crack patterns over months. Construction limited to permitted 3-4 hour maintenance windows between pass-bys, with rail-operator safety stewardship on every shift. Compliance with the rail authority\'s structural-clearance and seismic codes is non-negotiable.' + clientHook;
-      solution = sol('engineered <b>cyclic-load capable</b>, the composite soil mass flexing elastically and recovering under each train pass. Modular precast facing went up segment by segment, inside the rail operator\'s maintenance windows.', 'rail-corridor retention that performs through every pass-by, where a rigid RC wall would craze under cyclic load');
+      constraint = rotC([
+        'A rail corridor' + here + sz + ' (KTMB, ETS or freight) with retention metres from a live track. <b>Every train delivers a cyclic load pulse</b> into the wall mass, and rigid concrete in this position crazes over months. Work is confined to 3-4 hour maintenance windows between pass-bys under rail-operator stewardship, and the structure has to meet the authority\'s clearance and seismic codes.',
+        'Trackside retention' + here + sz + ' on an operating rail corridor. The wall sits close enough that <b>each pass-by pulses cyclic load</b> through it - a regime that cracks rigid RC over time. Construction happens only in short permitted possessions between trains, safety stewardship on every shift, in full compliance with the rail authority\'s clearance and seismic standards.',
+        'A wall within metres of live rail' + here + sz + ' where the governing condition is fatigue: <b>repeated train-induced load cycles</b> demand a structure that flexes and recovers rather than one that cracks. Access is limited to 3-4 hour maintenance windows, stewarded throughout, and the design answers to the rail authority\'s structural-clearance and seismic codes.'
+      ]);
+      solution = sol([
+        'engineered <b>cyclic-load capable</b>, the composite soil mass flexing elastically and recovering under each train pass. Modular precast facing went up segment by segment, inside the rail operator\'s maintenance windows.',
+        'tuned for <b>cyclic loading</b>, a composite soil mass that yields and recovers under every pass-by, with modular precast facing erected segment by segment inside the permitted track possessions.'
+      ], [
+        'rail-corridor retention that performs through every pass-by, where a rigid RC wall would craze under cyclic load',
+        'a fatigue-tolerant rail wall that rides out each train where rigid concrete would crack'
+      ]);
     }
     // FLOOD MITIGATION
     else if (d.isFlood) {
-      constraint = 'A flood-mitigation channel diversion or river-bank stabilisation' + here + sz + ' running through alluvium and saturated soil. The wall sees <b>wet-exposure cycles, intermittent submergence, and high-velocity scour</b> during monsoon. Tendon corrosion is the long-term failure mode: if galvanic protection breaks down the composite mass loses anchorage. Construction window is the dry season, typically 6-8 months, with hard programme pressure to dewater, build, and re-impound before the next monsoon arrives.' + clientHook;
-      solution = sol('with <b>hot-dip galvanised tendons</b> (sacrificial-thickness allowance designed in) and Grade 30 MPa precast facing rated for long service in wet exposure.', 'retention along a sensitive water corridor, the flood-mitigation programme protected for decades in conditions that would corrode standard steel reinforcement');
+      constraint = rotC([
+        'A flood-mitigation channel diversion or river-bank stabilisation' + here + sz + ' through alluvium and saturated soil. The wall faces <b>wet-exposure cycles, intermittent submergence and high-velocity scour</b> in the monsoon. Tendon corrosion is the long-term failure mode - lose the galvanic protection and the composite mass loses anchorage. The build window is the dry season, 6-8 months, with hard pressure to dewater, build and re-impound before the rains return.',
+        'River-bank or channel retention' + here + sz + ' on a flood-mitigation scheme. Sitting in <b>saturated, scour-prone alluvium</b> with seasonal submergence, the cardinal risk is reinforcement corrosion over decades. The whole sequence - dewater, construct, re-impound - has to fit the dry-season window before the next monsoon arrives.',
+        'Retention along a flood corridor' + here + sz + ' built in and around moving water, where <b>monsoon scour, wet-dry cycling and submergence</b> attack the reinforcement first, so corrosion allowance governs the design. The dry season is the only build window, which puts hard programme pressure on dewatering, construction and re-impounding.'
+      ]);
+      solution = sol([
+        'with <b>hot-dip galvanised tendons</b> (sacrificial-thickness allowance designed in) and Grade 30 MPa precast facing rated for long service in wet exposure.',
+        'on <b>hot-dip galvanised reinforcement</b> sized with a sacrificial-thickness allowance, behind Grade 30 MPa precast facing rated for years of wet-dry cycling.'
+      ], [
+        'retention along a sensitive water corridor, the flood-mitigation programme protected for decades in conditions that would corrode standard steel reinforcement',
+        'corrosion-tolerant retention on the flood corridor, holding for decades where standard steel reinforcement would rust out'
+      ]);
     }
     // RESERVOIR / WATER TREATMENT
     else if (d.isReservoir) {
-      constraint = 'A water-infrastructure facility' + here + sz + ' (treatment plant, reservoir embankment, balancing pond) where the wall functions as part of a <b>water-retaining structure with permanent wet contact</b>. Tendon corrosion is the cardinal failure mode; sacrificial-thickness allowance has to be designed in from day one. Operations cannot be disrupted: construction phases around the plant\'s running schedule, with potable-water hygiene controls on every materials delivery.' + clientHook;
-      solution = sol('with hot-dip galvanised tendons and precast facing built for long service under permanent wet contact, every phase sequenced around the plant\'s running schedule.', 'durable retention at a critical water-infrastructure site, designed for decades of wet-exposure service');
+      constraint = rotC([
+        'A water-infrastructure facility' + here + sz + ' (treatment plant, reservoir embankment, balancing pond) where the wall is part of a <b>water-retaining structure in permanent wet contact</b>. Tendon corrosion is the cardinal failure mode, so a sacrificial-thickness allowance is designed in from day one. Operations cannot stop: works phase around the plant\'s running schedule with potable-water hygiene controls on every delivery.',
+        'Retention at a live water facility' + here + sz + ' where the wall holds <b>permanent wet contact</b>, so corrosion governs the whole design and the reinforcement carries a sacrificial-thickness margin. The plant keeps running throughout, so construction is phased around operations under strict potable-water hygiene controls.',
+        'A wall inside operating water infrastructure' + here + sz + ' (reservoir, treatment works or balancing pond). The defining condition is <b>continuous saturation</b>: corrosion allowance is built in from the outset, every phase sequenced so the facility never goes offline, with hygiene controls on all materials.'
+      ]);
+      solution = sol([
+        'with hot-dip galvanised tendons and precast facing built for long service under permanent wet contact, every phase sequenced around the plant\'s running schedule.',
+        'on hot-dip galvanised reinforcement with a corrosion margin designed in, behind precast facing rated for permanent saturation, phased so the facility never stops running.'
+      ], [
+        'durable retention at a critical water-infrastructure site, designed for decades of wet-exposure service',
+        'corrosion-margined retention that serves for decades inside a live water facility'
+      ]);
     }
     // SLOPE RECTIFICATION
     else if (d.isSlope) {
-      constraint = 'An <b>active slope failure or unstable cut face</b>' + here + sz + ' threatening road closure, property damage, or infrastructure abandonment. The failure plane has already manifested: tension cracks, displacement, scarp formation. Progressive collapse is a matter of weeks if not addressed. Temporary protection (soil nails, jersey barriers, surface drainage) goes in first to arrest movement, then engineered retention rebuilds the slope to a higher factor of safety. Geotechnical investigation, design, mobilisation, and erection compressed into months, not the years a cast-in-situ RC alternative would demand.' + clientHook;
-      solution = sol('to rebuild the failed slope, the modular precast facing stitched into the recovered fill mass and anchored at a discrete deadman block, the sequence driven to get the corridor back in service fast.', 'slope-stable corridor, the original road or development returning to service');
+      constraint = rotC([
+        'An <b>active slope failure or unstable cut face</b>' + here + sz + ' threatening road closure, property loss or abandonment. The failure plane has already shown itself - tension cracks, displacement, scarp. Left alone, progressive collapse is weeks away. Temporary protection (soil nails, barriers, surface drainage) arrests movement first, then engineered retention rebuilds the slope to a higher factor of safety, with investigation, design, mobilisation and erection compressed into months, not the years an RC alternative needs.',
+        'A <b>moving slope</b>' + here + sz + ' already past the warning stage: cracks open, ground displaced, scarp formed. Without intervention the collapse completes in weeks. The job is two-stage - stabilise to halt movement, then rebuild to a stronger section - all of it telescoped into months, because the risk will not wait for a cast-in-situ programme.',
+        'Slope remediation' + here + sz + ' on ground that has <b>already failed</b>. The brief is recovery against the clock: temporary works stop the movement, then engineered retention re-establishes the slope at a higher factor of safety. Geotechnical investigation through to erection is compressed into months, where a poured-concrete fix would run to years.'
+      ]);
+      solution = sol([
+        'to rebuild the failed slope, the modular precast facing stitched into the recovered fill mass and anchored at a discrete deadman block, the sequence driven to get the corridor back in service fast.',
+        'to re-form the slope at a higher factor of safety, modular precast facing tied into the recovered fill and anchored to a discrete deadman block, sequenced for the fastest possible return to service.'
+      ], [
+        'slope-stable corridor, the original road or development returning to service',
+        'a recovered, higher-FoS slope that puts the road or development back in service'
+      ]);
     }
     // INDUSTRIAL / BUSINESS PARK
     else if (d.isIndustrial) {
-      constraint = 'An industrial estate or business-park platform' + here + sz + ' supporting heavy-machinery foundations, warehouse slabs, and tenant fit-out loads. <b>Differential settlement between adjacent lots is a tenant-disagreement risk</b>: uneven floors crack tilt-up panels, misalign racking, and stall fit-out programmes. The wall has to deliver structural-grade level retention to a tolerance commercial tenants will accept on handover. Developer programme is leasing-driven: each phase of retention completes before the corresponding lot can be marketed.' + clientHook;
-      solution = sol('to set the load-bearing platform. Its flexible interface soaks up the differential settlement that would crack a rigid RC wall; modular panels went up in days on crusher-run backfill from local quarries.', 'structural-grade industrial platform that\'s <b>tenant-ready in weeks, not months</b>, the developer\'s leasing programme moving on schedule');
+      constraint = rotC([
+        'An industrial estate or business-park platform' + here + sz + ' carrying heavy-machinery foundations, warehouse slabs and tenant fit-out loads. <b>Differential settlement between lots is a tenant-dispute risk</b> - uneven floors crack tilt-up panels, throw racking out of plumb and stall fit-out. The wall holds structural-grade level to a tolerance commercial tenants accept at handover, and the leasing programme drives each phase.',
+        'A business-park platform' + here + sz + ' built to take warehouse slabs and machine bases. The controlling risk is <b>uneven settlement across adjacent lots</b>, which cracks panels and misaligns racking the moment tenants fit out. Retention delivers level platform to a commercial handover tolerance, lot by lot, on a leasing-driven schedule.',
+        'Industrial platform retention' + here + sz + ' under heavy-machinery and warehouse loading. <b>Settlement tolerance is the whole game</b>: a platform that moves unevenly fails its tenants at fit-out. The wall holds structural-grade level to a tolerance leasing agents can hand over against, each phase tied to a lot release.'
+      ]);
+      solution = sol([
+        'to set the load-bearing platform. Its flexible interface soaks up the differential settlement that would crack a rigid RC wall; modular panels went up in days on crusher-run backfill from local quarries.',
+        'to lock in a load-bearing platform - the composite mass <b>flexes with differential settlement</b> instead of cracking like rigid RC, panels lifted in days over local crusher-run backfill.'
+      ], [
+        'structural-grade industrial platform that\'s <b>tenant-ready in weeks, not months</b>, the developer\'s leasing programme moving on schedule',
+        'a level, load-bearing platform handed over to a commercial tolerance, lot by lot, on the leasing clock'
+      ]);
     }
     // TOWNSHIP / HOUSING / MIXED DEVELOPMENT
     else if (d.isHousing || d.isMixed) {
-      constraint = 'A ' + (d.isPhased ? 'multi-phase ' : '') + 'township or mixed-use development' + here + sz + ' sitting on ' + (d.isHilly ? 'sloped, hill-cut platforms across hill terrain' : 'cut-and-fill platforms across irregular terrain') + '. The developer\'s marketing programme phases lots for sale stage-by-stage: each block has to be <b>platform-stable, drainage-ready, and visually finished before launch</b>. Differential settlement between cut and fill zones is a builder\'s nightmare: a 1% slope error on a residential plot looks fine on a drawing and disastrous on the tile work. Retention has to release each block on its own milestone without holding up the next.' + clientHook;
-      solution = sol('across the platform, the modular precast factory-built and erected in days, its flexible interface absorbing differential settlement, crusher-run backfill meaning <b>no premium granular fill is needed</b>.', 'buildable platform for stage-by-stage residential or commercial roll-out, the developer\'s marketing and construction phasing moving without cross-block disruption');
+      var hPhase = d.isPhased ? 'multi-phase ' : '';
+      var hTerr = d.isHilly ? 'sloped, hill-cut platforms' : 'cut-and-fill platforms across irregular terrain';
+      constraint = rotC([
+        'A ' + hPhase + 'township or mixed-use development' + here + sz + ' on ' + hTerr + '. The marketing programme releases lots stage by stage, so each block has to be <b>platform-stable, drainage-ready and visually finished before launch</b>. Differential settlement between cut and fill is the builder\'s nightmare - a 1% slope error looks fine on a drawing and ruins the tile work. Retention frees each block on its milestone without holding up the next.',
+        'A ' + hPhase + 'residential or mixed development' + here + sz + ' across ' + hTerr + ', sold in stages. Each parcel has to hit launch <b>level, drained and presentable</b>, and the cut-to-fill transition is where settlement bites - millimetres of differential show up as cracked tiles and out-of-level floors. The wall frees each block on cue without blocking the rest.',
+        'Platform retention for a ' + hPhase + 'township' + here + sz + ' on ' + hTerr + '. The developer sells phase by phase, so the constraint is timing as much as ground: <b>every block stable, drained and finished for its launch date</b>, no cross-block settlement to crack the next parcel\'s slabs, each release coming free on schedule.'
+      ]);
+      solution = sol([
+        'across the platform, the modular precast factory-built and erected in days, its flexible interface absorbing differential settlement, crusher-run backfill meaning <b>no premium granular fill is needed</b>.',
+        'over the development platform, factory-cast modular panels up in days, the flexible mass taking up differential settlement, and <b>local crusher-run backfill replacing premium granular fill</b>.'
+      ], [
+        'buildable platform for stage-by-stage residential or commercial roll-out, the developer\'s marketing and construction phasing moving without cross-block disruption',
+        'a phase-by-phase buildable platform that releases each block on its launch date, with no cross-block disruption'
+      ]);
     }
     // RECLAMATION / COASTAL / WATERFRONT
     else if (d.isReclamation) {
-      constraint = 'A reclaimed coastal or waterfront development' + here + sz + ' where the wall functions as the <b>perimeter retention of newly placed fill against tidal water</b>. Salt-water corrosion is the cardinal long-term failure mode: tide-cycle loading at the toe and saturation behind the wall accelerate every weakness in the system. The programme is tide-dependent: placing, compacting, and retaining all have to happen inside the dry-season window when the tide table allows working access. Coastal-authority permitting on top of the standard JKR or local-authority sign-off.' + clientHook;
-      solution = sol('with hot-dip galvanised tendons and architectural precast facing, specified for long service under coastal-exposure conditions.', 'marine-grade retention at the waterfront perimeter, the development phasing protected against decades of tidal cycling');
+      constraint = rotC([
+        'A reclaimed coastal or waterfront development' + here + sz + ' where the wall is the <b>perimeter retention of new fill against tidal water</b>. Salt-water corrosion is the cardinal long-term mode - tide-cycle loading at the toe and saturation behind the wall find every weakness. The programme is tide-dependent: place, compact and retain inside the dry-season window the tide table allows, coastal-authority permitting on top of the usual sign-off.',
+        'Perimeter retention for reclaimed waterfront' + here + sz + ' holding new fill against the tide, where the defining risk is <b>salt-water corrosion</b> driven by tidal cycling and constant saturation. Working access follows the tide table inside the dry season, and coastal-authority consent stacks on top of the standard JKR or local sign-off.',
+        'A coastal reclamation edge' + here + sz + ' where the wall retains placed fill at the <b>tidal waterline</b>. Corrosion governs design life, tide loading and saturation attacking the reinforcement. Construction is timed to tide and dry season together, and permitting runs through the coastal authority as well as the usual approvals.'
+      ]);
+      solution = sol([
+        'with hot-dip galvanised tendons and architectural precast facing, specified for long service under coastal-exposure conditions.',
+        'on hot-dip galvanised reinforcement behind architectural precast facing, both specified for the salt-laden, tide-cycled coastal environment.'
+      ], [
+        'marine-grade retention at the waterfront perimeter, the development phasing protected against decades of tidal cycling',
+        'a salt-tolerant waterfront edge engineered to ride decades of tidal cycling'
+      ]);
     }
     // FEDERAL / STATE ROAD (general)
     else if (d.isRoad) {
-      constraint = 'A ' + (d.isFederal ? 'federal' : 'state or arterial') + ' road alignment' + here + sz + ' threading through ' + (d.isHilly ? 'hilly cut faces and side-hill formation' : 'cut-and-fill terrain') + ' on a JKR or local-authority commissioning schedule. The road has a <b>published opening date</b> that the formation works drive toward: any retention that takes longer than 2-3 weeks per section delays the whole programme. JKR Standard Specification compliance is the gate: materials testing, method statements, and inspection records have to land before each lift is approved. Public commissioning audit at the end.' + clientHook;
-      solution = sol('along the road formation, factory-precast panels set behind the earthworks on hand-compacted crusher-run backfill, <b>zero heavy vibration plant</b> on the alignment.', 'road-corridor retention that lets the formation works carry on without a curing wait, the road on programme for public commissioning');
+      var rTier = d.isFederal ? 'federal' : 'state or arterial';
+      var rTerr = d.isHilly ? 'hilly cut faces and side-hill formation' : 'cut-and-fill terrain';
+      constraint = rotC([
+        'A ' + rTier + ' road alignment' + here + sz + ' threading through ' + rTerr + ' on a JKR or local-authority schedule. The road has a <b>published opening date</b> the formation works drive toward, so any retention slower than 2-3 weeks a section drags the whole programme. JKR Standard Specification is the gate - testing, method statements and inspection records before each lift - and a commissioning audit closes the job.',
+        'A ' + rTier + ' road' + here + sz + ' through ' + rTerr + ', built to a fixed opening date. The constraint is throughput: <b>retention has to keep pace with the earthworks</b>, section by section, or the commissioning date slips. Every lift clears JKR-spec testing and documentation before it is covered, with an audit at handover.',
+        'Road-corridor retention' + here + sz + ' on a ' + rTier + ' alignment crossing ' + rTerr + '. With a <b>committed commissioning date</b>, the wall cannot become the critical path - it goes up as fast as the formation advances while still clearing JKR Standard Specification checks at every lift.'
+      ]);
+      solution = sol([
+        'along the road formation, factory-precast panels set behind the earthworks on hand-compacted crusher-run backfill, <b>zero heavy vibration plant</b> on the alignment.',
+        'tracking the formation works, factory-precast panels following the earthworks lift by lift over hand-compacted crusher-run, <b>no heavy vibration plant</b> on the corridor.'
+      ], [
+        'road-corridor retention that lets the formation works carry on without a curing wait, the road on programme for public commissioning',
+        'retention that keeps pace with the earthworks and never becomes the critical path to opening day'
+      ]);
     }
     // GENERIC / FALLBACK
     else {
-      constraint = 'A development or infrastructure site' + here + sz + ' where the build-out programme is <b>gated by the retention works</b>. Soil conditions (soft alluvium, residual soil, weathered rock, fill of unknown provenance), terrain geometry (sloped, terraced, hill-cut), or site access (tight working aisle, neighbour proximity, live operations) make a conventional cast-in-situ RC wall impractical on programme. Retention has to be engineered, certified, and built without holding up the rest of the works.' + clientHook;
-      solution = sol('built lean: modular precast facing erected in days by a 3-4 person crew, crusher-run backfill from local quarries, <b>zero heavy vibration plant</b> on site.', 'engineered retention that moves the project forward without the multi-week curing wait of a cast-in-situ RC alternative');
+      constraint = rotC([
+        'A development or infrastructure site' + here + sz + ' where the build-out is <b>gated by the retention works</b>. Soil (soft alluvium, residual soil, weathered rock, fill of unknown provenance), terrain (sloped, terraced, hill-cut) or access (tight aisle, neighbour proximity, live operations) rules out a conventional cast-in-situ RC wall on programme. Retention has to be engineered, certified and built without holding up the rest of the works.',
+        'A site' + here + sz + ' where <b>retention sits on the critical path</b>. Between the ground conditions, the terrain and the access constraints, a poured-concrete wall would not make the programme, so the wall has to be engineered and certified yet quick to build, clearing the way for everything that follows.',
+        'An infrastructure or development platform' + here + sz + ' whose programme <b>waits on the retaining works</b>. Difficult ground, awkward terrain or tight access takes a cast-in-situ RC wall off the table, leaving a requirement for retention that is designed, certified and erected fast enough not to stall the rest of the job.'
+      ]);
+      solution = sol([
+        'built lean: modular precast facing erected in days by a 3-4 person crew, crusher-run backfill from local quarries, <b>zero heavy vibration plant</b> on site.',
+        'on a lean build, modular precast facing up in days with a 3-4 person crew, local crusher-run backfill, and <b>no heavy vibration plant</b> on site.'
+      ], [
+        'engineered retention that moves the project forward without the multi-week curing wait of a cast-in-situ RC alternative',
+        'certified retention kept off the critical path, skipping the multi-week curing wait an RC wall would add'
+      ]);
     }
 
     return { constraint: constraint, solution: solution };
